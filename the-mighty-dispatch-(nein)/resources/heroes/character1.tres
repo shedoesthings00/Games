@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dtcvxwuv7pkld"]
+
+[ext_resource type="Texture2D" uid="uid://cq24gf4tblr2c" path="res://assets/nott.jpg" id="1_7pcbk"]
+[ext_resource type="Script" uid="uid://jnx7qoxx437j" path="res://scripts/CharacterData.gd" id="1_7pl6v"]
+
+[resource]
+script = ExtResource("1_7pl6v")
+portrait = ExtResource("1_7pcbk")
+strength = 5
+dexterity = 5
+constitution = 5
+intelligence = 5
+wisdom = 5
+charisma = 5
+metadata/_custom_type_script = "uid://jnx7qoxx437j"

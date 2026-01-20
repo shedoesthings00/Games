@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi3u3vvftcwa"]
+
+[ext_resource type="Script" uid="uid://0epe0ofxralm" path="res://scripts/MissionSlot.gd" id="1_02vqu"]
+[ext_resource type="Script" uid="uid://d1y015432o0vg" path="res://scripts/DropArea.gd" id="1_dfh3t"]
+
+[node name="MissionSlot" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 273.0
+offset_top = 108.0
+offset_right = 987.0
+offset_bottom = 393.0
+script = ExtResource("1_02vqu")
+
+[node name="MissionName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 27.0
+offset_right = 537.0
+offset_bottom = 122.0
+
+[node name="DropArea" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 81.0
+offset_right = 434.0
+offset_bottom = 213.0
+script = ExtResource("1_dfh3t")
+
+[node name="Label" type="Label" parent="Panel/DropArea"]
+layout_mode = 0
+offset_left = -177.0
+offset_top = 2.0
+offset_right = -20.0
+offset_bottom = 25.0
+text = "Drop character here"
+
+[node name="AcceptButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 201.0
+offset_right = 566.0
+offset_bottom = 232.0
+text = "Aceptar"
+
+[node name="ResultLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 21.0
+offset_right = 437.0
+offset_bottom = 50.0
+
+[connection signal="character_dropped" from="Panel/DropArea" to="Panel/DropArea" method="_on_character_dropped"]
+[connection signal="pressed" from="Panel/AcceptButton" to="Panel" method="_on_accept_button_pressed"]

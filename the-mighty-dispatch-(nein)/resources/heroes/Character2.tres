@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://cbhcreaah1km3"]
+
+[ext_resource type="Texture2D" uid="uid://dmg5fws40x58i" path="res://assets/fjord.jpg" id="1_n17ex"]
+[ext_resource type="Script" uid="uid://jnx7qoxx437j" path="res://scripts/CharacterData.gd" id="1_s4gmw"]
+
+[resource]
+script = ExtResource("1_s4gmw")
+portrait = ExtResource("1_n17ex")
+strength = 2
+dexterity = 2
+constitution = 2
+intelligence = 2
+wisdom = 2
+charisma = 2
+metadata/_custom_type_script = "uid://jnx7qoxx437j"

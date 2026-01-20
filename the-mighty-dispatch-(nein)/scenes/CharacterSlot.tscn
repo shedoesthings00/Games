@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2t33f73m4uh7"]
+
+[ext_resource type="Script" uid="uid://cnhlbeiv0p7qy" path="res://scripts/CharacterSlot.gd" id="1_c0oo1"]
+
+[node name="CharacterSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c0oo1")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Portrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 3

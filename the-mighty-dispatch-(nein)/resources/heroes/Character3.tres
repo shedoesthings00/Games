@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://dh8f73kgu5x1a"]
+
+[ext_resource type="Script" uid="uid://jnx7qoxx437j" path="res://scripts/CharacterData.gd" id="1_p1i1q"]
+
+[resource]
+script = ExtResource("1_p1i1q")
+strength = 8
+dexterity = 8
+constitution = 8
+intelligence = 8
+metadata/_custom_type_script = "uid://jnx7qoxx437j"
