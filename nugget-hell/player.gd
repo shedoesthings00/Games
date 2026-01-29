@@ -1,14 +1,17 @@
 extends CharacterBody3D
 
 @export var move_speed: float = 6.0
+@export var turn_speed: float = 3.0
 @export var bullet_scene: PackedScene
 
 @onready var cam: Camera3D = get_viewport().get_camera_3d()
 @onready var muzzle: Node3D = $Muzzle
+@onready var cam_pivot: Node3D = $CamPivot   # crea este nodo hijo del Player y mete la Camera3D dentro
 
 
 func _physics_process(delta: float) -> void:
 	_move_player(delta)
+	_update_camera_follow(delta)
 
 
 func _process(delta: float) -> void:
@@ -16,26 +19,39 @@ func _process(delta: float) -> void:
 
 
 func _move_player(delta: float) -> void:
-	var input_dir: Vector2 = Input.get_vector(
-		"move_left", "move_right",
-		"move_forward", "move_back"
-	)
+	var input_left_right := Input.get_axis("move_left", "move_right")     # A/D
+	var input_forward_back := Input.get_axis("move_back", "move_forward") # S/W
 
-	var direction: Vector3 = Vector3.ZERO
+	# Girar el jugador en Y con A/D
+	if input_left_right != 0.0:
+		rotation.y -= input_left_right * turn_speed * delta
 
-	if input_dir.x != 0.0:
-		direction += transform.basis.x * input_dir.x
-	if input_dir.y != 0.0:
-		direction += transform.basis.z * input_dir.y
 
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
+	# Mover adelante/atrás según su frente local (-Z)
+	var dir: Vector3 = Vector3.ZERO
+	if input_forward_back != 0.0:
+		dir -= transform.basis.z * input_forward_back  # -Z es "delante"
 
-	velocity.x = direction.x * move_speed
-	velocity.z = direction.z * move_speed
+	if dir != Vector3.ZERO:
+		dir = dir.normalized()
+
+	velocity.x = dir.x * move_speed
+	velocity.z = dir.z * move_speed
 	velocity.y = 0.0
 
 	move_and_slide()
+
+
+func _update_camera_follow(delta: float) -> void:
+	if cam_pivot == null:
+		return
+
+	# Si quieres que siga EXACTAMENTE la rotación del player:
+	# cam_pivot.rotation.y = rotation.y
+
+	# Si quieres un giro suave:
+	var target_rot_y := rotation.y
+	cam_pivot.rotation.y = lerp_angle(cam_pivot.rotation.y, target_rot_y, 10.0 * delta)
 
 
 func _shoot() -> void:
@@ -48,10 +64,14 @@ func _shoot() -> void:
 		get_parent().add_child(bullet)
 
 		bullet.global_transform.origin = muzzle.global_transform.origin
-		(bullet as Node).call("init_direction", dir)
+		# Si seguiste mi recomendación de antes, usando init_direction en la bala:
+		if bullet.has_method("init_direction"):
+			bullet.init_direction(dir)
+		else:
+			# fallback al sistema antiguo de asignar move_dir
+			bullet.move_dir = dir
 
 		print("PLAYER: Disparo, dir =", dir)
-
 
 
 func _get_shoot_direction_to_mouse() -> Vector3:
@@ -67,6 +87,7 @@ func _get_shoot_direction_to_mouse() -> Vector3:
 	if hit == null:
 		return Vector3.ZERO
 
-	var dir: Vector3 = (hit as Vector3) - muzzle.global_transform.origin
+	var hit_pos: Vector3 = hit as Vector3
+	var dir: Vector3 = hit_pos - muzzle.global_transform.origin
 	dir.y = 0.0
 	return dir.normalized()

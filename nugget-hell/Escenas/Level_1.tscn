@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=8 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_n0r7v"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_c44pu"]
+[ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="3_m2lj2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nlike"]
 
@@ -23,6 +24,7 @@ bullet_scene = ExtResource("2_c44pu")
 shape = SubResource("SphereShape3D_nlike")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+visible = false
 mesh = SubResource("SphereMesh_n0r7v")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
@@ -30,6 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 0.6976905, 0.7163993, 0, -0.7163993, 0.69769
 
 [node name="Muzzle" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="Player" parent="Player" instance=ExtResource("3_m2lj2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.68043244, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 0.5, 0, 0, 0, 100, 0, -0.29406297, 0)
