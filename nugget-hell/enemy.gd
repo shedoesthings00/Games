@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 @export var enemy_name: String = "Enemy"
-@export var model_scene: PackedScene        # si luego quieres cambiar el modelo por escena
-@export var level_id: int = 1               # en qué nivel aparece
+@export var model_scene: PackedScene
+@export var level_id: int = 1
 @export var max_health: int = 10
 @export var attack_damage: int = 1
 @export var move_speed: float = 3.0
@@ -10,11 +10,10 @@ extends CharacterBody3D
 
 var current_health: int
 
-@onready var target: Node3D = null  # el jugador
+@onready var target: Node3D = null
 
 func _ready() -> void:
 	current_health = max_health
-	# Buscar jugador automáticamente (ajusta el nombre si hace falta)
 	target = get_tree().get_root().find_child("Player", true, false)
 
 func _physics_process(delta: float) -> void:
@@ -40,5 +39,4 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die() -> void:
-	# Aquí podrías soltar loot usando loot_value
 	queue_free()

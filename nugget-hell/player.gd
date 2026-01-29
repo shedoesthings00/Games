@@ -71,7 +71,7 @@ func _shoot() -> void:
 		if dir == Vector3.ZERO:
 			return
 
-		var bullet: RigidBody3D = bullet_scene.instantiate() as RigidBody3D
+		var bullet := bullet_scene.instantiate()
 		get_parent().add_child(bullet)
 
 		bullet.global_transform.origin = muzzle.global_transform.origin
@@ -79,9 +79,6 @@ func _shoot() -> void:
 			bullet.init_direction(dir)
 		else:
 			bullet.move_dir = dir
-
-		print("PLAYER: Disparo, dir =", dir)
-
 
 func _get_shoot_direction_to_mouse() -> Vector3:
 	if cam == null:
