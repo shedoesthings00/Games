@@ -10,7 +10,6 @@ var dash_time_left: float = 0.0
 
 @onready var cam: Camera3D = get_viewport().get_camera_3d()
 @onready var muzzle: Node3D = $Muzzle
-@onready var cam_pivot: Node3D = $CamPivot
 
 
 func _physics_process(delta: float) -> void:
@@ -32,7 +31,7 @@ func _move_player(delta: float) -> void:
 	var input_left_right := Input.get_axis("move_left", "move_right")     # A/D
 	var input_forward_back := Input.get_axis("move_back", "move_forward") # S/W
 
-	# Girar el jugador en Y con A/D (corregido para que A = izquierda, D = derecha)
+	# Girar el jugador en Y con A/D (A = izquierda, D = derecha)
 	if input_left_right != 0.0:
 		rotation.y -= input_left_right * turn_speed * delta
 
@@ -61,11 +60,9 @@ func _move_player(delta: float) -> void:
 
 
 func _update_camera_follow(delta: float) -> void:
-	if cam_pivot == null:
-		return
-
-	var target_rot_y := rotation.y
-	cam_pivot.rotation.y = lerp_angle(cam_pivot.rotation.y, target_rot_y, 10.0 * delta)
+	# Si la cámara es hija del Player y la has orientado en la escena,
+	# realmente no hace falta nada aquí; la dejo por si quieres suavizar algo.
+	pass
 
 
 func _shoot() -> void:
