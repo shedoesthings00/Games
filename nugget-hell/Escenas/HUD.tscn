@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk1xjbfpyqcyo"]
+
+[ext_resource type="Script" uid="uid://ctyarwlxqhglg" path="res://hud.gd" id="1_j171n"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j171n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmmqc"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_den20"]
+bg_color = Color(0.40196425, 0.60742277, 3.85046e-07, 1)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_j171n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="Control"]
+material = SubResource("CanvasItemMaterial_j171n")
+layout_mode = 0
+offset_left = 781.0
+offset_top = 18.0
+offset_right = 1129.0
+offset_bottom = 61.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gmmqc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_den20")
+max_value = 10.0
+step = 1.0
+value = 10.0
+
+[node name="AmmoLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 586.0
+offset_right = 1128.0
+offset_bottom = 635.0
+text = "3/3
+"

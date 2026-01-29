@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=11 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_n0r7v"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_c44pu"]
 [ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="3_m2lj2"]
 [ext_resource type="Script" uid="uid://bpuxnv38n6yim" path="res://enemy_spawner.gd" id="4_hhpw4"]
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemy1.tscn" id="5_icuq6"]
+[ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/HUD.tscn" id="6_ui02a"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nlike"]
 
@@ -54,3 +55,5 @@ transform = Transform3D(1, 0, 0, 0, -0.8814931, 0.4721969, 0, -0.4721969, -0.881
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972545, 0)
 script = ExtResource("4_hhpw4")
 enemy_scenes = Array[PackedScene]([ExtResource("5_icuq6")])
+
+[node name="HUD" parent="." instance=ExtResource("6_ui02a")]
