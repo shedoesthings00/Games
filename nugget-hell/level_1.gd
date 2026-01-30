@@ -1,6 +1,11 @@
 extends Node3D
 
-@export var max_enemies: int = 5   # TOTAL que deben morir en este nivel
+# Cada entrada: una escena de enemigo y cuántos quieres de ese tipo
+@export var enemy_config: Array[Dictionary] = [
+	{ "scene": preload("res://Escenas/Enemy1.tscn"), "count": 3 },
+	{ "scene": preload("res://Escenas/Enemy2.tscn"), "count": 2 },
+]
+
 var enemies_remaining: int
 
 @onready var hud: CanvasLayer = $HUD
@@ -8,37 +13,36 @@ var enemies_remaining: int
 
 func _ready() -> void:
 	print("LEVEL_1 _ready")
-	enemies_remaining = max_enemies
+
+	# Calcular total = suma de todos los counts
+	var total := 0
+	for cfg in enemy_config:
+		if cfg.has("count"):
+			total += int(cfg["count"])
+	enemies_remaining = total
+	print("LEVEL_1: total enemigos =", enemies_remaining)
+
 	_update_hud_enemies()
 
 	var spawner := get_node_or_null("EnemySpawner")
 	if spawner != null:
-		print("LEVEL_1: Spawner encontrado, total =", max_enemies)
-		if spawner.has_method("set_total_enemies"):
-			spawner.set_total_enemies(max_enemies)
-	else:
-		print("LEVEL_1: NO se ha encontrado nodo EnemySpawner")
+		if spawner.has_method("set_config"):
+			spawner.set_config(enemy_config)
 
 	if LevelTransition != null and LevelTransition.has_signal("transition_finished"):
-		print("LEVEL_1: conectando a transition_finished")
 		LevelTransition.transition_finished.connect(_on_transition_finished)
 	else:
-		print("LEVEL_1: sin transición, activando spawner directo")
 		_activate_spawner()
 
 
 func _on_transition_finished() -> void:
-	print("LEVEL_1: transición terminada, activando spawner")
 	_activate_spawner()
 
 
 func _activate_spawner() -> void:
 	var spawner := get_node_or_null("EnemySpawner")
 	if spawner != null and spawner.has_method("enable_spawning"):
-		print("LEVEL_1: enable_spawning en EnemySpawner")
 		spawner.enable_spawning()
-	else:
-		print("LEVEL_1: NO se ha podido activar el spawner")
 
 
 func _update_hud_enemies() -> void:

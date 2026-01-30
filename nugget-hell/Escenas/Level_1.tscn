@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=13 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://level_1.gd" id="1_6psxc"]
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_n0r7v"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_c44pu"]
 [ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="3_m2lj2"]
+[ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemy2.tscn" id="3_yoekh"]
 [ext_resource type="Script" uid="uid://bpuxnv38n6yim" path="res://enemy_spawner.gd" id="4_hhpw4"]
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemy1.tscn" id="5_icuq6"]
 [ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/HUD.tscn" id="6_ui02a"]
@@ -19,7 +20,13 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_6psxc")
-max_enemies = 3
+enemy_config = Array[Dictionary]([{
+"count": 5,
+"scene": ExtResource("5_icuq6")
+}, {
+"count": 3,
+"scene": ExtResource("3_yoekh")
+}])
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71104, 0)
@@ -58,6 +65,5 @@ transform = Transform3D(1, 0, 0, 0, -0.8814931, 0.4721969, 0, -0.4721969, -0.881
 [node name="EnemySpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972545, 0)
 script = ExtResource("4_hhpw4")
-enemy_scenes = Array[PackedScene]([ExtResource("5_icuq6")])
 
 [node name="HUD" parent="." instance=ExtResource("6_ui02a")]

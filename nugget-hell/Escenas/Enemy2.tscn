@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://43p8ymti8wl3"]
+
+[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://enemy.gd" id="1_lbyu5"]
+[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/EnemyHealthBar.tscn" id="2_n4jqo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lbyu5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cxmtl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_12w20"]
+viewport_path = NodePath("HealthViewport")
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5106733, 0)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_lbyu5")
+max_health = 3
+move_speed = 2.0
+attack_cooldown = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_lbyu5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cxmtl")
+
+[node name="HealthViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(217, 42)
+
+[node name="EnemyHealthBar" parent="HealthViewport" instance=ExtResource("2_n4jqo")]
+
+[node name="HealthBarSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7877737, 0)
+texture = SubResource("ViewportTexture_12w20")
