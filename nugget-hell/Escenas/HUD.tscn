@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk1xjbfpyqcyo"]
+[gd_scene load_steps=6 format=3 uid="uid://dk1xjbfpyqcyo"]
 
 [ext_resource type="Script" uid="uid://ctyarwlxqhglg" path="res://hud.gd" id="1_j171n"]
 
@@ -9,6 +9,9 @@ bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_den20"]
 bg_color = Color(0.40196425, 0.60742277, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j171n"]
+bg_color = Color(0.6, 0.23529412, 0.6, 1)
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_j171n")
@@ -22,10 +25,10 @@ offset_bottom = 40.0
 [node name="HealthBar" type="ProgressBar" parent="Control"]
 material = SubResource("CanvasItemMaterial_j171n")
 layout_mode = 0
-offset_left = 781.0
-offset_top = 18.0
-offset_right = 1129.0
-offset_bottom = 61.0
+offset_left = 770.0
+offset_top = 20.0
+offset_right = 1118.0
+offset_bottom = 63.0
 theme_override_styles/background = SubResource("StyleBoxFlat_gmmqc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_den20")
 max_value = 10.0
@@ -44,8 +47,20 @@ text = "3/3
 
 [node name="EnemiesLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 23.0
-offset_right = 516.0
-offset_bottom = 66.0
+offset_left = 985.0
+offset_top = 534.0
+offset_right = 1170.0
+offset_bottom = 577.0
 text = "Enemigos: 0 / 0"
+
+[node name="BossHealthBar" type="ProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 284.0
+offset_top = 47.0
+offset_right = 636.0
+offset_bottom = 74.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_j171n")
+step = 1.0
+value = 100.0
+show_percentage = false

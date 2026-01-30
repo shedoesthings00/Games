@@ -7,7 +7,6 @@ extends Node3D
 var _timer: float = 0.0
 var _spawning_enabled: bool = false
 
-# Lista de diccionarios: { "scene": PackedScene, "remaining": int }
 var _pool: Array[Dictionary] = []
 
 
@@ -44,7 +43,6 @@ func _physics_process(delta: float) -> void:
 	if not _spawning_enabled:
 		return
 
-	# Si ya no queda ningún tipo con remaining > 0, paramos
 	var any_remaining := false
 	for cfg in _pool:
 		if int(cfg["remaining"]) > 0:
@@ -60,7 +58,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _try_spawn_enemy() -> void:
-	# Limitar vivos simultáneamente
 	var current_alive := 0
 	for child in get_parent().get_children():
 		if child is CharacterBody3D and child.has_method("die"):
@@ -68,7 +65,6 @@ func _try_spawn_enemy() -> void:
 	if current_alive >= max_alive:
 		return
 
-	# Construir lista de índices con remaining > 0
 	var available_indices: Array[int] = []
 	for i in _pool.size():
 		if int(_pool[i]["remaining"]) > 0:
@@ -76,7 +72,6 @@ func _try_spawn_enemy() -> void:
 	if available_indices.is_empty():
 		return
 
-	# Elegir tipo de enemigo aleatorio entre los que quedan
 	var idx := available_indices[randi() % available_indices.size()]
 	var cfg := _pool[idx]
 	var scene: PackedScene = cfg["scene"]
@@ -94,5 +89,4 @@ func _try_spawn_enemy() -> void:
 	enemy.global_transform.origin = global_transform.origin + offset
 	get_parent().add_child(enemy)
 
-	# Reducir remaining para ese tipo
 	_pool[idx]["remaining"] = remaining - 1
