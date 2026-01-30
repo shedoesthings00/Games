@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpox4r6j6yp3o"]
+
+[ext_resource type="Script" uid="uid://chlclmlgfgq8h" path="res://Escenas/death_screen.gd" id="1_asqbv"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_asqbv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 76.0
+offset_right = 409.0
+offset_bottom = 134.0
+scale = Vector2(3.9375293, 3.9375293)
+text = "Skill Issue. You DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reintentar" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 49.269474
+offset_top = 47.99964
+offset_right = 132.06252
+offset_bottom = 70.09472
+text = "Restart"

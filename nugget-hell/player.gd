@@ -144,7 +144,7 @@ func take_damage(amount: int) -> void:
 
 func _die() -> void:
 	print("PLAYER MUERTO")
-	# Aquí puedes recargar escena o mostrar menú
+	get_tree().change_scene_to_file("res://Escenas/DeathScreen.tscn")
 
 
 func _start_reload() -> void:

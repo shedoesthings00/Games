@@ -34,9 +34,18 @@ func _physics_process(delta: float) -> void:
 
 
 func _face_camera() -> void:
-	var cam := get_viewport().get_camera_3d()
-	if cam and health_bar_sprite:
-		health_bar_sprite.look_at(cam.global_transform.origin, Vector3.UP)
+	if health_bar_sprite == null:
+		return
+
+	var vp := get_viewport()
+	if vp == null:
+		return
+
+	var cam := vp.get_camera_3d()
+	if cam == null:
+		return
+
+	health_bar_sprite.look_at(cam.global_transform.origin, Vector3.UP)
 
 
 func _move_towards_target(delta: float) -> void:
