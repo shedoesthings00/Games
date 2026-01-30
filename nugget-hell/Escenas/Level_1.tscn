@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=15 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://level_1.gd" id="1_6psxc"]
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_n0r7v"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b4pfxu0rnd1c2" path="res://Escenas/Boss1.tscn" id="4_r3tsu"]
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemy1.tscn" id="5_icuq6"]
 [ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/HUD.tscn" id="6_ui02a"]
+[ext_resource type="PackedScene" uid="uid://cql6r56wgnmmr" path="res://Escenas/SpawnMarker.tscn" id="9_o8xne"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nlike"]
 
@@ -67,6 +68,7 @@ transform = Transform3D(1, 0, 0, 0, -0.8814931, 0.4721969, 0, -0.4721969, -0.881
 [node name="EnemySpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972545, 0)
 script = ExtResource("4_hhpw4")
+spawn_marker_scene = ExtResource("9_o8xne")
 
 [node name="HUD" parent="." instance=ExtResource("6_ui02a")]
 

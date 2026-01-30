@@ -7,8 +7,9 @@ extends CharacterBody3D
 @export var attack_damage: int = 1
 @export var move_speed: float = 3.0
 @export var loot_value: int = 0
-
 @export var attack_cooldown: float = 1.0  # segundos entre golpes
+
+@export var death_fx_scene: PackedScene   # FX al morir (Node3D con GPUParticles3D hijas)
 
 var current_health: int
 var _time_since_last_attack: float = 0.0
@@ -25,6 +26,7 @@ func _ready() -> void:
 	target = get_tree().get_root().find_child("Player", true, false)
 	print("ENEMY READY en escena:", get_tree().current_scene.name)
 	_update_health_bar()
+
 
 func _physics_process(delta: float) -> void:
 	_time_since_last_attack += delta
@@ -83,10 +85,28 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
+	# FX de muerte
+	if death_fx_scene != null:
+		var fx_root: Node3D = death_fx_scene.instantiate() as Node3D
+		fx_root.global_transform.origin = global_transform.origin
+		get_parent().add_child(fx_root)
+		_enable_particles_recursive(fx_root)
+
+	# Avisar al nivel
 	var level := get_parent()
 	if level and level.has_method("on_enemy_killed"):
 		level.on_enemy_killed()
+
 	queue_free()
+
+
+func _enable_particles_recursive(node: Node) -> void:
+	for child in node.get_children():
+		if child is GPUParticles3D:
+			print("ENEMY: activando GPUParticles3D en", child.name)
+			child.emitting = true
+		_enable_particles_recursive(child)
+
 
 func _update_health_bar() -> void:
 	print("UPDATE BAR health =", current_health, " / ", max_health)

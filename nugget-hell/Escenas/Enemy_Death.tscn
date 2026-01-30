@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpqck3a3p23rw"]
+
+[sub_resource type="Curve" id="Curve_h0okd"]
+_data = [Vector2(0.0023255795, 0.7984942), 0.0, 0.0, 0, 0, Vector2(0.72325575, 0.99424267), 0.0, 0.0, 0, 0, Vector2(0.9999999, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_eduv7"]
+curve = SubResource("Curve_h0okd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_52q3q"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 15.0
+initial_velocity_max = 18.0
+scale_min = 0.19999999
+scale_max = 0.84999996
+scale_curve = SubResource("CurveTexture_eduv7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etepu"]
+albedo_color = Color(1, 0.38431373, 0.10980392, 1)
+emission_enabled = true
+emission = Color(1, 0.38431373, 0.10980392, 1)
+emission_energy_multiplier = 1.75
+
+[sub_resource type="PrismMesh" id="PrismMesh_swu2q"]
+material = SubResource("StandardMaterial3D_etepu")
+size = Vector3(0.2, 1.14, 0.15)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h0okd"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eduv7"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.99215686, 0.22745098, 0.08235294, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_52q3q"]
+material = SubResource("StandardMaterial3D_eduv7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eduv7"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 10, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52q3q"]
+blend_mode = 1
+albedo_color = Color(0.18431373, 0.18431373, 0.15294118, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_etepu"]
+material = SubResource("StandardMaterial3D_52q3q")
+
+[node name="EnemySpawnFx" type="Node3D"]
+
+[node name="Fragments" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_52q3q")
+draw_pass_1 = SubResource("PrismMesh_swu2q")
+
+[node name="Fire" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 150
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_h0okd")
+draw_pass_1 = SubResource("QuadMesh_52q3q")
+
+[node name="Smoke" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_eduv7")
+draw_pass_1 = SubResource("SphereMesh_etepu")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://db7jc08272jt0"]
+[gd_scene load_steps=7 format=3 uid="uid://db7jc08272jt0"]
 
 [ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://enemy.gd" id="1_jtl76"]
+[ext_resource type="PackedScene" uid="uid://dpqck3a3p23rw" path="res://Escenas/Enemy_Death.tscn" id="2_12w20"]
 [ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/EnemyHealthBar.tscn" id="2_60xt0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_pe06u"]
@@ -18,6 +19,7 @@ script = ExtResource("1_jtl76")
 max_health = 3
 move_speed = 2.0
 attack_cooldown = 2.0
+death_fx_scene = ExtResource("2_12w20")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_pe06u")
