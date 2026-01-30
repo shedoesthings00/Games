@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Nugget Hell"
-run/main_scene="uid://bvdqpyndsx2rg"
+run/main_scene="uid://y84sjug1g8mn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LevelManager="*res://LevelManager.gd"
+LevelTransition="*res://Escenas/LevelTransition.tscn"
 
 [input]
 
