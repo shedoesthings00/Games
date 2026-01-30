@@ -31,6 +31,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_den20")
 max_value = 10.0
 step = 1.0
 value = 10.0
+show_percentage = false
 
 [node name="AmmoLabel" type="Label" parent="Control"]
 layout_mode = 0
@@ -40,3 +41,11 @@ offset_right = 1128.0
 offset_bottom = 635.0
 text = "3/3
 "
+
+[node name="EnemiesLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 23.0
+offset_right = 516.0
+offset_bottom = 66.0
+text = "Enemigos: 0 / 0"
