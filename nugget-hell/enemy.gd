@@ -23,9 +23,8 @@ var _time_since_last_attack: float = 0.0
 func _ready() -> void:
 	current_health = max_health
 	target = get_tree().get_root().find_child("Player", true, false)
-	print("health_bar_ui =", health_bar_ui)
+	print("ENEMY READY en escena:", get_tree().current_scene.name)
 	_update_health_bar()
-
 
 func _physics_process(delta: float) -> void:
 	_time_since_last_attack += delta
@@ -79,7 +78,6 @@ func die() -> void:
 	if level and level.has_method("on_enemy_killed"):
 		level.on_enemy_killed()
 	queue_free()
-
 
 func _update_health_bar() -> void:
 	print("UPDATE BAR health =", current_health, " / ", max_health)
