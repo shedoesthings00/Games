@@ -5,11 +5,9 @@
 [sub_resource type="SphereMesh" id="SphereMesh_5q0pg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvksi"]
-radius = 0.5480213
+radius = 17.398376
 
 [node name="Bullet" type="Area3D"]
-collision_layer = 4
-collision_mask = 2
 script = ExtResource("1_5bagb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

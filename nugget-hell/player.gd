@@ -131,10 +131,12 @@ func _shoot() -> void:
 		spawn_pos.y = global_position.y
 		bullet.global_transform.origin = spawn_pos
 
+		print("PLAYER: bullet tiene init_direction:", bullet.has_method("init_direction"))
 		if bullet.has_method("init_direction"):
 			bullet.init_direction(dir)
 		else:
 			bullet.move_dir = dir
+
 
 		current_ammo -= 1
 		_update_hud()

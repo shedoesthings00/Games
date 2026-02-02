@@ -1,8 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=11 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://level_1.gd" id="1_6psxc"]
-[ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_n0r7v"]
-[ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_c44pu"]
 [ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="3_m2lj2"]
 [ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemy2.tscn" id="3_yoekh"]
 [ext_resource type="Script" uid="uid://bpuxnv38n6yim" path="res://enemy_spawner.gd" id="4_hhpw4"]
@@ -10,10 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemy1.tscn" id="5_icuq6"]
 [ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/HUD.tscn" id="6_ui02a"]
 [ext_resource type="PackedScene" uid="uid://cql6r56wgnmmr" path="res://Escenas/SpawnMarker.tscn" id="9_o8xne"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_nlike"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_n0r7v"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kidjj"]
 
@@ -31,28 +25,6 @@ enemy_config = Array[Dictionary]([{
 }])
 boss_scene = ExtResource("4_r3tsu")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71104, 0)
-script = ExtResource("1_n0r7v")
-bullet_scene = ExtResource("2_c44pu")
-max_ammo = 6
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("SphereShape3D_nlike")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-visible = false
-mesh = SubResource("SphereMesh_n0r7v")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.6976905, 0.7163993, 0, -0.7163993, 0.6976905, 0, 7.43805, 3.2801578)
-
-[node name="Muzzle" type="Marker3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06305003, 0.3207264)
-
-[node name="Player" parent="Player" instance=ExtResource("3_m2lj2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.68043244, 0)
-
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 0.5, 0, 0, 0, 100, 0, -0.29406297, 0)
 mesh = SubResource("BoxMesh_kidjj")
@@ -66,7 +38,7 @@ shape = SubResource("ConcavePolygonShape3D_65pcf")
 transform = Transform3D(1, 0, 0, 0, -0.8814931, 0.4721969, 0, -0.4721969, -0.8814931, 0, 5.4669104, -0.21009469)
 
 [node name="EnemySpawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972545, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48767686, 0)
 script = ExtResource("4_hhpw4")
 spawn_marker_scene = ExtResource("9_o8xne")
 
@@ -74,3 +46,5 @@ spawn_marker_scene = ExtResource("9_o8xne")
 
 [node name="BossSpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4663005, 34.05928)
+
+[node name="Player" parent="." instance=ExtResource("3_m2lj2")]
