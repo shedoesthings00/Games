@@ -15,6 +15,8 @@ var current_health: int
 var current_ammo: int
 @export var reload_time: float = 1.5
 var _is_reloading: bool = false
+var _reload_time_left: float = 0.0
+
 
 @onready var cam: Camera3D = get_viewport().get_camera_3d()
 @onready var muzzle: Node3D = $Muzzle
@@ -24,18 +26,48 @@ func _ready() -> void:
 	current_health = max_health
 	current_ammo = max_ammo
 	print("PLAYER VIDA =", current_health)
+	await get_tree().process_frame
 	_update_hud()
-
 
 func _physics_process(delta: float) -> void:
 	_handle_dash_input()
 	_move_player(delta)
 	_update_camera_follow(delta)
+	_update_reload_feedback(delta)
 
 
+func _update_reload_feedback(delta: float) -> void:
+	if not _is_reloading:
+		return
+
+	_reload_time_left -= delta
+	if _reload_time_left < 0.0:
+		_reload_time_left = 0.0
+
+	var progress := 1.0 - (_reload_time_left / reload_time)
+
+	var hud := get_tree().get_root().find_child("HUD", true, false)
+	if hud and hud.has_method("set_reload_progress"):
+		hud.set_reload_progress(progress)
+
+
+func _handle_manual_reload() -> void:
+	# Si ya está recargando, no hacer nada
+	if _is_reloading:
+		return
+
+	# Si ya tenemos el cargador lleno, opcionalmente no recargar
+	if current_ammo >= max_ammo:
+		return
+
+	# Pulsar R para recargar
+	if Input.is_action_just_pressed("reload"):
+		_start_reload()
+		
+		
 func _process(delta: float) -> void:
 	_shoot()
-
+	_handle_manual_reload()
 
 func _handle_dash_input() -> void:
 	if Input.is_action_just_pressed("dash") and dash_time_left <= 0.0:
@@ -151,7 +183,14 @@ func _start_reload() -> void:
 	if _is_reloading:
 		return
 	_is_reloading = true
+	_reload_time_left = reload_time
 	print("RELOAD...")
+
+	# Avisar al HUD para que muestre el círculo
+	var hud := get_tree().get_root().find_child("HUD", true, false)
+	if hud and hud.has_method("show_reload_progress"):
+		hud.show_reload_progress()
+
 	var t := get_tree().create_timer(reload_time)
 	t.timeout.connect(_finish_reload)
 
@@ -159,8 +198,14 @@ func _start_reload() -> void:
 func _finish_reload() -> void:
 	current_ammo = max_ammo
 	_is_reloading = false
+	_reload_time_left = 0.0
 	print("RELOAD DONE, ammo =", current_ammo)
 	_update_hud()
+
+	# Ocultar el círculo en el HUD
+	var hud := get_tree().get_root().find_child("HUD", true, false)
+	if hud and hud.has_method("hide_reload_progress"):
+		hud.hide_reload_progress()
 
 
 func _update_hud() -> void:

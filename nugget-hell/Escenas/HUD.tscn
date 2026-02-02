@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk1xjbfpyqcyo"]
+[gd_scene load_steps=7 format=3 uid="uid://dk1xjbfpyqcyo"]
 
 [ext_resource type="Script" uid="uid://ctyarwlxqhglg" path="res://hud.gd" id="1_j171n"]
+[ext_resource type="Texture2D" uid="uid://cvsg046rx7u0c" path="res://reload_better.png" id="2_gmmqc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j171n"]
 
@@ -42,7 +43,7 @@ offset_left = 1068.0
 offset_top = 586.0
 offset_right = 1128.0
 offset_bottom = 635.0
-text = "3/3
+text = "
 "
 
 [node name="EnemiesLabel" type="Label" parent="Control"]
@@ -54,7 +55,6 @@ offset_bottom = 577.0
 text = "Enemigos: 0 / 0"
 
 [node name="BossHealthBar" type="ProgressBar" parent="Control"]
-visible = false
 layout_mode = 0
 offset_left = 284.0
 offset_top = 47.0
@@ -64,3 +64,17 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_j171n")
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="ReloadCircle" type="TextureProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 914.0
+offset_top = 473.0
+offset_right = 1254.0
+offset_bottom = 813.0
+scale = Vector2(0.16357785, 0.16357785)
+pivot_offset = Vector2(128, 128)
+max_value = 1.0
+fill_mode = 4
+texture_under = ExtResource("2_gmmqc")
+texture_progress = ExtResource("2_gmmqc")
