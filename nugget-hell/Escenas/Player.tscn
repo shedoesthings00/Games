@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bht1r0vsd76dd"]
+[gd_scene load_steps=6 format=3 uid="uid://bht1r0vsd76dd"]
 
 [ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="1_83e7o"]
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_wwpud"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_wwpud"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c1rio"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c1rio"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_wwpud")
@@ -24,3 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8729732, 0.3207264)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_83e7o")]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3417027, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_c1rio")

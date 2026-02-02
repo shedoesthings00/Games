@@ -92,12 +92,21 @@ func die() -> void:
 		get_parent().add_child(fx_root)
 		_enable_particles_recursive(fx_root)
 
-	# Avisar al nivel
+	# Powerup: se lo pedimos al nivel
 	var level := get_parent()
+	if level != null and level.has_method("get_powerup_drop"):
+		var pu_scene: PackedScene = level.get_powerup_drop()
+		if pu_scene != null:
+			var pu: Node3D = pu_scene.instantiate() as Node3D
+			pu.global_transform.origin = global_transform.origin
+			level.add_child(pu)
+
+	# Avisar al nivel de que ha muerto
 	if level and level.has_method("on_enemy_killed"):
 		level.on_enemy_killed()
 
 	queue_free()
+
 
 
 func _enable_particles_recursive(node: Node) -> void:

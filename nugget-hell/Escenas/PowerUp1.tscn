@@ -1,20 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlo5i0402io04"]
 
-[ext_resource type="Script" path="res://Escenas/power_up.gd" id="1_8pp7g"]
+[ext_resource type="Script" uid="uid://sjw04cttnp3p" path="res://Escenas/power_up.gd" id="1_8pp7g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8pp7g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8pp7g"]
 
-[node name="PowerUp" type="Node3D"]
+[node name="PowerUp" type="Area3D"]
 script = ExtResource("1_8pp7g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_8pp7g")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8pp7g")
-
-[connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]

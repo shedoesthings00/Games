@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=12 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://level_1.gd" id="1_6psxc"]
 [ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="3_m2lj2"]
 [ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemy2.tscn" id="3_yoekh"]
 [ext_resource type="Script" uid="uid://bpuxnv38n6yim" path="res://enemy_spawner.gd" id="4_hhpw4"]
+[ext_resource type="PackedScene" uid="uid://dlo5i0402io04" path="res://Escenas/PowerUp1.tscn" id="4_o8xne"]
 [ext_resource type="PackedScene" uid="uid://b4pfxu0rnd1c2" path="res://Escenas/Boss1.tscn" id="4_r3tsu"]
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemy1.tscn" id="5_icuq6"]
 [ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/HUD.tscn" id="6_ui02a"]
@@ -22,6 +23,10 @@ enemy_config = Array[Dictionary]([{
 }, {
 "count": 1,
 "scene": ExtResource("3_yoekh")
+}])
+powerup_drops = Array[Dictionary]([{
+"chance": 1.0,
+"scene": ExtResource("4_o8xne")
 }])
 boss_scene = ExtResource("4_r3tsu")
 
