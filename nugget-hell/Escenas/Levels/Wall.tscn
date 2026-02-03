@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch7bj3ci6x5ji"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dro7"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kjt6a"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_1dro7"]
 material = SubResource("StandardMaterial3D_1dro7")
+orientation = 0
 
 [node name="Wall" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("PlaneMesh_kjt6a")
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1dro7")

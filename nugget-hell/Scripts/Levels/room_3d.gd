@@ -287,7 +287,7 @@ func _spawn_color_objects() -> void:
 			var pz = offset_z + float(y) * cell_size
 			inst.position = Vector3(px, 0.5, pz)
 			room_root_3d.add_child(inst)
-			
+
 func cell_to_world(x: int, y: int) -> Vector3:
 	var offset_x = - (grid_size.x * cell_size) / 2.0
 	var offset_z = - (grid_size.y * cell_size) / 2.0
@@ -362,10 +362,11 @@ func _spawn_walls() -> void:
 			var base_x: float = offset_x + float(x) * cell_size
 			var base_z: float = offset_z + float(y) * cell_size
 
-			# LADO +X (derecha)
+			# LADO +X (derecha): pared en el borde derecho de la celda de suelo.
 			if x + 1 >= grid_size.x or not floor_grid[y][x + 1]:
 				var wall_right: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_right.position = Vector3(base_x + cell_size * 0.5, floor_y, base_z)
+				# Normal mirando hacia +X → interior (suelo) está a -X
 				wall_right.rotation_degrees = Vector3(0.0, 90.0, 0.0)
 				room_root_3d.add_child(wall_right)
 				wall_count += 1
@@ -374,6 +375,7 @@ func _spawn_walls() -> void:
 			if x - 1 < 0 or not floor_grid[y][x - 1]:
 				var wall_left: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_left.position = Vector3(base_x - cell_size * 0.5, floor_y, base_z)
+				# Normal mirando hacia -X → interior (suelo) está a +X
 				wall_left.rotation_degrees = Vector3(0.0, -90.0, 0.0)
 				room_root_3d.add_child(wall_left)
 				wall_count += 1
@@ -382,7 +384,8 @@ func _spawn_walls() -> void:
 			if y + 1 >= grid_size.y or not floor_grid[y + 1][x]:
 				var wall_down: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_down.position = Vector3(base_x, floor_y, base_z + cell_size * 0.5)
-				wall_down.rotation_degrees = Vector3(0.0, 180.0, 0.0)
+				# Antes 180, ahora al revés:
+				wall_down.rotation_degrees = Vector3(0.0, 0.0, 0.0)
 				room_root_3d.add_child(wall_down)
 				wall_count += 1
 
@@ -390,8 +393,11 @@ func _spawn_walls() -> void:
 			if y - 1 < 0 or not floor_grid[y - 1][x]:
 				var wall_up: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_up.position = Vector3(base_x, floor_y, base_z - cell_size * 0.5)
-				wall_up.rotation_degrees = Vector3(0.0, 0.0, 0.0)
+				# Antes 0, ahora 180:
+				wall_up.rotation_degrees = Vector3(0.0, 180.0, 0.0)
 				room_root_3d.add_child(wall_up)
 				wall_count += 1
+
+
 
 	print("PAREDES GENERADAS =", wall_count)

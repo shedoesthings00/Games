@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvdqpyndsx2rg"]
+[gd_scene load_steps=14 format=3 uid="uid://bvdqpyndsx2rg"]
 
 [ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://Scripts/Levels/level_1.gd" id="1_4jmfo"]
 [ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemies/Enemy1.tscn" id="2_gumqa"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/Menus/HUD.tscn" id="9_lipfc"]
 [ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="10_bwp30"]
 [ext_resource type="PackedScene" uid="uid://b20olmsn1he75" path="res://Escenas/Levels/Room3D.tscn" id="11_u7gp3"]
-[ext_resource type="PackedScene" uid="uid://c4e21t7pjuouc" path="res://Escenas/Levels/Floor.tscn" id="12_gumqa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kidjj"]
 
@@ -56,4 +55,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4663005, 34.05928)
 [node name="Player" parent="." instance=ExtResource("10_bwp30")]
 
 [node name="Room3d" parent="." instance=ExtResource("11_u7gp3")]
-wall_tile_scene = ExtResource("12_gumqa")
