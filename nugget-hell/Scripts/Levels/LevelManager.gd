@@ -1,14 +1,14 @@
 extends Node
 
 var levels: Array[String] = [
-	"res://Escenas/Level_1.tscn",
-	"res://Escenas/Level_2.tscn",
+	"res://Escenas/Levels/Level_1.tscn",
+	"res://Escenas/Levels/Level_2.tscn",
 ]
 
 var current_index: int = 0
 
-const WIN_SCREEN_PATH := "res://Escenas/WinScreen.tscn"
-const DEATH_SCREEN_PATH := "res://Escenas/DeathScreen.tscn"
+const WIN_SCREEN_PATH := "res://Escenas/Menus/WinScreen.tscn"
+const DEATH_SCREEN_PATH := "res://Escenas/Menus/DeathScreen.tscn"
 
 
 func start_game() -> void:

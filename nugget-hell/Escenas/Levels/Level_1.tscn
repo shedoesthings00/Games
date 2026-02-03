@@ -1,0 +1,57 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvdqpyndsx2rg"]
+
+[ext_resource type="Script" uid="uid://bbdvs7r5i7657" path="res://Scripts/Levels/level_1.gd" id="1_4jmfo"]
+[ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemies/Enemy1.tscn" id="2_gumqa"]
+[ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemies/Enemy2.tscn" id="3_57o2u"]
+[ext_resource type="PackedScene" uid="uid://dlo5i0402io04" path="res://Escenas/PowerUps/Ketchup.tscn" id="4_6gu4i"]
+[ext_resource type="PackedScene" uid="uid://bjhrqatnqc6a7" path="res://Escenas/PowerUps/Mustard.tscn" id="5_354bp"]
+[ext_resource type="PackedScene" uid="uid://b4pfxu0rnd1c2" path="res://Escenas/Enemies/Boss1.tscn" id="6_jt0hi"]
+[ext_resource type="Script" uid="uid://bpuxnv38n6yim" path="res://Scripts/Enemies/enemy_spawner.gd" id="7_owpjh"]
+[ext_resource type="PackedScene" uid="uid://cql6r56wgnmmr" path="res://Escenas/Enemies/SpawnMarker.tscn" id="8_oupci"]
+[ext_resource type="PackedScene" uid="uid://dk1xjbfpyqcyo" path="res://Escenas/Menus/HUD.tscn" id="9_lipfc"]
+[ext_resource type="PackedScene" uid="uid://bht1r0vsd76dd" path="res://Escenas/Player.tscn" id="10_bwp30"]
+[ext_resource type="PackedScene" uid="uid://b20olmsn1he75" path="res://Escenas/Levels/Room3D.tscn" id="11_u7gp3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kidjj"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_65pcf"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_4jmfo")
+enemy_config = Array[Dictionary]([{
+"count": 1,
+"scene": ExtResource("2_gumqa")
+}, {
+"count": 1,
+"scene": ExtResource("3_57o2u")
+}])
+powerup_scenes = Array[PackedScene]([ExtResource("4_6gu4i"), ExtResource("5_354bp")])
+boss_scene = ExtResource("6_jt0hi")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 0.5, 0, 0, 0, 100, 0, -0.29406297, 0)
+visible = false
+mesh = SubResource("BoxMesh_kidjj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_65pcf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.8814931, 0.4721969, 0, -0.4721969, -0.8814931, 0, 5.4669104, -0.21009469)
+
+[node name="EnemySpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48767686, 0)
+script = ExtResource("7_owpjh")
+spawn_marker_scene = ExtResource("8_oupci")
+
+[node name="HUD" parent="." instance=ExtResource("9_lipfc")]
+
+[node name="BossSpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4663005, 34.05928)
+
+[node name="Player" parent="." instance=ExtResource("10_bwp30")]
+
+[node name="Room3d" parent="." instance=ExtResource("11_u7gp3")]

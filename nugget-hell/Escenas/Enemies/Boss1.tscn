@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4pfxu0rnd1c2"]
 
-[ext_resource type="Script" uid="uid://2tpf8w1dqbea" path="res://Escenas/boss.gd" id="1_0kd8n"]
-[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/EnemyHealthBar.tscn" id="2_fc1m8"]
+[ext_resource type="Script" uid="uid://2tpf8w1dqbea" path="res://Scripts/Enemies/boss.gd" id="1_0kd8n"]
+[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/Enemies/EnemyHealthBar.tscn" id="2_fc1m8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lbyu5"]
 

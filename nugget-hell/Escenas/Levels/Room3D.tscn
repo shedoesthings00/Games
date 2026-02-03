@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://b20olmsn1he75"]
+
+[ext_resource type="Script" uid="uid://b58c5i7rki4ur" path="res://Scripts/Levels/room_3d.gd" id="1_l0pit"]
+[ext_resource type="PackedScene" uid="uid://cljnltn6uksp3" path="res://Escenas/Levels/obj1.tscn" id="2_ksnvj"]
+[ext_resource type="PackedScene" uid="uid://c4e21t7pjuouc" path="res://Escenas/Levels/Floor.tscn" id="2_n76lr"]
+[ext_resource type="PackedScene" uid="uid://del3owwuq3wec" path="res://Escenas/Levels/obj2.tscn" id="3_youxj"]
+[ext_resource type="PackedScene" uid="uid://doqo8d3nimh8l" path="res://Escenas/Levels/obj3.tscn" id="4_mdw1w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l0pit"]
+
+[node name="Room3d" type="Node3D"]
+script = ExtResource("1_l0pit")
+floor_tile_scene = ExtResource("2_n76lr")
+red_scene_3d = ExtResource("2_ksnvj")
+blue_scene_3d = ExtResource("3_youxj")
+green_scene_3d = ExtResource("4_mdw1w")
+
+[node name="RoomRoot3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.062704, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.26223972, 0.9650028, 0, -0.9650028, 0.26223972, 0, 5.15243, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_l0pit")

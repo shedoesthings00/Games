@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjhrqatnqc6a7"]
+
+[ext_resource type="Script" uid="uid://sjw04cttnp3p" path="res://Scripts/PowerUps/power_up.gd" id="1_coivg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coivg"]
+albedo_color = Color(0.87058824, 0.45882353, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8pp7g"]
+material = SubResource("StandardMaterial3D_coivg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pp7g"]
+
+[node name="Mustard" type="Area3D"]
+script = ExtResource("1_coivg")
+powerup_name = "Mustard"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_8pp7g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8pp7g")

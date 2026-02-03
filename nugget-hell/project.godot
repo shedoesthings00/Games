@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*res://LevelManager.gd"
-LevelTransition="*res://Escenas/LevelTransition.tscn"
+LevelManager="*res://Scripts/Levels/LevelManager.gd"
+LevelTransition="*res://Escenas/Levels/LevelTransition.tscn"
 
 [input]
 

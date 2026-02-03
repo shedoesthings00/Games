@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dk1xjbfpyqcyo"]
 
-[ext_resource type="Script" uid="uid://ctyarwlxqhglg" path="res://hud.gd" id="1_j171n"]
+[ext_resource type="Script" uid="uid://ctyarwlxqhglg" path="res://Scripts/Menus/hud.gd" id="1_j171n"]
 [ext_resource type="Texture2D" uid="uid://cvsg046rx7u0c" path="res://reload_better.png" id="2_gmmqc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j171n"]

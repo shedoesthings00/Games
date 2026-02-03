@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dof52upl1ycwh"]
 
-[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://enemy.gd" id="1_y3j3y"]
+[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://Scripts/Enemies/enemy.gd" id="1_y3j3y"]
 [ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="2_pe06u"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_pe06u"]

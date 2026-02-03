@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bht1r0vsd76dd"]
 
 [ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="1_83e7o"]
-[ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://player.gd" id="1_wwpud"]
+[ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://Scripts/player.gd" id="1_wwpud"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_wwpud"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c1rio"]

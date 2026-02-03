@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpox4r6j6yp3o"]
+[gd_scene load_steps=2 format=3 uid="uid://c43vdv2cnfj35"]
 
-[ext_resource type="Script" uid="uid://chlclmlgfgq8h" path="res://death_screen.gd" id="1_asqbv"]
+[ext_resource type="Script" uid="uid://0lhrc13lwy1f" path="res://Scripts/Menus/win_screen.gd" id="1_v3dsf"]
 
-[node name="DeathScreen" type="Control"]
+[node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_asqbv")
+script = ExtResource("1_v3dsf")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -14,7 +14,7 @@ offset_top = 76.0
 offset_right = 409.0
 offset_bottom = 134.0
 scale = Vector2(3.9375293, 3.9375293)
-text = "Skill Issue. You DIED"
+text = "Yippieee"
 horizontal_alignment = 1
 vertical_alignment = 1
 

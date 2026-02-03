@@ -4,16 +4,8 @@ extends Node3D
 	# { "scene": preload("res://Escenas/Enemy.tscn"), "count": 3 },
 ]
 
-@export var powerup_drops: Array[Dictionary] = [
-	{
-		"scene": preload("res://Escenas/PowerUp1.tscn"),
-		"chance": 0.5
-	},
-	{
-		"scene": null,
-		"chance": 0.5
-	},
-]
+@export var powerup_scenes: Array[PackedScene] = []
+@export var powerup_chances: Array[float] = []
 
 
 @export var boss_scene: PackedScene
@@ -116,21 +108,25 @@ func _on_boss_killed() -> void:
 		LevelManager.load_next_level()
 		
 func get_powerup_drop() -> PackedScene:
-	if powerup_drops.is_empty():
+	if powerup_scenes.is_empty():
 		return null
 
-	var total_chance := 0.0
-	for cfg in powerup_drops:
-		total_chance += float(cfg.get("chance", 0.0))
-	if total_chance <= 0.0:
+	var total := 0.0
+	for c in powerup_chances:
+		total += c
+	if total <= 0.0:
 		return null
 
-	var r := randf() * total_chance
+	var r := randf() * total
 	var accum := 0.0
-	for cfg in powerup_drops:
-		var c := float(cfg.get("chance", 0.0))
+
+	for i in powerup_scenes.size():
+		var c := 0.0
+		if i < powerup_chances.size():
+			c = powerup_chances[i]
+
 		accum += c
 		if r <= accum:
-			return cfg.get("scene", null) as PackedScene
+			return powerup_scenes[i]
 
 	return null

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://43p8ymti8wl3"]
 
-[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://enemy.gd" id="1_lbyu5"]
-[ext_resource type="PackedScene" uid="uid://dpqck3a3p23rw" path="res://Escenas/Enemy_Death.tscn" id="2_kfwbd"]
-[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/EnemyHealthBar.tscn" id="2_n4jqo"]
+[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://Scripts/Enemies/enemy.gd" id="1_lbyu5"]
+[ext_resource type="PackedScene" uid="uid://dpqck3a3p23rw" path="res://Escenas/Enemies/Enemy_Death.tscn" id="2_kfwbd"]
+[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/Enemies/EnemyHealthBar.tscn" id="2_n4jqo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lbyu5"]
 
