@@ -10,7 +10,6 @@ var _timer: float = 0.0
 var _spawning_enabled: bool = false
 var _pool: Array[Dictionary] = []
 
-
 func _ready() -> void:
 	print("ENEMY_SPAWNER _ready")
 	if LevelTransition != null and LevelTransition.has_signal("transition_finished"):
@@ -52,8 +51,6 @@ func _physics_process(delta: float) -> void:
 			any_remaining = true
 			break
 	if not any_remaining:
-		# print opcional:
-		# print("ENEMY_SPAWNER: no quedan enemigos en pool")
 		return
 
 	_timer -= delta
@@ -93,15 +90,21 @@ func _try_spawn_enemy() -> void:
 		print("ENEMY_SPAWNER: scene null o remaining <= 0")
 		return
 
-	# Posición random dentro de un círculo alrededor del spawner
+	# 3) Posición random alrededor del spawner
 	var angle := randf() * TAU
 	var radius := randf() * spawn_area_radius
 	var offset := Vector3(cos(angle) * radius, 0.0, sin(angle) * radius)
-	var spawn_position := global_transform.origin + offset
+	var raw_spawn_position := global_transform.origin + offset
 
-	print("ENEMY_SPAWNER: spawn_position =", spawn_position)
+	# Ajustar a la celda de suelo más cercana en Room3D
+	var spawn_position := raw_spawn_position
+	var room3d := get_tree().get_root().find_child("Room3D", true, false)
+	if room3d and room3d.has_method("get_nearest_floor_position"):
+		spawn_position = room3d.get_nearest_floor_position(raw_spawn_position)
 
-	# 3) Instanciar marcador / sombra si existe
+	print("ENEMY_SPAWNER: spawn_position ajustado a suelo =", spawn_position)
+
+	# 4) Instanciar marcador / sombra si existe
 	var marker: Node3D = null
 	if spawn_marker_scene != null:
 		marker = spawn_marker_scene.instantiate() as Node3D
@@ -111,7 +114,7 @@ func _try_spawn_enemy() -> void:
 	else:
 		print("ENEMY_SPAWNER: spawn_marker_scene es null")
 
-	# 4) Tras 2 segundos, spawnear enemigo y FX
+	# 5) Tras 2 segundos, spawnear enemigo y FX
 	var timer := get_tree().create_timer(2.0)
 	timer.timeout.connect(func():
 		print("ENEMY_SPAWNER: timer timeout, spawneando enemigo y FX")

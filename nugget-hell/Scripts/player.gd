@@ -33,7 +33,15 @@ func _physics_process(delta: float) -> void:
 	_handle_dash_input()
 	_move_player(delta)
 	_update_camera_follow(delta)
-	_update_reload_feedback(delta)
+
+	# <<< AÑADIR ESTO si quieres que el player nunca salga del suelo >>>
+	var room3d := get_tree().get_root().find_child("Room3D", true, false)
+	if room3d and room3d.has_method("get_nearest_floor_position"):
+		var target: Vector3 = room3d.get_nearest_floor_position(global_position)
+		# mezcla suave para que no pegue saltos bruscos
+		global_position.x = target.x
+		global_position.z = target.z
+
 
 
 func _update_reload_feedback(delta: float) -> void:

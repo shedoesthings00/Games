@@ -4,6 +4,8 @@ extends Node3D
 	# { "scene": preload("res://Escenas/Enemy.tscn"), "count": 3 },
 ]
 
+@onready var room3d: Node3D = $Room3D
+
 @export var powerup_scenes: Array[PackedScene] = []
 @export var powerup_chances: Array[float] = []
 
@@ -39,6 +41,7 @@ func _ready() -> void:
 		LevelTransition.transition_finished.connect(_on_transition_finished)
 	else:
 		_activate_spawner()
+
 
 
 func _on_transition_finished() -> void:

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4e21t7pjuouc"]
+[gd_scene load_steps=3 format=3 uid="uid://c4e21t7pjuouc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28yll"]
+albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_28yll"]
+material = SubResource("StandardMaterial3D_28yll")
 
 [node name="Floor" type="Node3D"]
 

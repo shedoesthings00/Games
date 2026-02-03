@@ -17,6 +17,8 @@ var blocked: Array = []      # para reglas de verdes
 
 @onready var room_root_3d: Node3D = $RoomRoot3D
 
+@export var wall_tile_scene: PackedScene
+
 
 func _ready() -> void:
 	randomize()
@@ -24,6 +26,7 @@ func _ready() -> void:
 	_generate_single_complex_room()
 	_generate_color_grid()
 	_spawn_floor_tiles()
+	_spawn_walls()
 	_spawn_color_objects()
 
 
@@ -85,6 +88,13 @@ func _generate_single_complex_room() -> void:
 
 		print("Recortando esquina ", i, " lado ", side, " en (", cx0, ",", cy0, ") tamaño (", cut_w, "x", cut_h, ")")
 		_clear_rect_floor(cx0, cy0, cut_w, cut_h)
+
+		var count := 0
+		for y in grid_size.y:
+			for x in grid_size.x:
+				if floor_grid[y][x]:
+					count += 1
+		print("Celdas de suelo:", count, "de", grid_size.x * grid_size.y)
 
 
 func _fill_rect_floor(x0: int, y0: int, w: int, h: int) -> void:
@@ -247,7 +257,6 @@ func _spawn_floor_tiles() -> void:
 			tile.position = Vector3(px, 0.0, pz)
 			room_root_3d.add_child(tile)
 
-
 func _spawn_color_objects() -> void:
 	if red_scene_3d == null and blue_scene_3d == null and green_scene_3d == null:
 		print("AVISO: no hay escenas 3D asignadas para objetos.")
@@ -278,3 +287,111 @@ func _spawn_color_objects() -> void:
 			var pz = offset_z + float(y) * cell_size
 			inst.position = Vector3(px, 0.5, pz)
 			room_root_3d.add_child(inst)
+			
+func cell_to_world(x: int, y: int) -> Vector3:
+	var offset_x = - (grid_size.x * cell_size) / 2.0
+	var offset_z = - (grid_size.y * cell_size) / 2.0
+	var px = offset_x + float(x) * cell_size
+	var pz = offset_z + float(y) * cell_size
+	return Vector3(px, 0.0, pz)
+
+func get_random_floor_cell() -> Vector2i:
+	var candidates: Array[Vector2i] = []
+	for y in grid_size.y:
+		for x in grid_size.x:
+			if floor_grid[y][x]:
+				candidates.append(Vector2i(x, y))
+
+	if candidates.is_empty():
+		return Vector2i(0, 0)
+
+	return candidates[randi() % candidates.size()]
+
+func get_random_floor_position() -> Vector3:
+	var cell := get_random_floor_cell()
+	return cell_to_world(cell.x, cell.y)
+
+func get_nearest_floor_position(world_pos: Vector3) -> Vector3:
+	var offset_x = - (grid_size.x * cell_size) / 2.0
+	var offset_z = - (grid_size.y * cell_size) / 2.0
+
+	var fx = int(round((world_pos.x - offset_x) / cell_size))
+	var fy = int(round((world_pos.z - offset_z) / cell_size))
+
+	fx = clamp(fx, 0, grid_size.x - 1)
+	fy = clamp(fy, 0, grid_size.y - 1)
+
+	# Si la celda no es suelo, busca en vecinos
+	if not floor_grid[fy][fx]:
+		for radius in range(1, 4):
+			for dy in range(-radius, radius + 1):
+				for dx in range(-radius, radius + 1):
+					var nx = fx + dx
+					var ny = fy + dy
+					if nx < 0 or ny < 0 or nx >= grid_size.x or ny >= grid_size.y:
+						continue
+					if floor_grid[ny][nx]:
+						return cell_to_world(nx, ny)
+
+	# fallback
+	return cell_to_world(fx, fy)
+
+func _spawn_walls() -> void:
+	print("SPAWN_WALLS llamado, wall_tile_scene =", wall_tile_scene, " room_root_3d =", room_root_3d)
+
+	if wall_tile_scene == null:
+		print("AVISO: wall_tile_scene es null, no se generan paredes.")
+		return
+	if room_root_3d == null:
+		print("AVISO: room_root_3d es null, revisa que exista el nodo RoomRoot3D.")
+		return
+
+	var offset_x: float = - (grid_size.x * cell_size) / 2.0
+	var offset_z: float = - (grid_size.y * cell_size) / 2.0
+
+	var wall_height: float = 3.0          # altura del muro
+	var floor_y: float = wall_height * 0.5  # centro del muro en Y
+
+	var wall_count := 0
+
+	for y in grid_size.y:
+		for x in grid_size.x:
+			if not floor_grid[y][x]:
+				continue
+
+			var base_x: float = offset_x + float(x) * cell_size
+			var base_z: float = offset_z + float(y) * cell_size
+
+			# LADO +X (derecha)
+			if x + 1 >= grid_size.x or not floor_grid[y][x + 1]:
+				var wall_right: Node3D = wall_tile_scene.instantiate() as Node3D
+				wall_right.position = Vector3(base_x + cell_size * 0.5, floor_y, base_z)
+				wall_right.rotation_degrees = Vector3(0.0, 90.0, 0.0)
+				room_root_3d.add_child(wall_right)
+				wall_count += 1
+
+			# LADO -X (izquierda)
+			if x - 1 < 0 or not floor_grid[y][x - 1]:
+				var wall_left: Node3D = wall_tile_scene.instantiate() as Node3D
+				wall_left.position = Vector3(base_x - cell_size * 0.5, floor_y, base_z)
+				wall_left.rotation_degrees = Vector3(0.0, -90.0, 0.0)
+				room_root_3d.add_child(wall_left)
+				wall_count += 1
+
+			# LADO +Y (abajo en grid → +Z en mundo)
+			if y + 1 >= grid_size.y or not floor_grid[y + 1][x]:
+				var wall_down: Node3D = wall_tile_scene.instantiate() as Node3D
+				wall_down.position = Vector3(base_x, floor_y, base_z + cell_size * 0.5)
+				wall_down.rotation_degrees = Vector3(0.0, 180.0, 0.0)
+				room_root_3d.add_child(wall_down)
+				wall_count += 1
+
+			# LADO -Y (arriba en grid → -Z en mundo)
+			if y - 1 < 0 or not floor_grid[y - 1][x]:
+				var wall_up: Node3D = wall_tile_scene.instantiate() as Node3D
+				wall_up.position = Vector3(base_x, floor_y, base_z - cell_size * 0.5)
+				wall_up.rotation_degrees = Vector3(0.0, 0.0, 0.0)
+				room_root_3d.add_child(wall_up)
+				wall_count += 1
+
+	print("PAREDES GENERADAS =", wall_count)

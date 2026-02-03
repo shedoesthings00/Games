@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4e21t7pjuouc" path="res://Escenas/Levels/Floor.tscn" id="2_n76lr"]
 [ext_resource type="PackedScene" uid="uid://del3owwuq3wec" path="res://Escenas/Levels/obj2.tscn" id="3_youxj"]
 [ext_resource type="PackedScene" uid="uid://doqo8d3nimh8l" path="res://Escenas/Levels/obj3.tscn" id="4_mdw1w"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_l0pit"]
+[ext_resource type="PackedScene" uid="uid://ch7bj3ci6x5ji" path="res://Escenas/Levels/Wall.tscn" id="6_cyp4s"]
 
 [node name="Room3d" type="Node3D"]
 script = ExtResource("1_l0pit")
@@ -14,6 +13,7 @@ floor_tile_scene = ExtResource("2_n76lr")
 red_scene_3d = ExtResource("2_ksnvj")
 blue_scene_3d = ExtResource("3_youxj")
 green_scene_3d = ExtResource("4_mdw1w")
+wall_tile_scene = ExtResource("6_cyp4s")
 
 [node name="RoomRoot3D" type="Node3D" parent="."]
 
@@ -22,7 +22,3 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.26223972, 0.9650028, 0, -0.9650028, 0.26223972, 0, 5.15243, 0)
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("PlaneMesh_l0pit")
