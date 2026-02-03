@@ -9,6 +9,8 @@
 
 [node name="Room3d" type="Node3D"]
 script = ExtResource("1_l0pit")
+grid_size = null
+cell_size = null
 floor_tile_scene = ExtResource("2_n76lr")
 red_scene_3d = ExtResource("2_ksnvj")
 blue_scene_3d = ExtResource("3_youxj")

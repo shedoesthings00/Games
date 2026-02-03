@@ -9,7 +9,9 @@ extends Node2D
 @export var blue_scene_3d: PackedScene
 @export var green_scene_3d: PackedScene
 
-const MIN_PER_TYPE := 5
+# Solo entre 3 y 5 de cada tipo (rojo, azul, verde)
+const MIN_OBJS_PER_TYPE := 3
+const MAX_OBJS_PER_TYPE := 5
 
 var room_size: Vector2i
 var grid: Array = []      # grid[y][x] = "R","B","G",null
@@ -39,16 +41,14 @@ func _generate_grid() -> void:
 		grid.append(row)
 		blocked.append(brow)
 
-	# Mínimo de cada tipo
-	_place_minimum_of_type("R", MIN_PER_TYPE)
-	_place_minimum_of_type("B", MIN_PER_TYPE)
-	_place_minimum_of_type("G", MIN_PER_TYPE)
+	# Solo entre 3 y 5 de cada tipo; no rellenar el resto
+	var count_r := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
+	var count_b := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
+	var count_g := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
 
-	# Rellenar el resto respetando reglas/bloqueos
-	for y in room_size.y:
-		for x in room_size.x:
-			if grid[y][x] == null and not blocked[y][x]:
-				_place_pixel(x, y)
+	_place_minimum_of_type("R", count_r)
+	_place_minimum_of_type("B", count_b)
+	_place_minimum_of_type("G", count_g)
 
 
 func _place_minimum_of_type(t: String, count: int) -> void:

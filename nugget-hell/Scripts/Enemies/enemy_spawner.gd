@@ -90,19 +90,21 @@ func _try_spawn_enemy() -> void:
 		print("ENEMY_SPAWNER: scene null o remaining <= 0")
 		return
 
-	# 3) Posición random alrededor del spawner
-	var angle := randf() * TAU
-	var radius := randf() * spawn_area_radius
-	var offset := Vector3(cos(angle) * radius, 0.0, sin(angle) * radius)
-	var raw_spawn_position := global_transform.origin + offset
+	# 3) Spawn siempre dentro de la sala: usar una posición de suelo válida del Room3D
+	var room3d := get_tree().get_root().find_child("Room3d", true, false)
+	if room3d == null:
+		room3d = get_tree().get_root().find_child("Room3D", true, false)
 
-	# Ajustar a la celda de suelo más cercana en Room3D
-	var spawn_position := raw_spawn_position
-	var room3d := get_tree().get_root().find_child("Room3D", true, false)
-	if room3d and room3d.has_method("get_nearest_floor_position"):
-		spawn_position = room3d.get_nearest_floor_position(raw_spawn_position)
+	var spawn_position: Vector3
+	if room3d and room3d.has_method("get_random_floor_position"):
+		spawn_position = room3d.get_random_floor_position()
+	else:
+		var angle := randf() * TAU
+		var radius := randf() * spawn_area_radius
+		var offset := Vector3(cos(angle) * radius, 0.0, sin(angle) * radius)
+		spawn_position = global_transform.origin + offset
 
-	print("ENEMY_SPAWNER: spawn_position ajustado a suelo =", spawn_position)
+	print("ENEMY_SPAWNER: spawn_position en sala =", spawn_position)
 
 	# 4) Instanciar marcador / sombra si existe
 	var marker: Node3D = null

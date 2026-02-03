@@ -6,12 +6,12 @@ albedo_color = Color(0, 0, 1, 1)
 [sub_resource type="PrismMesh" id="PrismMesh_k6c5c"]
 material = SubResource("StandardMaterial3D_k6c5c")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_3ey82"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ey82"]
 
-[node name="Obj2" type="Node3D"]
+[node name="Obj2" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PrismMesh_k6c5c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_3ey82")
+shape = SubResource("BoxShape3D_3ey82")

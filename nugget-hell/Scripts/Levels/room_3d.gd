@@ -9,7 +9,9 @@ extends Node3D
 @export var blue_scene_3d: PackedScene
 @export var green_scene_3d: PackedScene
 
-const MIN_PER_TYPE := 5
+# Objetos de color: solo entre 3 y 5 de cada tipo (rojo, azul, verde)
+const MIN_OBJS_PER_TYPE := 3
+const MAX_OBJS_PER_TYPE := 5
 
 var floor_grid: Array = []   # bool: hay suelo
 var grid: Array = []         # "R","B","G",null
@@ -22,12 +24,63 @@ var blocked: Array = []      # para reglas de verdes
 
 func _ready() -> void:
 	randomize()
+	# No generar aquí: la sala se crea una sola vez cuando Level_1 llama regenerate_room()
+	# tras la transición (inicio o cambio de habitación).
+
+
+# --------- API PÚBLICA PARA EL NIVEL ---------
+
+func regenerate_room() -> void:
+	# Borra todo el contenido anterior
+	if room_root_3d:
+		for child in room_root_3d.get_children():
+			child.queue_free()
+
 	_init_grids()
 	_generate_single_complex_room()
 	_generate_color_grid()
 	_spawn_floor_tiles()
 	_spawn_walls()
 	_spawn_color_objects()
+
+
+# Devuelve una posición aproximada en una pared exterior para poner la puerta
+func get_random_wall_position() -> Vector3:
+	var offset_x: float = - (grid_size.x * cell_size) / 2.0
+	var offset_z: float = - (grid_size.y * cell_size) / 2.0
+
+	var candidates: Array[Vector3] = []
+
+	for y in grid_size.y:
+		for x in grid_size.x:
+			if not floor_grid[y][x]:
+				continue
+
+			var base_x: float = offset_x + float(x) * cell_size
+			var base_z: float = offset_z + float(y) * cell_size
+
+			# Usamos la misma lógica que _spawn_walls, pero solo para recoger posiciones
+
+			# LADO +X (derecha)
+			if x + 1 >= grid_size.x or not floor_grid[y][x + 1]:
+				candidates.append(Vector3(base_x + cell_size * 0.5, 1.5, base_z))
+
+			# LADO -X (izquierda)
+			if x - 1 < 0 or not floor_grid[y][x - 1]:
+				candidates.append(Vector3(base_x - cell_size * 0.5, 1.5, base_z))
+
+			# LADO +Y (abajo en grid → +Z en mundo)
+			if y + 1 >= grid_size.y or not floor_grid[y + 1][x]:
+				candidates.append(Vector3(base_x, 1.5, base_z + cell_size * 0.5))
+
+			# LADO -Y (arriba en grid → -Z en mundo)
+			if y - 1 < 0 or not floor_grid[y - 1][x]:
+				candidates.append(Vector3(base_x, 1.5, base_z - cell_size * 0.5))
+
+	if candidates.is_empty():
+		return global_position
+
+	return candidates[randi() % candidates.size()]
 
 
 # --------- INICIALIZACIÓN ---------
@@ -53,7 +106,6 @@ func _init_grids() -> void:
 # --------- 1) UNA SOLA HABITACIÓN COMPLEJA ---------
 
 func _generate_single_complex_room() -> void:
-	# Rectángulo base grande centrado
 	var base_w = int(grid_size.x * 0.7)
 	var base_h = int(grid_size.y * 0.7)
 	var x0 = (grid_size.x - base_w) / 2
@@ -62,10 +114,9 @@ func _generate_single_complex_room() -> void:
 	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
 	_fill_rect_floor(x0, y0, base_w, base_h)
 
-	# Crear esquinas recortando sub-rectángulos aleatorios en los bordes
-	var cuts = randi_range(3, 6)  # número de recortes/esquinas
+	var cuts = randi_range(3, 6)
 	for i in cuts:
-		var side = randi() % 4  # 0=izq,1=dcha,2=arriba,3=abajo
+		var side = randi() % 4
 		var cut_w = randi_range(int(base_w * 0.15), int(base_w * 0.3))
 		var cut_h = randi_range(int(base_h * 0.15), int(base_h * 0.3))
 
@@ -73,16 +124,16 @@ func _generate_single_complex_room() -> void:
 		var cy0 = y0
 
 		match side:
-			0: # izquierda
+			0:
 				cx0 = x0
 				cy0 = randi_range(y0, y0 + base_h - cut_h)
-			1: # derecha
+			1:
 				cx0 = x0 + base_w - cut_w
 				cy0 = randi_range(y0, y0 + base_h - cut_h)
-			2: # arriba
+			2:
 				cx0 = randi_range(x0, x0 + base_w - cut_w)
 				cy0 = y0
-			3: # abajo
+			3:
 				cx0 = randi_range(x0, x0 + base_w - cut_w)
 				cy0 = y0 + base_h - cut_h
 
@@ -114,16 +165,14 @@ func _clear_rect_floor(x0: int, y0: int, w: int, h: int) -> void:
 # --------- 2) GRID RGB SOBRE SUELO ---------
 
 func _generate_color_grid() -> void:
-	_place_minimum_of_type("R", MIN_PER_TYPE)
-	_place_minimum_of_type("B", MIN_PER_TYPE)
-	_place_minimum_of_type("G", MIN_PER_TYPE)
+	# Solo entre 3 y 5 de cada tipo; no rellenar el resto de celdas con más objetos
+	var count_r := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
+	var count_b := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
+	var count_g := randi_range(MIN_OBJS_PER_TYPE, MAX_OBJS_PER_TYPE)
 
-	for y in grid_size.y:
-		for x in grid_size.x:
-			if not floor_grid[y][x]:
-				continue
-			if grid[y][x] == null and not blocked[y][x]:
-				_place_pixel(x, y)
+	_place_minimum_of_type("R", count_r)
+	_place_minimum_of_type("B", count_b)
+	_place_minimum_of_type("G", count_g)
 
 
 func _place_minimum_of_type(t: String, count: int) -> void:
@@ -257,6 +306,7 @@ func _spawn_floor_tiles() -> void:
 			tile.position = Vector3(px, 0.0, pz)
 			room_root_3d.add_child(tile)
 
+
 func _spawn_color_objects() -> void:
 	if red_scene_3d == null and blue_scene_3d == null and green_scene_3d == null:
 		print("AVISO: no hay escenas 3D asignadas para objetos.")
@@ -288,12 +338,14 @@ func _spawn_color_objects() -> void:
 			inst.position = Vector3(px, 0.5, pz)
 			room_root_3d.add_child(inst)
 
+
 func cell_to_world(x: int, y: int) -> Vector3:
 	var offset_x = - (grid_size.x * cell_size) / 2.0
 	var offset_z = - (grid_size.y * cell_size) / 2.0
 	var px = offset_x + float(x) * cell_size
 	var pz = offset_z + float(y) * cell_size
 	return Vector3(px, 0.0, pz)
+
 
 func get_random_floor_cell() -> Vector2i:
 	var candidates: Array[Vector2i] = []
@@ -307,9 +359,11 @@ func get_random_floor_cell() -> Vector2i:
 
 	return candidates[randi() % candidates.size()]
 
+
 func get_random_floor_position() -> Vector3:
 	var cell := get_random_floor_cell()
 	return cell_to_world(cell.x, cell.y)
+
 
 func get_nearest_floor_position(world_pos: Vector3) -> Vector3:
 	var offset_x = - (grid_size.x * cell_size) / 2.0
@@ -321,7 +375,6 @@ func get_nearest_floor_position(world_pos: Vector3) -> Vector3:
 	fx = clamp(fx, 0, grid_size.x - 1)
 	fy = clamp(fy, 0, grid_size.y - 1)
 
-	# Si la celda no es suelo, busca en vecinos
 	if not floor_grid[fy][fx]:
 		for radius in range(1, 4):
 			for dy in range(-radius, radius + 1):
@@ -333,8 +386,8 @@ func get_nearest_floor_position(world_pos: Vector3) -> Vector3:
 					if floor_grid[ny][nx]:
 						return cell_to_world(nx, ny)
 
-	# fallback
 	return cell_to_world(fx, fy)
+
 
 func _spawn_walls() -> void:
 	print("SPAWN_WALLS llamado, wall_tile_scene =", wall_tile_scene, " room_root_3d =", room_root_3d)
@@ -349,8 +402,8 @@ func _spawn_walls() -> void:
 	var offset_x: float = - (grid_size.x * cell_size) / 2.0
 	var offset_z: float = - (grid_size.y * cell_size) / 2.0
 
-	var wall_height: float = 3.0          # altura del muro
-	var floor_y: float = wall_height * 0.5  # centro del muro en Y
+	var wall_height: float = 3.0
+	var floor_y: float = wall_height * 0.5
 
 	var wall_count := 0
 
@@ -362,11 +415,10 @@ func _spawn_walls() -> void:
 			var base_x: float = offset_x + float(x) * cell_size
 			var base_z: float = offset_z + float(y) * cell_size
 
-			# LADO +X (derecha): pared en el borde derecho de la celda de suelo.
+			# LADO +X (derecha)
 			if x + 1 >= grid_size.x or not floor_grid[y][x + 1]:
 				var wall_right: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_right.position = Vector3(base_x + cell_size * 0.5, floor_y, base_z)
-				# Normal mirando hacia +X → interior (suelo) está a -X
 				wall_right.rotation_degrees = Vector3(0.0, 90.0, 0.0)
 				room_root_3d.add_child(wall_right)
 				wall_count += 1
@@ -375,7 +427,6 @@ func _spawn_walls() -> void:
 			if x - 1 < 0 or not floor_grid[y][x - 1]:
 				var wall_left: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_left.position = Vector3(base_x - cell_size * 0.5, floor_y, base_z)
-				# Normal mirando hacia -X → interior (suelo) está a +X
 				wall_left.rotation_degrees = Vector3(0.0, -90.0, 0.0)
 				room_root_3d.add_child(wall_left)
 				wall_count += 1
@@ -384,8 +435,7 @@ func _spawn_walls() -> void:
 			if y + 1 >= grid_size.y or not floor_grid[y + 1][x]:
 				var wall_down: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_down.position = Vector3(base_x, floor_y, base_z + cell_size * 0.5)
-				# Antes 180, ahora al revés:
-				wall_down.rotation_degrees = Vector3(0.0, 0.0, 0.0)
+				wall_down.rotation_degrees = Vector3(0.0, 0.0, 0.0) # ajustado según tu comentario
 				room_root_3d.add_child(wall_down)
 				wall_count += 1
 
@@ -393,11 +443,8 @@ func _spawn_walls() -> void:
 			if y - 1 < 0 or not floor_grid[y - 1][x]:
 				var wall_up: Node3D = wall_tile_scene.instantiate() as Node3D
 				wall_up.position = Vector3(base_x, floor_y, base_z - cell_size * 0.5)
-				# Antes 0, ahora 180:
-				wall_up.rotation_degrees = Vector3(0.0, 180.0, 0.0)
+				wall_up.rotation_degrees = Vector3(0.0, 180.0, 0.0) # ajustado según tu comentario
 				room_root_3d.add_child(wall_up)
 				wall_count += 1
-
-
 
 	print("PAREDES GENERADAS =", wall_count)

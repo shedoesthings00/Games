@@ -98,7 +98,8 @@ func die() -> void:
 		var pu_scene: PackedScene = level.get_powerup_drop()
 		if pu_scene != null:
 			var pu: Node3D = pu_scene.instantiate() as Node3D
-			pu.global_transform.origin = global_transform.origin
+			# Levantar un poco para que no quede enterrado en el suelo
+			pu.global_transform.origin = global_transform.origin + Vector3(0.0, 0.5, 0.0)
 			level.add_child(pu)
 
 	# Avisar al nivel de que ha muerto

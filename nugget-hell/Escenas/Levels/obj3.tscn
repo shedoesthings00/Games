@@ -8,7 +8,7 @@ material = SubResource("StandardMaterial3D_60e8p")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_57rkh"]
 
-[node name="Obj3" type="Node3D"]
+[node name="Obj3" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_60e8p")
