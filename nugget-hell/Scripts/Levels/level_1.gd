@@ -261,3 +261,12 @@ func get_powerup_drop() -> PackedScene:
 			return powerup_scenes[i]
 
 	return null
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var pause_menu := get_tree().get_root().find_child("PauseMenu", true, false)
+		if pause_menu:
+			if get_tree().paused:
+				pause_menu.hide_menu()
+			else:
+				pause_menu.show_menu()

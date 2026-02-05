@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://crmw3d237gpnm"]
+
+[ext_resource type="Script" uid="uid://bdkywufv25hjs" path="res://Scripts/Menus/pause_menu.gd" id="1_u7qui"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_u7qui")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(1, 1, 1, 0.24313726)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 212.0
+offset_right = 750.0
+offset_bottom = 474.0
+alignment = 1
+
+[node name="Resume" type="Button" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Exit" type="Button" parent="Control/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="Control/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/ColorRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

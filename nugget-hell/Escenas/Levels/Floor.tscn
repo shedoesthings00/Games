@@ -1,12 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4e21t7pjuouc"]
+[gd_scene load_steps=2 format=3 uid="uid://c4e21t7pjuouc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28yll"]
-albedo_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_28yll"]
-material = SubResource("StandardMaterial3D_28yll")
+[ext_resource type="ArrayMesh" uid="uid://sittidk8i4vb" path="res://Modelo/Floor1.obj" id="1_vcu7f"]
 
 [node name="Floor" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_28yll")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_vcu7f")

@@ -9,6 +9,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c1rio"]
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8145573, 0)
 script = ExtResource("1_wwpud")
 bullet_scene = ExtResource("2_wwpud")
 max_ammo = 6

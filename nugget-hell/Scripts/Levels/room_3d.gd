@@ -38,6 +38,7 @@ func regenerate_room() -> void:
 
 	_init_grids()
 	_generate_single_complex_room()
+	_prune_corridors() 
 	_generate_color_grid()
 	_spawn_floor_tiles()
 	_spawn_walls()
@@ -106,10 +107,18 @@ func _init_grids() -> void:
 # --------- 1) UNA SOLA HABITACIÓN COMPLEJA ---------
 
 func _generate_single_complex_room() -> void:
-	var base_w = int(grid_size.x * 0.7)
-	var base_h = int(grid_size.y * 0.7)
+	# Tamaño máximo de habitación en celdas
+	var max_room_w := 20
+	var max_room_h := 20
+
+	# Rectángulo base centrado, limitado por max_room_*
+	var base_w = min(max_room_w, grid_size.x)
+	var base_h = min(max_room_h, grid_size.y)
 	var x0 = (grid_size.x - base_w) / 2
 	var y0 = (grid_size.y - base_h) / 2
+
+	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
+	_fill_rect_floor(x0, y0, base_w, base_h)
 
 	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
 	_fill_rect_floor(x0, y0, base_w, base_h)
@@ -448,3 +457,42 @@ func _spawn_walls() -> void:
 				wall_count += 1
 
 	print("PAREDES GENERADAS =", wall_count)
+	
+func _count_floor_neighbors(x: int, y: int) -> int:
+	var count := 0
+	var dirs = [
+		Vector2i(1, 0),
+		Vector2i(-1, 0),
+		Vector2i(0, 1),
+		Vector2i(0, -1),
+	]
+	for d in dirs:
+		var nx = x + d.x
+		var ny = y + d.y
+		if nx < 0 or ny < 0 or nx >= grid_size.x or ny >= grid_size.y:
+			continue
+		if floor_grid[ny][nx]:
+			count += 1
+	return count
+
+
+func _prune_corridors() -> void:
+	var changed := true
+	while changed:
+		changed = false
+		var to_clear: Array[Vector2i] = []
+
+		for y in grid_size.y:
+			for x in grid_size.x:
+				if not floor_grid[y][x]:
+					continue
+				var neighbors := _count_floor_neighbors(x, y)
+				if neighbors < 2:
+					to_clear.append(Vector2i(x, y))
+
+		if to_clear.is_empty():
+			break
+
+		for cell in to_clear:
+			floor_grid[cell.y][cell.x] = false
+			changed = true
