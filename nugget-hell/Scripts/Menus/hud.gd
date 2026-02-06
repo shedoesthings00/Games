@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var health_bar: ProgressBar = $Control/HealthBar
-@onready var ammo_label: Label = $Control/AmmoLabel
-@onready var enemies_label: Label = $Control/EnemiesLabel
+@onready var health_bar: ProgressBar = $Control/HealthPanel/HealthMargin/HealthBar
+@onready var ammo_label: Label = $Control/BottomRightPanel/BottomRightMargin/BottomRightVBox/AmmoLabel
+@onready var enemies_label: Label = $Control/BottomRightPanel/BottomRightMargin/BottomRightVBox/EnemiesLabel
 @onready var boss_health_bar: ProgressBar = $Control/BossHealthBar
 @onready var reload_circle: TextureProgressBar = $Control/ReloadCircle
 
@@ -18,13 +18,13 @@ func set_health(current: int, max_value: int) -> void:
 func set_ammo(current: int, max_value: int) -> void:
 	if ammo_label == null:
 		return
-	ammo_label.text = str(current, " / ", max_value)
+	ammo_label.text = str("Balas: ", current, " / ", max_value)
 
 
 func set_enemies_remaining(current: int) -> void:
 	if enemies_label == null:
 		return
-	enemies_label.text = str(current)
+	enemies_label.text = str("Enemigos: ", current)
 
 
 func set_boss_health(current: int, max_value: int) -> void:

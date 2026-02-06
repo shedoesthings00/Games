@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const SFX_DO_DAMAGE := preload("res://Audio/do_damage.wav")
+const DAMAGE_NUMBER_SCENE := preload("res://Escenas/UI/DamageNumber.tscn")
 
 @export var enemy_name: String = "Enemy"
 @export var model_scene: PackedScene
@@ -10,6 +11,11 @@ const SFX_DO_DAMAGE := preload("res://Audio/do_damage.wav")
 @export var move_speed: float = 3.0
 @export var loot_value: int = 0
 @export var attack_cooldown: float = 1.0  # segundos entre golpes
+
+# FX al golpear al jugador (impacto). Si está asignado, se instanciará sobre el player.
+@export var hit_fx_scene: PackedScene
+@export var hit_fx_height: float = 0.6
+@export var hit_fx_ttl: float = 0.8
 
 @export var death_fx_scene: PackedScene   # FX al morir (Node3D con GPUParticles3D hijas)
 
@@ -75,10 +81,12 @@ func _check_player_hit() -> void:
 		if target.has_method("take_damage"):
 			target.take_damage(attack_damage)
 			_time_since_last_attack = 0.0
+			_spawn_hit_fx_on_target()
 
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
+	_spawn_damage_number(amount)
 	_update_health_bar()
 	_play_sfx(SFX_DO_DAMAGE)
 	if current_health <= 0:
@@ -116,6 +124,49 @@ func _enable_particles_recursive(node: Node) -> void:
 		if child is GPUParticles3D:
 			child.emitting = true
 		_enable_particles_recursive(child)
+
+
+func _spawn_hit_fx_on_target() -> void:
+	if hit_fx_scene == null or target == null:
+		return
+
+	var fx_root := hit_fx_scene.instantiate() as Node3D
+	if fx_root == null:
+		return
+
+	# Parent: nivel/room (hermano del enemigo) para que no se destruya si el enemy se borra.
+	var parent := get_parent()
+	if parent == null:
+		parent = get_tree().current_scene
+	parent.add_child(fx_root)
+
+	var p := target.global_transform.origin
+	p.y += hit_fx_height
+	fx_root.global_transform.origin = p
+
+	_enable_particles_recursive(fx_root)
+	var t := get_tree().create_timer(max(0.05, hit_fx_ttl))
+	t.timeout.connect(fx_root.queue_free)
+
+
+func _spawn_damage_number(amount: int) -> void:
+	if DAMAGE_NUMBER_SCENE == null:
+		return
+	var dn := DAMAGE_NUMBER_SCENE.instantiate() as Node3D
+	if dn == null:
+		return
+
+	var parent := get_parent()
+	if parent == null:
+		parent = get_tree().current_scene
+	parent.add_child(dn)
+
+	var p := global_transform.origin
+	p.y += 1.1
+	dn.global_transform.origin = p
+
+	if dn.has_method("setup"):
+		dn.setup(amount)
 
 
 func _update_health_bar() -> void:

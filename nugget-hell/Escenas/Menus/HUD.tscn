@@ -14,22 +14,46 @@ bg_color = Color(0.40196425, 0.60742277, 3.85046e-07, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j171n"]
 bg_color = Color(0.6, 0.23529412, 0.6, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0, 0, 0, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_j171n")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HealthBar" type="ProgressBar" parent="Control"]
-material = SubResource("CanvasItemMaterial_j171n")
+[node name="HealthPanel" type="PanelContainer" parent="Control"]
 layout_mode = 0
-offset_left = 770.0
-offset_top = 20.0
-offset_right = 1118.0
-offset_bottom = 63.0
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+offset_left = -368.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 132.0
+
+[node name="HealthMargin" type="MarginContainer" parent="Control/HealthPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HealthBar" type="ProgressBar" parent="Control/HealthPanel/HealthMargin"]
+material = SubResource("CanvasItemMaterial_j171n")
+layout_mode = 2
+custom_minimum_size = Vector2(0, 34)
 theme_override_styles/background = SubResource("StyleBoxFlat_gmmqc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_den20")
 max_value = 10.0
@@ -37,29 +61,50 @@ step = 1.0
 value = 10.0
 show_percentage = false
 
-[node name="AmmoLabel" type="Label" parent="Control"]
+[node name="BottomRightPanel" type="PanelContainer" parent="Control"]
 layout_mode = 0
-offset_left = 1068.0
-offset_top = 586.0
-offset_right = 1128.0
-offset_bottom = 635.0
-text = "
-"
+anchors_preset = 14
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_left = -300.0
+offset_top = -160.0
+offset_right = -16.0
+offset_bottom = -72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="EnemiesLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 985.0
-offset_top = 534.0
-offset_right = 1170.0
-offset_bottom = 577.0
-text = "Enemigos: 0 / 0"
+[node name="BottomRightMargin" type="MarginContainer" parent="Control/BottomRightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="BottomRightVBox" type="VBoxContainer" parent="Control/BottomRightPanel/BottomRightMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="EnemiesLabel" type="Label" parent="Control/BottomRightPanel/BottomRightMargin/BottomRightVBox"]
+layout_mode = 2
+text = "Enemigos: 0"
+
+[node name="AmmoLabel" type="Label" parent="Control/BottomRightPanel/BottomRightMargin/BottomRightVBox"]
+layout_mode = 2
+text = "Balas: 0 / 0"
 
 [node name="BossHealthBar" type="ProgressBar" parent="Control"]
 layout_mode = 0
-offset_left = 284.0
-offset_top = 47.0
-offset_right = 636.0
-offset_bottom = 74.0
+anchors_preset = 10
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+offset_left = -220.0
+offset_top = 16.0
+offset_right = 220.0
+offset_bottom = 40.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_j171n")
 step = 1.0
 value = 100.0
@@ -68,11 +113,16 @@ show_percentage = false
 [node name="ReloadCircle" type="TextureProgressBar" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 914.0
-offset_top = 473.0
-offset_right = 1254.0
-offset_bottom = 813.0
-scale = Vector2(0.16357785, 0.16357785)
+anchors_preset = 14
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -146.0
+offset_right = -308.0
+offset_bottom = -82.0
+scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(128, 128)
 max_value = 1.0
 fill_mode = 4

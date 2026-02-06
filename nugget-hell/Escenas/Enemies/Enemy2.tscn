@@ -4,9 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://dpqck3a3p23rw" path="res://Escenas/Enemies/Enemy_Death.tscn" id="2_kfwbd"]
 [ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/Enemies/EnemyHealthBar.tscn" id="2_n4jqo"]
 
+[sub_resource type="StandardMaterial3D" id="Mat_Enemy2"]
+albedo_color = Color(0.15, 0.85, 1, 1)
+emission_enabled = true
+emission = Color(0.15, 0.85, 1, 1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Mat_Shadow"]
+albedo_color = Color(0, 0, 0, 0.35)
+transparency = 1
+shading_mode = 1
+
 [sub_resource type="BoxMesh" id="BoxMesh_lbyu5"]
+material = SubResource("Mat_Enemy2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ik8la"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_Shadow"]
+top_radius = 0.65
+bottom_radius = 0.65
+height = 0.02
+material = SubResource("Mat_Shadow")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_12w20"]
 viewport_path = NodePath("HealthViewport")
@@ -21,6 +39,10 @@ death_fx_scene = ExtResource("2_kfwbd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2007983738]
 mesh = SubResource("BoxMesh_lbyu5")
+
+[node name="Shadow" type="MeshInstance3D" parent="." unique_id=156000112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("CylinderMesh_Shadow")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=652043504]
 shape = SubResource("BoxShape3D_ik8la")

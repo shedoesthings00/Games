@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://b2xbeflohj1ki" path="res://Scripts/bullet.gd" id="1_5bagb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bagb"]
-albedo_color = Color(1, 0.2, 0.17254902, 1)
+albedo_color = Color(1, 0.25, 0.2, 1)
+emission_enabled = true
+emission = Color(1, 0.4, 0.3, 1)
+emission_energy_multiplier = 2.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_5q0pg"]
 material = SubResource("StandardMaterial3D_5bagb")
@@ -17,11 +20,11 @@ collision_mask = 2
 script = ExtResource("1_5bagb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.47196785, 0, 0, 0, 0.47196785, 0, 0, 0, 0.47196785, 0, 0, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = SubResource("SphereMesh_5q0pg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.47196785, 0, 0, 0, 0.47196785, 0, 0, 0, 0.47196785, 0, 0, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("SphereShape3D_lvksi")
 debug_color = Color(0, 0.610203, 0.63911957, 0.41960785)
 

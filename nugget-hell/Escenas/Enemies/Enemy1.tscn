@@ -3,10 +3,29 @@
 [ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://Scripts/Enemies/enemy.gd" id="1_jtl76"]
 [ext_resource type="PackedScene" uid="uid://dpqck3a3p23rw" path="res://Escenas/Enemies/Enemy_Death.tscn" id="2_12w20"]
 [ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/Enemies/EnemyHealthBar.tscn" id="2_60xt0"]
+[ext_resource type="PackedScene" uid="uid://ci4iaten70shm" path="res://Escenas/Enemies/EnemySpawnFX.tscn" id="4_hitfx"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Enemy1"]
+albedo_color = Color(0.95, 0.2, 0.9, 1)
+emission_enabled = true
+emission = Color(0.95, 0.2, 0.9, 1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Mat_Shadow"]
+albedo_color = Color(0, 0, 0, 0.35)
+transparency = 1
+shading_mode = 1
 
 [sub_resource type="SphereMesh" id="SphereMesh_pe06u"]
+material = SubResource("Mat_Enemy1")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cxmtl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_Shadow"]
+top_radius = 0.55
+bottom_radius = 0.55
+height = 0.02
+material = SubResource("Mat_Shadow")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_12w20"]
 viewport_path = NodePath("HealthViewport")
@@ -14,13 +33,20 @@ viewport_path = NodePath("HealthViewport")
 [node name="Enemy" type="CharacterBody3D" unique_id=2119141503]
 collision_layer = 2
 script = ExtResource("1_jtl76")
-max_health = 3
+enemy_name = "Bolsa Patatas Podridas"
+max_health = 20
+attack_damage = 3
 move_speed = 2.0
-attack_cooldown = 2.0
+attack_cooldown = 1.0
+hit_fx_scene = ExtResource("4_hitfx")
 death_fx_scene = ExtResource("2_12w20")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=928040917]
 mesh = SubResource("SphereMesh_pe06u")
+
+[node name="Shadow" type="MeshInstance3D" parent="." unique_id=156000111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("CylinderMesh_Shadow")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1143912692]
 shape = SubResource("SphereShape3D_cxmtl")

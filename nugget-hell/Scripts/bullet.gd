@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var speed: float = 40.0
+@export var damage: int = 5
 var move_dir: Vector3 = Vector3.ZERO
 
 func init_direction(dir: Vector3) -> void:
@@ -19,6 +20,6 @@ func _on_body_entered(body: Node3D) -> void:
 
 	# Hacer daño solo a enemigos con take_damage
 	if body and body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(damage)
 
 	queue_free()

@@ -1,25 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bwxk7rkift0fc"]
 
-[ext_resource type="PackedScene" path="res://Escenas/Levels/Door.tscn" id="1_door"]
-[ext_resource type="Script" path="res://Scripts/Levels/room_waves.gd" id="2_roomwaves"]
-[ext_resource type="PackedScene" path="res://Escenas/Enemies/Enemy1.tscn" id="3_enemy1"]
-[ext_resource type="PackedScene" path="res://Escenas/Enemies/Enemy2.tscn" id="4_enemy2"]
-[ext_resource type="Script" path="res://Scripts/Enemies/spawn_entry.gd" id="5_spawnentry"]
-[ext_resource type="Script" path="res://Scripts/Enemies/wave_definition.gd" id="6_wavedef"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1"]
-size = Vector3(1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="Mat_Collidable"]
-albedo_color = Color(0.22, 0.22, 0.22, 1)
-metallic = 0.0
-roughness = 1.0
-
-[sub_resource type="StandardMaterial3D" id="Mat_NoCollide"]
-albedo_color = Color(0.75, 0.75, 0.75, 1)
-metallic = 0.0
-roughness = 1.0
-
+[ext_resource type="PackedScene" uid="uid://d2lhd8b68f3i8" path="res://Escenas/Levels/Door.tscn" id="1_door"]
+[ext_resource type="Script" uid="uid://d4kdam1qyfuad" path="res://Scripts/Levels/room_waves.gd" id="2_roomwaves"]
+[ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemies/Enemy1.tscn" id="3_enemy1"]
+[ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemies/Enemy2.tscn" id="4_enemy2"]
+[ext_resource type="Script" uid="uid://bybvf7ltxipnv" path="res://Scripts/Enemies/spawn_entry.gd" id="5_spawnentry"]
+[ext_resource type="Script" uid="uid://bi5crfufhswc3" path="res://Scripts/Enemies/wave_definition.gd" id="6_wavedef"]
 
 [sub_resource type="Resource" id="SpawnEntry_w1_e1"]
 script = ExtResource("5_spawnentry")
@@ -34,8 +20,6 @@ count = 2
 [sub_resource type="Resource" id="WaveDefinition_w1"]
 script = ExtResource("6_wavedef")
 entries = [SubResource("SpawnEntry_w1_e1"), SubResource("SpawnEntry_w1_e2")]
-spawn_interval = 2.0
-max_alive = 5
 
 [sub_resource type="Resource" id="SpawnEntry_w2_e1"]
 script = ExtResource("5_spawnentry")
@@ -50,8 +34,6 @@ count = 2
 [sub_resource type="Resource" id="WaveDefinition_w2"]
 script = ExtResource("6_wavedef")
 entries = [SubResource("SpawnEntry_w2_e1"), SubResource("SpawnEntry_w2_e2")]
-spawn_interval = 2.0
-max_alive = 5
 
 [sub_resource type="Resource" id="SpawnEntry_w3_e1"]
 script = ExtResource("5_spawnentry")
@@ -66,315 +48,321 @@ count = 2
 [sub_resource type="Resource" id="WaveDefinition_w3"]
 script = ExtResource("6_wavedef")
 entries = [SubResource("SpawnEntry_w3_e1"), SubResource("SpawnEntry_w3_e2")]
-spawn_interval = 2.0
-max_alive = 5
 
-[node name="LayoutRoom7" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
 
-[node name="RoomWaves" type="Node" parent="."]
+[sub_resource type="StandardMaterial3D" id="Mat_Collidable"]
+albedo_color = Color(0.22, 0.22, 0.22, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_NoCollide"]
+albedo_color = Color(0.75, 0.75, 0.75, 1)
+
+[node name="LayoutRoom7" type="Node3D" unique_id=327971470]
+
+[node name="RoomWaves" type="Node" parent="." unique_id=272109631]
 script = ExtResource("2_roomwaves")
 waves = [SubResource("WaveDefinition_w1"), SubResource("WaveDefinition_w2"), SubResource("WaveDefinition_w3")]
 
-[node name="SpawnPoint" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.0, 0.0, -3.0)
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1122510678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -3)
 
-[node name="Door" parent="." instance=ExtResource("1_door")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0, 1.5, -3.0)
+[node name="Door" parent="." unique_id=1552329731 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1.5, -3)
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=229158597]
+transform = Transform3D(120, 0, 0, 0, 0.2, 0, 0, 0, 90, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_1")
-transform = Transform3D(120.0, 0, 0, 0, 0.2, 0, 0, 0, 90.0, 0.0, -0.1, 0.0)
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=1659790408]
 
-[node name="Wall_0" type="MeshInstance3D" parent="Walls"]
-mesh = SubResource("BoxMesh_1")
+[node name="Wall_0" type="MeshInstance3D" parent="Walls" unique_id=1700118658]
+transform = Transform3D(120, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.5, -43.5)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(120.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, 0.0, 1.5, -43.5)
-
-[node name="Wall_1" type="MeshInstance3D" parent="Walls"]
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 87.0, -58.5, 1.5, 1.5)
 
-[node name="Wall_2" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_1" type="MeshInstance3D" parent="Walls" unique_id=1025081273]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 87, -58.5, 1.5, 1.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 24.0, -16.5, 1.5, -30.0)
 
-[node name="Wall_3" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_2" type="MeshInstance3D" parent="Walls" unique_id=2015711773]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 24, -16.5, 1.5, -30)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 24.0, 16.5, 1.5, -30.0)
 
-[node name="Wall_4" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_3" type="MeshInstance3D" parent="Walls" unique_id=294381264]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 24, 16.5, 1.5, -30)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 87.0, 58.5, 1.5, 1.5)
 
-[node name="Wall_5" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_4" type="MeshInstance3D" parent="Walls" unique_id=733361749]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 87, 58.5, 1.5, 1.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(9.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, -52.5, 1.5, -19.5)
 
-[node name="Wall_6" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_5" type="MeshInstance3D" parent="Walls" unique_id=1018105358]
+transform = Transform3D(9, 0, 0, 0, 3, 0, 0, 0, 3, -52.5, 1.5, -19.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(24.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, -30.0, 1.5, -19.5)
 
-[node name="Wall_7" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_6" type="MeshInstance3D" parent="Walls" unique_id=107551313]
+transform = Transform3D(24, 0, 0, 0, 3, 0, 0, 0, 3, -30, 1.5, -19.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(33.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, 40.5, 1.5, -19.5)
 
-[node name="Wall_8" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_7" type="MeshInstance3D" parent="Walls" unique_id=844670317]
+transform = Transform3D(33, 0, 0, 0, 3, 0, 0, 0, 3, 40.5, 1.5, -19.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, -55.5, 1.5, 13.5)
 
-[node name="Wall_9" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_8" type="MeshInstance3D" parent="Walls" unique_id=515912106]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.5, 1.5, 13.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(33.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, -31.5, 1.5, 13.5)
 
-[node name="Wall_10" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_9" type="MeshInstance3D" parent="Walls" unique_id=1146796510]
+transform = Transform3D(33, 0, 0, 0, 3, 0, 0, 0, 3, -31.5, 1.5, 13.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(42.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, 36.0, 1.5, 13.5)
 
-[node name="Wall_11" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_10" type="MeshInstance3D" parent="Walls" unique_id=752823320]
+transform = Transform3D(42, 0, 0, 0, 3, 0, 0, 0, 3, 36, 1.5, 13.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 30.0, -16.5, 1.5, 30.0)
 
-[node name="Wall_12" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_11" type="MeshInstance3D" parent="Walls" unique_id=633132547]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 30, -16.5, 1.5, 30)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.0, 0, 0, 0, 3.0, 0, 0, 0, 24.0, 16.5, 1.5, 33.0)
 
-[node name="Wall_13" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_12" type="MeshInstance3D" parent="Walls" unique_id=953485956]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 24, 16.5, 1.5, 33)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(39.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, -37.5, 1.5, 43.5)
 
-[node name="Wall_14" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_13" type="MeshInstance3D" parent="Walls" unique_id=886632640]
+transform = Transform3D(39, 0, 0, 0, 3, 0, 0, 0, 3, -37.5, 1.5, 43.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Mat_Collidable")
-transform = Transform3D(30.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, 0.0, 1.5, 43.5)
 
-[node name="Wall_15" type="MeshInstance3D" parent="Walls"]
+[node name="Wall_14" type="MeshInstance3D" parent="Walls" unique_id=1878577500]
+transform = Transform3D(30, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.5, 43.5)
+material_override = SubResource("Mat_Collidable")
 mesh = SubResource("BoxMesh_1")
+
+[node name="Wall_15" type="MeshInstance3D" parent="Walls" unique_id=1228858149]
+transform = Transform3D(39, 0, 0, 0, 3, 0, 0, 0, 3, 37.5, 1.5, 43.5)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(39.0, 0, 0, 0, 3.0, 0, 0, 0, 3.0, 37.5, 1.5, 43.5)
-
-[node name="Objects" type="Node3D" parent="."]
-
-[node name="Estanteria alta con comida 1" type="MeshInstance3D" parent="Objects"]
 mesh = SubResource("BoxMesh_1")
+
+[node name="Objects" type="Node3D" parent="." unique_id=1664881671]
+
+[node name="Estanteria alta con comida 1" type="MeshInstance3D" parent="Objects" unique_id=947046380]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 3.6, -46.5, 1.5, -39.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(12.0, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -46.5, 1.5, -39.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Estanteria alta con comida 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Estanteria alta con comida 2" type="MeshInstance3D" parent="Objects" unique_id=1187040129]
+transform = Transform3D(9.6, 0, 0, 0, 1, 0, 0, 0, 3.6, -6, 1.5, -39.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(9.600000000000001, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -6.0, 1.5, -39.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Estanteria alta con comida 3" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Estanteria alta con comida 3" type="MeshInstance3D" parent="Objects" unique_id=649338412]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 3.6, 28.5, 1.5, -39.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(12.0, 0, 0, 0, 1.0, 0, 0, 0, 3.6, 28.5, 1.5, -39.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Estanteria metalica vacia" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Estanteria metalica vacia" type="MeshInstance3D" parent="Objects" unique_id=1518230483]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 3.6, -46.5, 1.5, 32.25)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(12.0, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -46.5, 1.5, 32.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Palés apoyados a la pared" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Palés apoyados a la pared" type="MeshInstance3D" parent="Objects" unique_id=1021118735]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 3.6, -54, 1.5, -6.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(4.800000000000001, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -54.0, 1.5, -6.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Tuberias vistas en la pared" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Tuberias vistas en la pared" type="MeshInstance3D" parent="Objects" unique_id=805277380]
+transform = Transform3D(1.92, 0, 0, 0, 1, 0, 0, 0, 14.4, -16.2, 1.5, -30)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.9200000000000004, 0, 0, 0, 1.0, 0, 0, 0, 14.4, -16.200000000000003, 1.5, -30.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Cuadros Electicos" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Cuadros Electicos" type="MeshInstance3D" parent="Objects" unique_id=1545099491]
+transform = Transform3D(1.92, 0, 0, 0, 1, 0, 0, 0, 6, 16.8, 1.5, -35.25)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.9200000000000004, 0, 0, 0, 1.0, 0, 0, 0, 6.0, 16.799999999999997, 1.5, -35.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Extintor con Soporte" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Extintor con Soporte" type="MeshInstance3D" parent="Objects" unique_id=725030306]
+transform = Transform3D(1.92, 0, 0, 0, 1, 0, 0, 0, 2.88, -16.2, 1.5, 22.8)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.9200000000000004, 0, 0, 0, 1.0, 0, 0, 0, 2.88, -16.200000000000003, 1.5, 22.80000000000001)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Señales de seguridad" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Señales de seguridad" type="MeshInstance3D" parent="Objects" unique_id=2144572122]
+transform = Transform3D(1.92, 0, 0, 0, 1, 0, 0, 0, 2.4, 16.8, 1.5, 25.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.9200000000000004, 0, 0, 0, 1.0, 0, 0, 0, 2.4000000000000004, 16.799999999999997, 1.5, 25.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Puerta metalica de carga" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Puerta metalica de carga" type="MeshInstance3D" parent="Objects" unique_id=764843614]
+transform = Transform3D(2.4, 0, 0, 0, 1, 0, 0, 0, 9.6, 55.5, 1.5, 0)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(2.4000000000000004, 0, 0, 0, 1.0, 0, 0, 0, 9.600000000000001, 55.5, 1.5, 0.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Ventana alta pequeña con barrotes" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Ventana alta pequeña con barrotes" type="MeshInstance3D" parent="Objects" unique_id=1202602599]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1.92, -26.25, 1.5, -43.2)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(6.0, 0, 0, 0, 1.0, 0, 0, 0, 1.9200000000000004, -26.25, 1.5, -43.2)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Columna hormigon sucios 1" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Columna hormigon sucios 1" type="MeshInstance3D" parent="Objects" unique_id=1068044685]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -5.25, 1.5, -5.25)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(6.0, 0, 0, 0, 1.0, 0, 0, 0, 6.0, -5.25, 1.5, -5.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Columna hormigon sucios 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Columna hormigon sucios 2" type="MeshInstance3D" parent="Objects" unique_id=1253543767]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 6.75, 1.5, -5.25)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(6.0, 0, 0, 0, 1.0, 0, 0, 0, 6.0, 6.75, 1.5, -5.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Caja carton vacia 1" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Caja carton vacia 1" type="MeshInstance3D" parent="Objects" unique_id=706675808]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 3.6, -45.75, 0.5, -33.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -45.75, 0.5, -33.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Caja carton vacia 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Caja carton vacia 2" type="MeshInstance3D" parent="Objects" unique_id=1730524838]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 3.6, -3.75, 0.5, -30.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -3.75, 0.5, -30.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Caja carton vacia 3" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Caja carton vacia 3" type="MeshInstance3D" parent="Objects" unique_id=2032002513]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 3.6, 32.25, 0.5, -33.75)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 3.6, 32.25, 0.5, -33.75)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Pales madera apilados" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Pales madera apilados" type="MeshInstance3D" parent="Objects" unique_id=271326723]
+transform = Transform3D(7.2, 0, 0, 0, 1, 0, 0, 0, 7.2, -40.5, 0.5, -10.5)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(7.2, 0, 0, 0, 1.0, 0, 0, 0, 7.2, -40.5, 0.5, -10.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="carretilla de mano" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="carretilla de mano" type="MeshInstance3D" parent="Objects" unique_id=2117577796]
+transform = Transform3D(2.88, 0, 0, 0, 1, 0, 0, 0, 4.32, -28.2, 0.5, -9.3)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(2.88, 0, 0, 0, 1.0, 0, 0, 0, 4.32, -28.200000000000003, 0.5, -9.299999999999997)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="transpaleta manual" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="transpaleta manual" type="MeshInstance3D" parent="Objects" unique_id=376984194]
+transform = Transform3D(2.4, 0, 0, 0, 1, 0, 0, 0, 6, 25.5, 0.5, -8.25)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(2.4000000000000004, 0, 0, 0, 1.0, 0, 0, 0, 6.0, 25.5, 0.5, -8.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="barriles - bidones" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="barriles - bidones" type="MeshInstance3D" parent="Objects" unique_id=1294393496]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 39.75, 0.5, -11.25)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(6.0, 0, 0, 0, 1.0, 0, 0, 0, 6.0, 39.75, 0.5, -11.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Sacos harina" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Sacos harina" type="MeshInstance3D" parent="Objects" unique_id=1909285231]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 4.8, -9, 0.5, -15)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(4.800000000000001, 0, 0, 0, 1.0, 0, 0, 0, 4.800000000000001, -9.0, 0.5, -15.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Sacos azucar" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Sacos azucar" type="MeshInstance3D" parent="Objects" unique_id=739559079]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 4.8, 9, 0.5, -15)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(4.800000000000001, 0, 0, 0, 1.0, 0, 0, 0, 4.800000000000001, 9.0, 0.5, -15.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Monton de cajas" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Monton de cajas" type="MeshInstance3D" parent="Objects" unique_id=520546994]
+transform = Transform3D(8.4, 0, 0, 0, 1, 0, 0, 0, 7.2, -42.75, 0.5, 22.5)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(8.4, 0, 0, 0, 1.0, 0, 0, 0, 7.2, -42.75, 0.5, 22.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Carros de almacen" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Carros de almacen" type="MeshInstance3D" parent="Objects" unique_id=198198926]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 3.6, -27, 0.5, 23.25)
 material_override = SubResource("Mat_Collidable")
-transform = Transform3D(4.800000000000001, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -27.0, 0.5, 23.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = true
 
-[node name="Charcos de liquido" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Charcos de liquido" type="MeshInstance3D" parent="Objects" unique_id=375989461]
+transform = Transform3D(7.2, 0, 0, 0, 1, 0, 0, 0, 3.6, -7.5, 0.5, 11.25)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(7.2, 0, 0, 0, 1.0, 0, 0, 0, 3.6, -7.5, 0.5, 11.25)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Trozos pequeños de papel" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Trozos pequeños de papel" type="MeshInstance3D" parent="Objects" unique_id=2075881168]
+transform = Transform3D(4.8, 0, 0, 0, 1, 0, 0, 0, 2.4, 30, 0.5, 19.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(4.800000000000001, 0, 0, 0, 1.0, 0, 0, 0, 2.4000000000000004, 30.0, 0.5, 19.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Suelo sucio 1" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Suelo sucio 1" type="MeshInstance3D" parent="Objects" unique_id=1780094649]
+transform = Transform3D(9.6, 0, 0, 0, 1, 0, 0, 0, 4.8, -36, 0.5, -27)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(9.600000000000001, 0, 0, 0, 1.0, 0, 0, 0, 4.800000000000001, -36.0, 0.5, -27.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Suelo sucio 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Suelo sucio 2" type="MeshInstance3D" parent="Objects" unique_id=1303283617]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 7.2, 31.5, 0.5, -25.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(12.0, 0, 0, 0, 1.0, 0, 0, 0, 7.2, 31.5, 0.5, -25.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Suelo sucio 3" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Suelo sucio 3" type="MeshInstance3D" parent="Objects" unique_id=537385883]
+transform = Transform3D(9.6, 0, 0, 0, 1, 0, 0, 0, 7.2, -30, 0.5, 28.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(9.600000000000001, 0, 0, 0, 1.0, 0, 0, 0, 7.2, -30.0, 0.5, 28.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Pared sucia 1" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Pared sucia 1" type="MeshInstance3D" parent="Objects" unique_id=114720548]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 7.2, -56.25, 0.5, -10.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.2000000000000002, 0, 0, 0, 1.0, 0, 0, 0, 7.2, -56.25, 0.5, -10.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Pared sucia 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Pared sucia 2" type="MeshInstance3D" parent="Objects" unique_id=1515791575]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 9.6, -15.75, 0.5, -9)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.2000000000000002, 0, 0, 0, 1.0, 0, 0, 0, 9.600000000000001, -15.75, 0.5, -9.0)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Pared sucia 3" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Pared sucia 3" type="MeshInstance3D" parent="Objects" unique_id=1020450498]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 12, 54.75, 0.5, -13.5)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(1.2000000000000002, 0, 0, 0, 1.0, 0, 0, 0, 12.0, 54.75, 0.5, -13.5)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Lampara industrial 1" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Lampara industrial 1" type="MeshInstance3D" parent="Objects" unique_id=666234668]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 1.68, -33.75, 0.5, -43.05)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 1.6799999999999997, -33.75, 0.5, -43.05)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Lampara industrial 2" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Lampara industrial 2" type="MeshInstance3D" parent="Objects" unique_id=218918059]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 1.68, 2.25, 0.5, -4.95)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 1.6799999999999997, 2.25, 0.5, -4.950000000000003)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
 
-[node name="Lampara industrial 3" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("BoxMesh_1")
+[node name="Lampara industrial 3" type="MeshInstance3D" parent="Objects" unique_id=178521666]
+transform = Transform3D(3.6, 0, 0, 0, 1, 0, 0, 0, 1.68, -3.75, 0.5, 31.05)
 material_override = SubResource("Mat_NoCollide")
-transform = Transform3D(3.6, 0, 0, 0, 1.0, 0, 0, 0, 1.6799999999999997, -3.75, 0.5, 31.05000000000001)
+mesh = SubResource("BoxMesh_1")
 metadata/collidable = false
