@@ -115,12 +115,6 @@ func _generate_single_complex_room() -> void:
 	var y0 = (grid_size.y - base_h) / 2
 	_fill_rect_floor(x0, y0, base_w, base_h)
 
-	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
-	_fill_rect_floor(x0, y0, base_w, base_h)
-
-	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
-	_fill_rect_floor(x0, y0, base_w, base_h)
-
 	var cuts = randi_range(3, 6)
 	for i in cuts:
 		var side = randi() % 4
@@ -144,15 +138,7 @@ func _generate_single_complex_room() -> void:
 				cx0 = randi_range(x0, x0 + base_w - cut_w)
 				cy0 = y0 + base_h - cut_h
 
-		print("Recortando esquina ", i, " lado ", side, " en (", cx0, ",", cy0, ") tamaño (", cut_w, "x", cut_h, ")")
 		_clear_rect_floor(cx0, cy0, cut_w, cut_h)
-
-		var count := 0
-		for y in grid_size.y:
-			for x in grid_size.x:
-				if floor_grid[y][x]:
-					count += 1
-		print("Celdas de suelo:", count, "de", grid_size.x * grid_size.y)
 
 
 func _fill_rect_floor(x0: int, y0: int, w: int, h: int) -> void:
@@ -296,7 +282,7 @@ func _has_blocked_neighbor(x: int, y: int) -> bool:
 
 func _spawn_floor_tiles() -> void:
 	if floor_tile_scene == null:
-		print("AVISO: floor_tile_scene no asignado, no se genera suelo.")
+		push_warning("Room3D: floor_tile_scene no asignado; no se genera suelo.")
 		return
 
 	var offset_x = - (grid_size.x * cell_size) / 2.0
@@ -316,7 +302,7 @@ func _spawn_floor_tiles() -> void:
 
 func _spawn_color_objects() -> void:
 	if red_scene_3d == null and blue_scene_3d == null and green_scene_3d == null:
-		print("AVISO: no hay escenas 3D asignadas para objetos.")
+		push_warning("Room3D: no hay escenas 3D asignadas para objetos.")
 		return
 
 	var offset_x = - (grid_size.x * cell_size) / 2.0
@@ -405,13 +391,11 @@ func get_nearest_floor_position(world_pos: Vector3) -> Vector3:
 
 
 func _spawn_walls() -> void:
-	print("SPAWN_WALLS llamado, wall_tile_scene =", wall_tile_scene, " room_root_3d =", room_root_3d)
-
 	if wall_tile_scene == null:
-		print("AVISO: wall_tile_scene es null, no se generan paredes.")
+		push_warning("Room3D: wall_tile_scene es null; no se generan paredes.")
 		return
 	if room_root_3d == null:
-		print("AVISO: room_root_3d es null, revisa que exista el nodo RoomRoot3D.")
+		push_error("Room3D: room_root_3d es null; revisa que exista el nodo RoomRoot3D.")
 		return
 
 	var offset_x: float = - (grid_size.x * cell_size) / 2.0
@@ -462,7 +446,7 @@ func _spawn_walls() -> void:
 				room_root_3d.add_child(wall_up)
 				wall_count += 1
 
-	print("PAREDES GENERADAS =", wall_count)
+	# walls generadas correctamente
 	
 func _count_floor_neighbors(x: int, y: int) -> int:
 	var count := 0

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const SFX_TAKE_DAMAGE := preload("res://Audio/take_damage.wav")
+
 @export var move_speed: float = 6.0
 @export var turn_speed: float = 3.0
 @export var bullet_scene: PackedScene
@@ -28,7 +30,6 @@ var _footstep_timer: float = 0.0
 func _ready() -> void:
 	current_health = max_health
 	current_ammo = max_ammo
-	print("PLAYER VIDA =", current_health)
 	await get_tree().process_frame
 	_update_hud()
 
@@ -39,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	_play_footsteps(delta)
 
-	# <<< AÑADIR ESTO si quieres que el player nunca salga del suelo >>>
+	# Mantener al player dentro de la sala (clamp suave a suelo).
 	var room3d := get_tree().get_root().find_child("Room3D", true, false)
 	if room3d and room3d.has_method("get_nearest_floor_position"):
 		var target: Vector3 = room3d.get_nearest_floor_position(global_position)
@@ -144,7 +145,6 @@ func _shoot() -> void:
 		spawn_pos.y = global_position.y
 		bullet.global_transform.origin = spawn_pos
 
-		print("PLAYER: bullet tiene init_direction:", bullet.has_method("init_direction"))
 		if bullet.has_method("init_direction"):
 			bullet.init_direction(dir)
 		else:
@@ -153,7 +153,6 @@ func _shoot() -> void:
 
 		current_ammo -= 1
 		_update_hud()
-		print("PLAYER: Disparo, dir =", dir, " ammo =", current_ammo)
 
 		if current_ammo <= 0:
 			_start_reload()
@@ -182,15 +181,14 @@ func take_damage(amount: int) -> void:
 	current_health -= amount
 	if current_health < 0:
 		current_health = 0
-	print("PLAYER VIDA =", current_health)
 	_update_hud()
+	_play_sfx(SFX_TAKE_DAMAGE)
 
 	if current_health == 0:
 		_die()
 
 
 func _die() -> void:
-	print("PLAYER MUERTO")
 	get_tree().change_scene_to_file("res://Escenas/DeathScreen.tscn")
 
 
@@ -199,7 +197,6 @@ func _start_reload() -> void:
 		return
 	_is_reloading = true
 	_reload_time_left = reload_time
-	print("RELOAD...")
 
 	# Avisar al HUD para que muestre el círculo
 	var hud := get_tree().get_root().find_child("HUD", true, false)
@@ -214,7 +211,6 @@ func _finish_reload() -> void:
 	current_ammo = max_ammo
 	_is_reloading = false
 	_reload_time_left = 0.0
-	print("RELOAD DONE, ammo =", current_ammo)
 	_update_hud()
 
 	# Ocultar el círculo en el HUD
@@ -225,7 +221,6 @@ func _finish_reload() -> void:
 
 func _update_hud() -> void:
 	var hud := get_tree().get_root().find_child("HUD", true, false)
-	print("HUD encontrado:", hud)
 	if hud:
 		if hud.has_method("set_health"):
 			hud.set_health(current_health, max_health)
@@ -247,3 +242,13 @@ func _play_footsteps(delta: float) -> void:
 		_footstep_timer = 0.0
 		if footstep_player.playing:
 			footstep_player.stop()
+
+
+func _play_sfx(stream: AudioStream) -> void:
+	if stream == null:
+		return
+	var p := AudioStreamPlayer.new()
+	p.stream = stream
+	get_tree().current_scene.add_child(p)
+	p.finished.connect(p.queue_free)
+	p.play()

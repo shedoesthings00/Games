@@ -3,8 +3,65 @@
 [ext_resource type="ArrayMesh" uid="uid://sittidk8i4vb" path="res://Modelo/Floor1.obj" id="1_ag06b"]
 [ext_resource type="ArrayMesh" uid="uid://bsy51x6f4qrm2" path="res://Modelo/Box1.obj" id="2_4nry7"]
 [ext_resource type="PackedScene" uid="uid://d2lhd8b68f3i8" path="res://Escenas/Levels/Door.tscn" id="3_4nry7"]
+[ext_resource type="Script" path="res://Scripts/Levels/room_waves.gd" id="4_roomwaves"]
+[ext_resource type="PackedScene" uid="uid://db7jc08272jt0" path="res://Escenas/Enemies/Enemy1.tscn" id="5_enemy1"]
+[ext_resource type="PackedScene" uid="uid://43p8ymti8wl3" path="res://Escenas/Enemies/Enemy2.tscn" id="6_enemy2"]
+[ext_resource type="Script" path="res://Scripts/Enemies/spawn_entry.gd" id="7_spawnentry"]
+[ext_resource type="Script" path="res://Scripts/Enemies/wave_definition.gd" id="8_wavedef"]
+
+[sub_resource type="Resource" id="SpawnEntry_w1_e1"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("5_enemy1")
+count = 2
+
+[sub_resource type="Resource" id="SpawnEntry_w1_e2"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("6_enemy2")
+count = 2
+
+[sub_resource type="Resource" id="WaveDefinition_w1"]
+script = ExtResource("8_wavedef")
+entries = [SubResource("SpawnEntry_w1_e1"), SubResource("SpawnEntry_w1_e2")]
+spawn_interval = 2.0
+max_alive = 5
+
+[sub_resource type="Resource" id="SpawnEntry_w2_e1"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("5_enemy1")
+count = 2
+
+[sub_resource type="Resource" id="SpawnEntry_w2_e2"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("6_enemy2")
+count = 2
+
+[sub_resource type="Resource" id="WaveDefinition_w2"]
+script = ExtResource("8_wavedef")
+entries = [SubResource("SpawnEntry_w2_e1"), SubResource("SpawnEntry_w2_e2")]
+spawn_interval = 2.0
+max_alive = 5
+
+[sub_resource type="Resource" id="SpawnEntry_w3_e1"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("5_enemy1")
+count = 2
+
+[sub_resource type="Resource" id="SpawnEntry_w3_e2"]
+script = ExtResource("7_spawnentry")
+scene = ExtResource("6_enemy2")
+count = 2
+
+[sub_resource type="Resource" id="WaveDefinition_w3"]
+script = ExtResource("8_wavedef")
+entries = [SubResource("SpawnEntry_w3_e1"), SubResource("SpawnEntry_w3_e2")]
+spawn_interval = 2.0
+max_alive = 5
 
 [node name="Room7" type="Node3D" unique_id=2087058737]
+
+[node name="RoomWaves" type="Node" parent="."]
+script = ExtResource("4_roomwaves")
+waves = [SubResource("WaveDefinition_w1"), SubResource("WaveDefinition_w2"), SubResource("WaveDefinition_w3")]
 
 [node name="Floor" type="Area3D" parent="." unique_id=1743427193]
 

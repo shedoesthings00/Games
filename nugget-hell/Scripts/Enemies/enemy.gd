@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const SFX_DO_DAMAGE := preload("res://Audio/do_damage.wav")
+
 @export var enemy_name: String = "Enemy"
 @export var model_scene: PackedScene
 @export var level_id: int = 1
@@ -24,7 +26,6 @@ var _time_since_last_attack: float = 0.0
 func _ready() -> void:
 	current_health = max_health
 	target = get_tree().get_root().find_child("Player", true, false)
-	print("ENEMY READY en escena:", get_tree().current_scene.name)
 	_update_health_bar()
 
 
@@ -78,8 +79,8 @@ func _check_player_hit() -> void:
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	print("ENEMY: daño =", amount, " vida =", current_health)
 	_update_health_bar()
+	_play_sfx(SFX_DO_DAMAGE)
 	if current_health <= 0:
 		die()
 
@@ -113,12 +114,21 @@ func die() -> void:
 func _enable_particles_recursive(node: Node) -> void:
 	for child in node.get_children():
 		if child is GPUParticles3D:
-			print("ENEMY: activando GPUParticles3D en", child.name)
 			child.emitting = true
 		_enable_particles_recursive(child)
 
 
 func _update_health_bar() -> void:
-	print("UPDATE BAR health =", current_health, " / ", max_health)
 	if health_bar_ui and health_bar_ui.has_method("set_health"):
 		health_bar_ui.set_health(current_health, max_health)
+
+
+func _play_sfx(stream: AudioStream) -> void:
+	if stream == null:
+		return
+	var p := AudioStreamPlayer3D.new()
+	p.stream = stream
+	p.global_transform.origin = global_transform.origin
+	get_tree().current_scene.add_child(p)
+	p.finished.connect(p.queue_free)
+	p.play()

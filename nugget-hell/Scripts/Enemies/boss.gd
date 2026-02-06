@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const SFX_DO_DAMAGE := preload("res://Audio/do_damage.wav")
+
 @export var enemy_name: String = "Boss"
 @export var max_health: int = 100
 @export var attack_damage: int = 2
@@ -56,7 +58,7 @@ func _check_player_hit() -> void:
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	print("BOSS: daño =", amount, " vida =", current_health)
+	_play_sfx(SFX_DO_DAMAGE)
 
 	# Actualizar barra del HUD
 	var level := get_parent()
@@ -72,3 +74,14 @@ func die() -> void:
 	if level and level.has_method("on_enemy_killed"):
 		level.on_enemy_killed()
 	queue_free()
+
+
+func _play_sfx(stream: AudioStream) -> void:
+	if stream == null:
+		return
+	var p := AudioStreamPlayer3D.new()
+	p.stream = stream
+	p.global_transform.origin = global_transform.origin
+	get_tree().current_scene.add_child(p)
+	p.finished.connect(p.queue_free)
+	p.play()

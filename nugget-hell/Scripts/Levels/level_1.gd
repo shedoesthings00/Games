@@ -26,6 +26,9 @@ var current_room_index: int = 0
 var total_rooms: int = 0
 var current_door: Area3D = null
 
+var _room_waves: Array = []
+var _current_wave_index: int = 0
+
 # Si true, el cambio de sala ya se hizo durante la transición; no volver a _start_room al terminar.
 var _room_changed_during_transition: bool = false
 
@@ -35,16 +38,14 @@ var _room_changed_during_transition: bool = false
 var current_room_instance: Node3D = null
 
 func _ready() -> void:
-	print("LEVEL_1 _ready")
 	current_room_index = 0
 	total_rooms = max(1, rooms_per_level)
 	
 	var player := get_tree().get_root().find_child("Player", true, false)
 	if player:
-		print("LEVEL_1: player encontrado, moviendo al centro")
 		player.global_transform.origin = Vector3(0.0, 0.0, 0.0)
 	else:
-		print("LEVEL_1: player NO encontrado")
+		push_warning("Level_1: Player no encontrado en el árbol de escena.")
 
 	if hud and hud.has_method("hide_boss_health"):
 		hud.hide_boss_health()
@@ -72,18 +73,21 @@ func _on_transition_finished() -> void:
 # --- HABITACIONES ---
 
 func _start_room() -> void:
+	_clear_room_powerups()
+
 	# borrar habitación anterior
 	if current_room_instance and current_room_instance.is_inside_tree():
 		current_room_instance.queue_free()
 		current_room_instance = null
 	current_door = null
+	_room_waves = []
+	_current_wave_index = 0
 
 	# pedir una sala random que no se haya usado
 	var room_path := LevelManager.get_next_room_scene_path()
 	var room_scene := load(room_path) as PackedScene
 	current_room_instance = room_scene.instantiate() as Node3D
 	room_root.add_child(current_room_instance)
-	print("LEVEL_1: habitación cargada:", room_path)
 
 	# Crear un helper `Room3D` para spawns/door/limitar movimiento usando bounds del mesh
 	var room_helper := Node3D.new()
@@ -102,27 +106,20 @@ func _start_room() -> void:
 		else:
 			player.global_transform.origin = Vector3(0.0, player.global_transform.origin.y, 0.0)
 
-	# --- CONFIGURAR ENEMIGOS PARA ESTA HABITACIÓN ---
-
-	var config_for_room := _get_enemy_config_for_room(current_room_index)
-
-	enemies_remaining = 0
-	for cfg in config_for_room:
-		if cfg.has("count"):
-			enemies_remaining += int(cfg["count"])
-	print("LEVEL_1: enemigos en esta habitación =", enemies_remaining)
-	_update_hud_enemies()
-
-	var spawner := get_node_or_null("EnemySpawner")
-	if spawner and spawner.has_method("set_config"):
-		spawner.set_config(config_for_room)
-	# El spawner ya se habilita con `LevelTransition.transition_finished`.
-	# Si no hay transición (por ejemplo, ejecutando esta escena directamente), habilitarlo aquí.
-	if (LevelTransition == null) and spawner and spawner.has_method("enable_spawning"):
-		spawner.enable_spawning()
-
 	# Puerta de salida (la que ya viene en la room)
 	_setup_exit_door_from_room()
+
+	# --- OLEADAS ---
+	_room_waves = _get_waves_for_current_room()
+	_start_current_wave()
+
+
+func _clear_room_powerups() -> void:
+	# Los powerups se instancian como hijos del nivel (no de la room),
+	# así que hay que limpiarlos al cambiar de habitación.
+	for n in get_tree().get_nodes_in_group("powerups"):
+		if n and n.is_inside_tree():
+			n.queue_free()
 
 
 func _reposition_player_in_room() -> void:
@@ -137,6 +134,82 @@ func _reposition_player_in_room() -> void:
 
 func _get_enemy_config_for_room(room_index: int) -> Array[Dictionary]:
 	return enemy_config
+
+
+func _get_waves_for_current_room() -> Array:
+	# Buscar el nodo `RoomWaves` dentro de la habitación instanciada.
+	if current_room_instance == null:
+		return []
+
+	var rw := current_room_instance.find_child("RoomWaves", true, false)
+	if rw == null:
+		return []
+
+	var waves: Variant = rw.get("waves")
+	if waves is Array and not (waves as Array).is_empty():
+		return waves as Array
+
+	return []
+
+
+func _start_current_wave() -> void:
+	var spawner := get_node_or_null("EnemySpawner")
+
+	var config_for_wave: Array[Dictionary] = []
+	var wave_spawn_interval: float = 0.0
+	var wave_max_alive: int = 0
+	var using_room_waves := _room_waves.size() > 0
+
+	# Si la room tiene oleadas configuradas, usar esa. Si no, fallback a `enemy_config` (1 oleada).
+	if _current_wave_index < _room_waves.size():
+		var wave: Variant = _room_waves[_current_wave_index]
+		# WaveDefinition: entries(Array[SpawnEntry]), spawn_interval, max_alive
+		if wave != null:
+			if wave.has_method("get"):
+				wave_spawn_interval = float(wave.get("spawn_interval"))
+				wave_max_alive = int(wave.get("max_alive"))
+				var entries: Variant = wave.get("entries")
+				if entries is Array:
+					for e in entries:
+						if e == null:
+							continue
+						var scn: PackedScene = e.get("scene") as PackedScene
+						var cnt: int = int(e.get("count"))
+						if scn != null and cnt > 0:
+							config_for_wave.append({ "scene": scn, "count": cnt })
+
+	# Fallback: una única oleada con el config global
+	if (not using_room_waves) and config_for_wave.is_empty():
+		config_for_wave = _get_enemy_config_for_room(current_room_index)
+		wave_spawn_interval = 0.0
+		wave_max_alive = 0
+
+	# Contador de enemigos restantes en esta oleada
+	enemies_remaining = 0
+	for cfg in config_for_wave:
+		if cfg.has("count"):
+			enemies_remaining += int(cfg["count"])
+	_update_hud_enemies()
+
+	# Oleada vacía (permitir pasar a la siguiente sin spawns)
+	if enemies_remaining == 0:
+		call_deferred("_on_wave_cleared")
+		return
+
+	# Aplicar parámetros de spawner por oleada (si se han seteado)
+	if spawner:
+		if wave_spawn_interval > 0.0:
+			spawner.spawn_interval = wave_spawn_interval
+		if wave_max_alive > 0:
+			spawner.max_alive = wave_max_alive
+
+		if spawner.has_method("set_config"):
+			spawner.set_config(config_for_wave)
+
+		# El spawner ya se habilita con `LevelTransition.transition_finished`.
+		# Si no hay transición (por ejemplo, ejecutando esta escena directamente), habilitarlo aquí.
+		if (LevelTransition == null) and spawner.has_method("enable_spawning"):
+			spawner.enable_spawning()
 
 
 # --- PUERTA DE SALIDA ---
@@ -163,7 +236,7 @@ func _setup_exit_door_from_room() -> void:
 		if spawn_door_if_missing_in_room:
 			_spawn_exit_door()
 		else:
-			print("LEVEL_1: no se encontró Door en la room; no se spawnea otra (spawn_door_if_missing_in_room=false)")
+			push_warning("Level_1: no se encontró Door en la room y spawn_door_if_missing_in_room=false.")
 		return
 
 	# Asegurar desactivada al entrar
@@ -179,7 +252,7 @@ func _setup_exit_door_from_room() -> void:
 
 func _spawn_exit_door() -> void:
 	if door_scene == null:
-		print("LEVEL_1: door_scene es null, no se puede crear puerta")
+		push_error("Level_1: door_scene es null; no se puede crear puerta.")
 		return
 
 	if current_door and current_door.is_inside_tree():
@@ -206,14 +279,13 @@ func _spawn_exit_door() -> void:
 
 
 func _on_door_touched() -> void:
-	print("LEVEL_1: puerta tocada, pasando a siguiente habitación")
 	current_room_index += 1
 
 	if current_room_index >= total_rooms:
 		if current_door and current_door.is_inside_tree():
 			current_door.queue_free()
 			current_door = null
-		print("LEVEL_1: completadas", total_rooms, "habitaciones, cargando Level_2")
+		print("LEVEL_1: completadas ", total_rooms, " habitaciones. Cargando Level_2.")
 		if LevelManager != null:
 			LevelManager.load_next_level()
 	else:
@@ -236,15 +308,23 @@ func on_enemy_killed() -> void:
 	enemies_remaining -= 1
 	if enemies_remaining < 0:
 		enemies_remaining = 0
-	print("ENEMIGOS RESTANTES =", enemies_remaining)
 	_update_hud_enemies()
 
 	if enemies_remaining == 0:
-		_on_room_cleared()
+		_on_wave_cleared()
+
+func _on_wave_cleared() -> void:
+	# Si hay más oleadas en la room, lanzar la siguiente.
+	if _room_waves.size() > 0 and _current_wave_index < _room_waves.size() - 1:
+		_current_wave_index += 1
+		_start_current_wave()
+		return
+
+	# Última oleada completada → se puede activar la puerta.
+	_on_room_cleared()
 
 
 func _on_room_cleared() -> void:
-	print("LEVEL_1: habitación limpia")
 	if current_door == null or not current_door.is_inside_tree():
 		_setup_exit_door_from_room()
 	if current_door and current_door.has_method("activate"):
@@ -302,37 +382,3 @@ func _input(event: InputEvent) -> void:
 				pause_menu.hide_menu()
 			else:
 				pause_menu.show_menu()
-				
-	if event.is_action_pressed("debug_change_room"):
-		change_room_test()
-
-func change_room_test() -> void:
-	print("LEVEL_1: change_room_test llamado")
-
-	if room_root == null:
-		print("LEVEL_1: room_root es null, revisa que exista el nodo RoomRoot")
-		return
-
-	# borrar habitación anterior
-	if current_room_instance and current_room_instance.is_inside_tree():
-		print("LEVEL_1: borrando habitación anterior")
-		current_room_instance.queue_free()
-		current_room_instance = null
-
-	# pedir una sala random al LevelManager
-	if LevelManager == null:
-		print("LEVEL_1: LevelManager es null")
-		return
-
-	var room_path := LevelManager.get_next_room_scene_path()
-	print("LEVEL_1: instanciando habitación:", room_path)
-
-	var room_scene := load(room_path) as PackedScene
-	if room_scene == null:
-		print("LEVEL_1: room_scene es null")
-		return
-
-	current_room_instance = room_scene.instantiate() as Node3D
-	room_root.add_child(current_room_instance)
-
-	print("LEVEL_1: habitación cambiada OK")

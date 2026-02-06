@@ -5,6 +5,7 @@ extends Area3D
 
 func _ready() -> void:
 	# Si conectas desde el editor, no hace falta.
+	add_to_group("powerups")
 	body_entered.connect(_on_body_entered)
 
 func _process(delta: float) -> void:
@@ -12,5 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		print("PLAYER ha recogido el powerup:", powerup_name)
 		queue_free()
