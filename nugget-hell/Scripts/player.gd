@@ -6,6 +6,10 @@ const SFX_TAKE_DAMAGE := preload("res://Audio/take_damage.wav")
 @export var turn_speed: float = 3.0
 @export var bullet_scene: PackedScene
 
+# SFX configurables desde el inspector (AudioStream/WAV).
+@export var sfx_shooting: AudioStream
+@export var sfx_reloading: AudioStream
+
 @export var dash_speed: float = 18.0
 @export var dash_duration: float = 0.2
 var dash_time_left: float = 0.0
@@ -153,6 +157,7 @@ func _shoot() -> void:
 
 		current_ammo -= 1
 		_update_hud()
+		_play_sfx(sfx_shooting)
 
 		if current_ammo <= 0:
 			_start_reload()
@@ -197,6 +202,7 @@ func _start_reload() -> void:
 		return
 	_is_reloading = true
 	_reload_time_left = reload_time
+	_play_sfx(sfx_reloading)
 
 	# Avisar al HUD para que muestre el círculo
 	var hud := get_tree().get_root().find_child("HUD", true, false)

@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="1_83e7o"]
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://Scripts/player.gd" id="1_wwpud"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_wwpud"]
+[ext_resource type="AudioStream" uid="uid://de0eaxg8h045f" path="res://Audio/shooting.wav" id="3_kwdw2"]
 [ext_resource type="AudioStream" uid="uid://brgvi6357gn70" path="res://Audio/running.wav" id="4_hhy33"]
+[ext_resource type="AudioStream" uid="uid://fsnh74jr65fy" path="res://Audio/reloading.wav" id="4_j2dk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1rio"]
 size = Vector3(1, 1.2156677, 1)
@@ -13,6 +15,8 @@ size = Vector3(1, 1.2156677, 1)
 [node name="Player" type="CharacterBody3D" unique_id=1408834426]
 script = ExtResource("1_wwpud")
 bullet_scene = ExtResource("2_wwpud")
+sfx_shooting = ExtResource("3_kwdw2")
+sfx_reloading = ExtResource("4_j2dk4")
 max_ammo = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1061217006]
