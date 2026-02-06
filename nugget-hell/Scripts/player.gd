@@ -3,7 +3,9 @@ extends CharacterBody3D
 const SFX_TAKE_DAMAGE := preload("res://Audio/take_damage.wav")
 
 @export var move_speed: float = 6.0
-@export var turn_speed: float = 3.0
+@export var move_accel: float = 28.0
+@export var move_decel: float = 36.0
+@export var face_turn_speed: float = 18.0
 @export var bullet_scene: PackedScene
 
 # SFX configurables desde el inspector (AudioStream/WAV).
@@ -13,6 +15,7 @@ const SFX_TAKE_DAMAGE := preload("res://Audio/take_damage.wav")
 @export var dash_speed: float = 18.0
 @export var dash_duration: float = 0.2
 var dash_time_left: float = 0.0
+var _dash_dir: Vector3 = Vector3.ZERO
 
 @export var max_health: int = 10
 var current_health: int
@@ -23,19 +26,37 @@ var current_ammo: int
 var _is_reloading: bool = false
 var _reload_time_left: float = 0.0
 
-
-@onready var cam: Camera3D = get_viewport().get_camera_3d()
+@onready var cam: Camera3D = $Camera3D
 @onready var muzzle: Node3D = $Muzzle
 
 @onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
 @export var footstep_interval: float = 0.3
 var _footstep_timer: float = 0.0
 
+# Cámara: fija (sin rotar con el player), encima y mirando al jugador.
+@export var camera_offset: Vector3 = Vector3(0.0, 9.0, 6.0)
+@export var camera_look_height: float = 0.9
+@export var camera_follow_speed: float = 18.0
+
+# Suavizado del clamp dentro de la sala (0 = duro, valores altos = más suave).
+@export var room_clamp_strength: float = 25.0
+
 func _ready() -> void:
 	current_health = max_health
 	current_ammo = max_ammo
 	await get_tree().process_frame
 	_update_hud()
+
+	# La cámara está como hija del Player en la escena: si el Player rota,
+	# la cámara también. Para un top-down shooter, suele ser mejor que la cámara
+	# NO rote y solo rote el personaje (aim).
+	if cam:
+		# Si el offset en la escena es “bueno”, úsalo como default (pero evita el caso degenerado).
+		var scene_offset := cam.global_position - global_position
+		if scene_offset.length() > 0.5 and scene_offset.y > 1.0:
+			camera_offset = scene_offset
+		cam.set_as_top_level(true)
+		_update_camera_follow(0.0)
 
 func _physics_process(delta: float) -> void:
 	_handle_dash_input()
@@ -48,9 +69,9 @@ func _physics_process(delta: float) -> void:
 	var room3d := get_tree().get_root().find_child("Room3D", true, false)
 	if room3d and room3d.has_method("get_nearest_floor_position"):
 		var target: Vector3 = room3d.get_nearest_floor_position(global_position)
-		# mezcla suave para que no pegue saltos bruscos
-		global_position.x = target.x
-		global_position.z = target.z
+		var t := clampf(room_clamp_strength * delta, 0.0, 1.0)
+		global_position.x = lerpf(global_position.x, target.x, t)
+		global_position.z = lerpf(global_position.z, target.z, t)
 
 
 
@@ -90,43 +111,73 @@ func _process(delta: float) -> void:
 func _handle_dash_input() -> void:
 	if Input.is_action_just_pressed("dash") and dash_time_left <= 0.0:
 		dash_time_left = dash_duration
+		var mv := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		if mv.length() > 0.1:
+			_dash_dir = Vector3(mv.x, 0.0, mv.y).normalized()
+		else:
+			# Si no hay input, dash hacia donde está mirando el personaje (Hades-like).
+			_dash_dir = -transform.basis.z
+			_dash_dir.y = 0.0
+			_dash_dir = _dash_dir.normalized()
 
 
 func _move_player(delta: float) -> void:
-	var input_left_right := Input.get_axis("move_left", "move_right")
-	var input_forward_back := Input.get_axis("move_back", "move_forward")
-
-	# Girar el jugador en Y con A/D (A = izquierda, D = derecha)
-	if input_left_right != 0.0:
-		rotation.y -= input_left_right * turn_speed * delta
-
-	# Dirección de movimiento
-	var dir: Vector3 = Vector3.ZERO
-	if input_forward_back != 0.0:
-		dir -= transform.basis.z * input_forward_back  # -Z es "delante"
-
-	if dir != Vector3.ZERO:
-		dir = dir.normalized()
-
-	var final_speed := move_speed
-
-	# Dash hacia delante
+	# Dash: si está activo, ignorar aceleración/freno.
 	if dash_time_left > 0.0:
 		dash_time_left -= delta
-		dir = -transform.basis.z
-		dir = dir.normalized()
-		final_speed = dash_speed
+		var d := _dash_dir
+		if d == Vector3.ZERO:
+			d = -transform.basis.z
+		d.y = 0.0
+		d = d.normalized()
+		velocity.x = d.x * dash_speed
+		velocity.z = d.z * dash_speed
+		velocity.y = 0.0
+		move_and_slide()
+		return
 
-	velocity.x = dir.x * final_speed
-	velocity.z = dir.z * final_speed
+	# Movimiento libre estilo top-down: WASD en ejes del mundo (sin “tanque”).
+	var mv := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var dir := Vector3(mv.x, 0.0, mv.y)
+	if dir.length() > 1.0:
+		dir = dir.normalized()
+
+	# Rotación estilo Hades: mirar hacia la dirección de movimiento (si se mueve).
+	_update_facing_from_movement(dir, delta)
+
+	var target_v := dir * move_speed
+	var accel := move_accel if dir != Vector3.ZERO else move_decel
+	velocity.x = move_toward(velocity.x, target_v.x, accel * delta)
+	velocity.z = move_toward(velocity.z, target_v.z, accel * delta)
 	velocity.y = 0.0
 
 	move_and_slide()
 
 
 func _update_camera_follow(delta: float) -> void:
-	# La cámara es hija del Player, no hace falta nada
-	pass
+	if cam == null:
+		return
+	var desired_pos := global_position + camera_offset
+	if delta <= 0.0:
+		cam.global_position = desired_pos
+	else:
+		var t := clampf(camera_follow_speed * delta, 0.0, 1.0)
+		cam.global_position = cam.global_position.lerp(desired_pos, t)
+
+	# Mirar al jugador sin heredar rotación del CharacterBody.
+	cam.look_at(global_position + Vector3(0.0, camera_look_height, 0.0), Vector3.UP)
+
+
+func _update_facing_from_movement(move_dir: Vector3, delta: float) -> void:
+	if move_dir == Vector3.ZERO:
+		return
+	var d := move_dir
+	d.y = 0.0
+	d = d.normalized()
+	# Yaw para que el -Z del personaje apunte hacia `d`
+	var desired_yaw := atan2(-d.x, -d.z)
+	var t := clampf(face_turn_speed * delta, 0.0, 1.0)
+	rotation.y = lerp_angle(rotation.y, desired_yaw, t)
 
 
 func _shoot() -> void:
