@@ -13,27 +13,90 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="Dim" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 650.0
-color = Color(1, 1, 1, 0.24313726)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect"]
+[node name="Center" type="CenterContainer" parent="Control"]
 layout_mode = 0
-offset_left = 407.0
-offset_top = 212.0
-offset_right = 750.0
-offset_bottom = 474.0
-alignment = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Resume" type="Button" parent="Control/ColorRect/VBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="Control/Center"]
 layout_mode = 2
-text = "Resume"
+custom_minimum_size = Vector2(420, 0)
 
-[node name="Exit" type="Button" parent="Control/ColorRect/VBoxContainer"]
+[node name="Margin" type="MarginContainer" parent="Control/Center/Panel"]
 layout_mode = 2
-text = "Exit"
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
 
-[connection signal="pressed" from="Control/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Control/ColorRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="VBox" type="VBoxContainer" parent="Control/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Control/Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "PAUSA"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Control/Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="Button" parent="Control/Center/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="MainMenuButton" type="Button" parent="Control/Center/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+text = "Menú principal"
+
+[node name="OptionsBox" type="VBoxContainer" parent="Control/Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VolumeRow" type="HBoxContainer" parent="Control/Center/Panel/Margin/VBox/OptionsBox"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="Control/Center/Panel/Margin/VBox/OptionsBox/VolumeRow"]
+layout_mode = 2
+text = "Volumen"
+
+[node name="VolumeSlider" type="HSlider" parent="Control/Center/Panel/Margin/VBox/OptionsBox/VolumeRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Control/Center/Panel/Margin/VBox/OptionsBox"]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="Control/Center/Panel/Margin/VBox/OptionsBox/FullscreenRow"]
+layout_mode = 2
+text = "Pantalla completa"
+
+[node name="FullscreenCheck" type="CheckBox" parent="Control/Center/Panel/Margin/VBox/OptionsBox/FullscreenRow"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Control/Center/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Salir del juego"
+
+[connection signal="pressed" from="Control/Center/Panel/Margin/VBox/Buttons/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/Center/Panel/Margin/VBox/Buttons/MainMenuButton" to="." method="_on_main_menu_pressed"]
+[connection signal="value_changed" from="Control/Center/Panel/Margin/VBox/OptionsBox/VolumeRow/VolumeSlider" to="." method="_on_volume_changed"]
+[connection signal="toggled" from="Control/Center/Panel/Margin/VBox/OptionsBox/FullscreenRow/FullscreenCheck" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Control/Center/Panel/Margin/VBox/QuitButton" to="." method="_on_quit_pressed"]

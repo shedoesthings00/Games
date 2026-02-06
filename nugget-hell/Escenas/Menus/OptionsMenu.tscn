@@ -1,0 +1,79 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Menus/options_menu.gd" id="1_options"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_options")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.07, 0.08, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+alignment = 0
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="AudioBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="Margin/VBox/AudioBox"]
+layout_mode = 2
+text = "Volumen"
+
+[node name="VolumeSlider" type="HSlider" parent="Margin/VBox/AudioBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="FullscreenBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="Margin/VBox/FullscreenBox"]
+layout_mode = 2
+text = "Pantalla completa"
+
+[node name="FullscreenCheck" type="CheckBox" parent="Margin/VBox/FullscreenBox"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 18)
+
+[node name="BackButton" type="Button" parent="Margin/VBox"]
+layout_mode = 2
+text = "Volver"
+
+[connection signal="value_changed" from="Margin/VBox/AudioBox/VolumeSlider" to="." method="_on_volume_changed"]
+[connection signal="toggled" from="Margin/VBox/FullscreenBox/FullscreenCheck" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Margin/VBox/BackButton" to="." method="_on_back_pressed"]
+

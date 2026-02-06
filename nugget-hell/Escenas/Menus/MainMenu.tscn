@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_mainmenu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mainmenu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.07, 0.08, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "NUGGET HELL"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 18)
+
+[node name="PlayButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Jugar"
+
+[node name="OptionsButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="CreditsButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="QuitButton" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="Center/VBox/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Center/VBox/OptionsButton" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Center/VBox/CreditsButton" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Center/VBox/QuitButton" to="." method="_on_quit_pressed"]
+
