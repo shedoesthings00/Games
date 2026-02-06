@@ -18,6 +18,14 @@ func activate() -> void:
 	is_active = true
 	_update_visual()
 
+func deactivate() -> void:
+	is_active = false
+	_update_visual()
+
+func set_active(active: bool) -> void:
+	is_active = active
+	_update_visual()
+
 func _update_visual() -> void:
 	var mesh := get_node_or_null("MeshInstance3D")
 	if mesh == null:

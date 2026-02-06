@@ -21,6 +21,9 @@ var _reload_time_left: float = 0.0
 @onready var cam: Camera3D = get_viewport().get_camera_3d()
 @onready var muzzle: Node3D = $Muzzle
 
+@onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
+@export var footstep_interval: float = 0.3
+var _footstep_timer: float = 0.0
 
 func _ready() -> void:
 	current_health = max_health
@@ -33,6 +36,8 @@ func _physics_process(delta: float) -> void:
 	_handle_dash_input()
 	_move_player(delta)
 	_update_camera_follow(delta)
+	
+	_play_footsteps(delta)
 
 	# <<< AÑADIR ESTO si quieres que el player nunca salga del suelo >>>
 	var room3d := get_tree().get_root().find_child("Room3D", true, false)
@@ -226,3 +231,19 @@ func _update_hud() -> void:
 			hud.set_health(current_health, max_health)
 		if hud.has_method("set_ammo"):
 			hud.set_ammo(current_ammo, max_ammo)
+
+func _play_footsteps(delta: float) -> void:
+	if footstep_player == null:
+		return
+
+	var horizontal_speed := Vector2(velocity.x, velocity.z).length()
+
+	if horizontal_speed > 0.1:
+		_footstep_timer -= delta
+		if _footstep_timer <= 0.0:
+			footstep_player.play()
+			_footstep_timer = footstep_interval
+	else:
+		_footstep_timer = 0.0
+		if footstep_player.playing:
+			footstep_player.stop()

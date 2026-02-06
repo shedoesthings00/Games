@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="1_83e7o"]
 [ext_resource type="Script" uid="uid://cnepmx2jfs13" path="res://Scripts/player.gd" id="1_wwpud"]
 [ext_resource type="PackedScene" uid="uid://byjq5s8p7vvly" path="res://Escenas/Bullet.tscn" id="2_wwpud"]
+[ext_resource type="AudioStream" uid="uid://brgvi6357gn70" path="res://Audio/running.wav" id="4_hhy33"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c1rio"]
 size = Vector3(1, 1.2156677, 1)
@@ -32,3 +33,6 @@ transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3417027, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_c1rio")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1472571603]
+stream = ExtResource("4_hhy33")

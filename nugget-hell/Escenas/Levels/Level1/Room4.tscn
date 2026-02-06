@@ -1,0 +1,4509 @@
+[gd_scene format=3 uid="uid://bfhwtt5f2f4af"]
+
+[ext_resource type="ArrayMesh" uid="uid://sittidk8i4vb" path="res://Modelo/Floor1.obj" id="1_3kon2"]
+[ext_resource type="ArrayMesh" uid="uid://bsy51x6f4qrm2" path="res://Modelo/Box1.obj" id="2_yoqy0"]
+[ext_resource type="PackedScene" uid="uid://d2lhd8b68f3i8" path="res://Escenas/Levels/Door.tscn" id="3_yoqy0"]
+
+[node name="Room4" type="Node3D" unique_id=2087058737]
+
+[node name="Floor" type="Area3D" parent="." unique_id=1743427193]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1343014316]
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor" unique_id=1304409390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor" unique_id=393765079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Floor" unique_id=243559663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Floor" unique_id=965115447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Floor" unique_id=953153106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Floor" unique_id=743686089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Floor" unique_id=1020217625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Floor" unique_id=1039649672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Floor" unique_id=460412363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Floor" unique_id=1201149257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Floor" unique_id=1094969600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Floor" unique_id=1638380666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Floor" unique_id=949114096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Floor" unique_id=1781400854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Floor" unique_id=917289559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Floor" unique_id=100834684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Floor" unique_id=1491446137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Floor" unique_id=1583251023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Floor" unique_id=95942454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Floor" unique_id=334089507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Floor" unique_id=379604587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="Floor" unique_id=213550952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="Floor" unique_id=1613509007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Floor" unique_id=268954905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Floor" unique_id=1827567019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Floor" unique_id=538694348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="Floor" unique_id=1884540877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="Floor" unique_id=1372360609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D30" type="MeshInstance3D" parent="Floor" unique_id=1811549217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D31" type="MeshInstance3D" parent="Floor" unique_id=1546457476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D32" type="MeshInstance3D" parent="Floor" unique_id=1383761466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D33" type="MeshInstance3D" parent="Floor" unique_id=146517747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D34" type="MeshInstance3D" parent="Floor" unique_id=465010084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D35" type="MeshInstance3D" parent="Floor" unique_id=1248454836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D36" type="MeshInstance3D" parent="Floor" unique_id=1590120173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D37" type="MeshInstance3D" parent="Floor" unique_id=1491034178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D38" type="MeshInstance3D" parent="Floor" unique_id=864607332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D39" type="MeshInstance3D" parent="Floor" unique_id=980673874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D40" type="MeshInstance3D" parent="Floor" unique_id=1255032422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="Floor" unique_id=1467592375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D42" type="MeshInstance3D" parent="Floor" unique_id=1021351114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D43" type="MeshInstance3D" parent="Floor" unique_id=1348866507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D44" type="MeshInstance3D" parent="Floor" unique_id=530350746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D45" type="MeshInstance3D" parent="Floor" unique_id=1066095948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="Floor" unique_id=24931140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="Floor" unique_id=1016618926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D48" type="MeshInstance3D" parent="Floor" unique_id=65214267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D49" type="MeshInstance3D" parent="Floor" unique_id=1938174653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D50" type="MeshInstance3D" parent="Floor" unique_id=267066427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D51" type="MeshInstance3D" parent="Floor" unique_id=2030836046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D52" type="MeshInstance3D" parent="Floor" unique_id=154786004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D53" type="MeshInstance3D" parent="Floor" unique_id=2085666266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D54" type="MeshInstance3D" parent="Floor" unique_id=1340253511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D55" type="MeshInstance3D" parent="Floor" unique_id=106747267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D56" type="MeshInstance3D" parent="Floor" unique_id=660550676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D57" type="MeshInstance3D" parent="Floor" unique_id=1923930170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D58" type="MeshInstance3D" parent="Floor" unique_id=1151442530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D59" type="MeshInstance3D" parent="Floor" unique_id=617621057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D60" type="MeshInstance3D" parent="Floor" unique_id=2095785007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D61" type="MeshInstance3D" parent="Floor" unique_id=1063265576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D62" type="MeshInstance3D" parent="Floor" unique_id=1563500054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D63" type="MeshInstance3D" parent="Floor" unique_id=2017600925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D64" type="MeshInstance3D" parent="Floor" unique_id=46538856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D65" type="MeshInstance3D" parent="Floor" unique_id=923895463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D66" type="MeshInstance3D" parent="Floor" unique_id=1385585513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D67" type="MeshInstance3D" parent="Floor" unique_id=1815115921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D68" type="MeshInstance3D" parent="Floor" unique_id=1814260514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D69" type="MeshInstance3D" parent="Floor" unique_id=1701573164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D70" type="MeshInstance3D" parent="Floor" unique_id=1118486947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D71" type="MeshInstance3D" parent="Floor" unique_id=268568203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D72" type="MeshInstance3D" parent="Floor" unique_id=511664282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D73" type="MeshInstance3D" parent="Floor" unique_id=1320038829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D74" type="MeshInstance3D" parent="Floor" unique_id=650941212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D75" type="MeshInstance3D" parent="Floor" unique_id=1888096188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D76" type="MeshInstance3D" parent="Floor" unique_id=880592366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D77" type="MeshInstance3D" parent="Floor" unique_id=697818949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D78" type="MeshInstance3D" parent="Floor" unique_id=37522284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D79" type="MeshInstance3D" parent="Floor" unique_id=1194307924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D80" type="MeshInstance3D" parent="Floor" unique_id=1625722941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D81" type="MeshInstance3D" parent="Floor" unique_id=1874532235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D82" type="MeshInstance3D" parent="Floor" unique_id=685016789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D83" type="MeshInstance3D" parent="Floor" unique_id=959144906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D84" type="MeshInstance3D" parent="Floor" unique_id=1263217182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D85" type="MeshInstance3D" parent="Floor" unique_id=2120818754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D86" type="MeshInstance3D" parent="Floor" unique_id=280216834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D87" type="MeshInstance3D" parent="Floor" unique_id=1239336688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D88" type="MeshInstance3D" parent="Floor" unique_id=305485320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D89" type="MeshInstance3D" parent="Floor" unique_id=1492508902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D90" type="MeshInstance3D" parent="Floor" unique_id=1941618374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D91" type="MeshInstance3D" parent="Floor" unique_id=1787391362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D92" type="MeshInstance3D" parent="Floor" unique_id=629034124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D93" type="MeshInstance3D" parent="Floor" unique_id=1119902416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D94" type="MeshInstance3D" parent="Floor" unique_id=858177322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D95" type="MeshInstance3D" parent="Floor" unique_id=1934426744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D96" type="MeshInstance3D" parent="Floor" unique_id=1351790109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D97" type="MeshInstance3D" parent="Floor" unique_id=1358077038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D98" type="MeshInstance3D" parent="Floor" unique_id=572656695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D99" type="MeshInstance3D" parent="Floor" unique_id=1144123683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D100" type="MeshInstance3D" parent="Floor" unique_id=364318155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D101" type="MeshInstance3D" parent="Floor" unique_id=982090944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D102" type="MeshInstance3D" parent="Floor" unique_id=327821202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D103" type="MeshInstance3D" parent="Floor" unique_id=1496573478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D104" type="MeshInstance3D" parent="Floor" unique_id=1308426796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D105" type="MeshInstance3D" parent="Floor" unique_id=1559510119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D106" type="MeshInstance3D" parent="Floor" unique_id=212854843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D107" type="MeshInstance3D" parent="Floor" unique_id=1562829656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D108" type="MeshInstance3D" parent="Floor" unique_id=685741632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D109" type="MeshInstance3D" parent="Floor" unique_id=2030664324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D110" type="MeshInstance3D" parent="Floor" unique_id=1645839682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D111" type="MeshInstance3D" parent="Floor" unique_id=1517135860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D112" type="MeshInstance3D" parent="Floor" unique_id=38105304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D113" type="MeshInstance3D" parent="Floor" unique_id=145116689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D114" type="MeshInstance3D" parent="Floor" unique_id=738459255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D115" type="MeshInstance3D" parent="Floor" unique_id=48845664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D116" type="MeshInstance3D" parent="Floor" unique_id=1888386729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D117" type="MeshInstance3D" parent="Floor" unique_id=64731606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D118" type="MeshInstance3D" parent="Floor" unique_id=1554826956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D119" type="MeshInstance3D" parent="Floor" unique_id=58368343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D120" type="MeshInstance3D" parent="Floor" unique_id=1734364668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D121" type="MeshInstance3D" parent="Floor" unique_id=1538901237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D122" type="MeshInstance3D" parent="Floor" unique_id=2056964253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D123" type="MeshInstance3D" parent="Floor" unique_id=1022946617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D124" type="MeshInstance3D" parent="Floor" unique_id=2007355558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D125" type="MeshInstance3D" parent="Floor" unique_id=1798614804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D126" type="MeshInstance3D" parent="Floor" unique_id=981090158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D127" type="MeshInstance3D" parent="Floor" unique_id=1160803704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D128" type="MeshInstance3D" parent="Floor" unique_id=1668196541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D129" type="MeshInstance3D" parent="Floor" unique_id=177101174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D130" type="MeshInstance3D" parent="Floor" unique_id=1608388578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D131" type="MeshInstance3D" parent="Floor" unique_id=1590769691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D132" type="MeshInstance3D" parent="Floor" unique_id=1890974566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D133" type="MeshInstance3D" parent="Floor" unique_id=1136439001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D134" type="MeshInstance3D" parent="Floor" unique_id=2020695366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D135" type="MeshInstance3D" parent="Floor" unique_id=1688954627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D136" type="MeshInstance3D" parent="Floor" unique_id=1199358465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D137" type="MeshInstance3D" parent="Floor" unique_id=84178315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D138" type="MeshInstance3D" parent="Floor" unique_id=1731668377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D139" type="MeshInstance3D" parent="Floor" unique_id=1541542944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D140" type="MeshInstance3D" parent="Floor" unique_id=852256624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D141" type="MeshInstance3D" parent="Floor" unique_id=772265227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D142" type="MeshInstance3D" parent="Floor" unique_id=1035551657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D143" type="MeshInstance3D" parent="Floor" unique_id=2051484658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D144" type="MeshInstance3D" parent="Floor" unique_id=808024633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D145" type="MeshInstance3D" parent="Floor" unique_id=1376485648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D146" type="MeshInstance3D" parent="Floor" unique_id=421352160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D147" type="MeshInstance3D" parent="Floor" unique_id=138625163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D148" type="MeshInstance3D" parent="Floor" unique_id=1590422200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D149" type="MeshInstance3D" parent="Floor" unique_id=1626149897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D150" type="MeshInstance3D" parent="Floor" unique_id=995504080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D151" type="MeshInstance3D" parent="Floor" unique_id=64755350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D152" type="MeshInstance3D" parent="Floor" unique_id=1024765898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D153" type="MeshInstance3D" parent="Floor" unique_id=780525973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D154" type="MeshInstance3D" parent="Floor" unique_id=1696001522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D155" type="MeshInstance3D" parent="Floor" unique_id=2133641587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D156" type="MeshInstance3D" parent="Floor" unique_id=16689224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D157" type="MeshInstance3D" parent="Floor" unique_id=1774350778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D158" type="MeshInstance3D" parent="Floor" unique_id=189407491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D159" type="MeshInstance3D" parent="Floor" unique_id=1167168270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D160" type="MeshInstance3D" parent="Floor" unique_id=273050738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D161" type="MeshInstance3D" parent="Floor" unique_id=1759538435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D162" type="MeshInstance3D" parent="Floor" unique_id=1675051195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D163" type="MeshInstance3D" parent="Floor" unique_id=1943550565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D164" type="MeshInstance3D" parent="Floor" unique_id=490172112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D165" type="MeshInstance3D" parent="Floor" unique_id=1763280991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D166" type="MeshInstance3D" parent="Floor" unique_id=343654294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D167" type="MeshInstance3D" parent="Floor" unique_id=2123534398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D168" type="MeshInstance3D" parent="Floor" unique_id=1276458450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D169" type="MeshInstance3D" parent="Floor" unique_id=180839135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D170" type="MeshInstance3D" parent="Floor" unique_id=747138462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D171" type="MeshInstance3D" parent="Floor" unique_id=1491887229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D172" type="MeshInstance3D" parent="Floor" unique_id=306679900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D173" type="MeshInstance3D" parent="Floor" unique_id=1891655433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D174" type="MeshInstance3D" parent="Floor" unique_id=1254434468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D175" type="MeshInstance3D" parent="Floor" unique_id=1753979948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D176" type="MeshInstance3D" parent="Floor" unique_id=1027151284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D177" type="MeshInstance3D" parent="Floor" unique_id=319724618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D178" type="MeshInstance3D" parent="Floor" unique_id=1789465911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D179" type="MeshInstance3D" parent="Floor" unique_id=1912881441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D180" type="MeshInstance3D" parent="Floor" unique_id=1330510466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D181" type="MeshInstance3D" parent="Floor" unique_id=995375847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D182" type="MeshInstance3D" parent="Floor" unique_id=1172257263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D183" type="MeshInstance3D" parent="Floor" unique_id=61733363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D184" type="MeshInstance3D" parent="Floor" unique_id=1611811101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D185" type="MeshInstance3D" parent="Floor" unique_id=671055226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D186" type="MeshInstance3D" parent="Floor" unique_id=1869407203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D187" type="MeshInstance3D" parent="Floor" unique_id=658051452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D188" type="MeshInstance3D" parent="Floor" unique_id=691452932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D189" type="MeshInstance3D" parent="Floor" unique_id=1067272290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D190" type="MeshInstance3D" parent="Floor" unique_id=226804532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D191" type="MeshInstance3D" parent="Floor" unique_id=1936821550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D192" type="MeshInstance3D" parent="Floor" unique_id=1908190906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D193" type="MeshInstance3D" parent="Floor" unique_id=947035632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D194" type="MeshInstance3D" parent="Floor" unique_id=70912692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D195" type="MeshInstance3D" parent="Floor" unique_id=909145266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D196" type="MeshInstance3D" parent="Floor" unique_id=1575185412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D197" type="MeshInstance3D" parent="Floor" unique_id=1276147467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D198" type="MeshInstance3D" parent="Floor" unique_id=781219410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D199" type="MeshInstance3D" parent="Floor" unique_id=688998472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D200" type="MeshInstance3D" parent="Floor" unique_id=153423365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D201" type="MeshInstance3D" parent="Floor" unique_id=639195079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D202" type="MeshInstance3D" parent="Floor" unique_id=146610543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D203" type="MeshInstance3D" parent="Floor" unique_id=378525230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D204" type="MeshInstance3D" parent="Floor" unique_id=543039071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D205" type="MeshInstance3D" parent="Floor" unique_id=999570888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D206" type="MeshInstance3D" parent="Floor" unique_id=1809824404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D207" type="MeshInstance3D" parent="Floor" unique_id=427176279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D208" type="MeshInstance3D" parent="Floor" unique_id=507204663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D209" type="MeshInstance3D" parent="Floor" unique_id=291511190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D210" type="MeshInstance3D" parent="Floor" unique_id=1248584733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D211" type="MeshInstance3D" parent="Floor" unique_id=1128770161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D212" type="MeshInstance3D" parent="Floor" unique_id=74071920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D213" type="MeshInstance3D" parent="Floor" unique_id=1082543023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D214" type="MeshInstance3D" parent="Floor" unique_id=1486724982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D215" type="MeshInstance3D" parent="Floor" unique_id=1399512736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D216" type="MeshInstance3D" parent="Floor" unique_id=943054569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D217" type="MeshInstance3D" parent="Floor" unique_id=888253605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D218" type="MeshInstance3D" parent="Floor" unique_id=1108385286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D219" type="MeshInstance3D" parent="Floor" unique_id=1937665433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D220" type="MeshInstance3D" parent="Floor" unique_id=706600641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D221" type="MeshInstance3D" parent="Floor" unique_id=1029918054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D222" type="MeshInstance3D" parent="Floor" unique_id=744953146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D223" type="MeshInstance3D" parent="Floor" unique_id=999462762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D224" type="MeshInstance3D" parent="Floor" unique_id=1981548047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D225" type="MeshInstance3D" parent="Floor" unique_id=1759456623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D226" type="MeshInstance3D" parent="Floor" unique_id=1867833044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D227" type="MeshInstance3D" parent="Floor" unique_id=1765603216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D228" type="MeshInstance3D" parent="Floor" unique_id=1198045560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D229" type="MeshInstance3D" parent="Floor" unique_id=191216374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D230" type="MeshInstance3D" parent="Floor" unique_id=1768488576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D231" type="MeshInstance3D" parent="Floor" unique_id=1904503089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D232" type="MeshInstance3D" parent="Floor" unique_id=870966771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D233" type="MeshInstance3D" parent="Floor" unique_id=20709473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D234" type="MeshInstance3D" parent="Floor" unique_id=970440058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D235" type="MeshInstance3D" parent="Floor" unique_id=1815201853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D236" type="MeshInstance3D" parent="Floor" unique_id=504485713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D237" type="MeshInstance3D" parent="Floor" unique_id=1725127480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D238" type="MeshInstance3D" parent="Floor" unique_id=2099329873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D239" type="MeshInstance3D" parent="Floor" unique_id=931011070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D240" type="MeshInstance3D" parent="Floor" unique_id=1612109067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D241" type="MeshInstance3D" parent="Floor" unique_id=587474355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D242" type="MeshInstance3D" parent="Floor" unique_id=1551840839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D243" type="MeshInstance3D" parent="Floor" unique_id=647947837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D244" type="MeshInstance3D" parent="Floor" unique_id=1684617170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D245" type="MeshInstance3D" parent="Floor" unique_id=303918997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D246" type="MeshInstance3D" parent="Floor" unique_id=2064643426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D247" type="MeshInstance3D" parent="Floor" unique_id=998802814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D248" type="MeshInstance3D" parent="Floor" unique_id=556181803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D249" type="MeshInstance3D" parent="Floor" unique_id=505939233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D250" type="MeshInstance3D" parent="Floor" unique_id=1471373409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D251" type="MeshInstance3D" parent="Floor" unique_id=1999225588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D252" type="MeshInstance3D" parent="Floor" unique_id=969308215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D253" type="MeshInstance3D" parent="Floor" unique_id=1118308382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D254" type="MeshInstance3D" parent="Floor" unique_id=907835999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D255" type="MeshInstance3D" parent="Floor" unique_id=1866868102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D256" type="MeshInstance3D" parent="Floor" unique_id=1099947284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D257" type="MeshInstance3D" parent="Floor" unique_id=352297865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D258" type="MeshInstance3D" parent="Floor" unique_id=1925391686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D259" type="MeshInstance3D" parent="Floor" unique_id=771232922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D260" type="MeshInstance3D" parent="Floor" unique_id=365517245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D261" type="MeshInstance3D" parent="Floor" unique_id=916453802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D262" type="MeshInstance3D" parent="Floor" unique_id=324603218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D263" type="MeshInstance3D" parent="Floor" unique_id=928366404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D264" type="MeshInstance3D" parent="Floor" unique_id=586132959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D265" type="MeshInstance3D" parent="Floor" unique_id=8718706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D266" type="MeshInstance3D" parent="Floor" unique_id=423488701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D267" type="MeshInstance3D" parent="Floor" unique_id=1772287207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D268" type="MeshInstance3D" parent="Floor" unique_id=781694054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D269" type="MeshInstance3D" parent="Floor" unique_id=277897701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D270" type="MeshInstance3D" parent="Floor" unique_id=802389623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D271" type="MeshInstance3D" parent="Floor" unique_id=1960491410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D272" type="MeshInstance3D" parent="Floor" unique_id=816291260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D273" type="MeshInstance3D" parent="Floor" unique_id=1408552063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D274" type="MeshInstance3D" parent="Floor" unique_id=1727446411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D275" type="MeshInstance3D" parent="Floor" unique_id=1031503631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D276" type="MeshInstance3D" parent="Floor" unique_id=32915873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D277" type="MeshInstance3D" parent="Floor" unique_id=407172293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D278" type="MeshInstance3D" parent="Floor" unique_id=945829618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D279" type="MeshInstance3D" parent="Floor" unique_id=1618654573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D280" type="MeshInstance3D" parent="Floor" unique_id=1341197481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D281" type="MeshInstance3D" parent="Floor" unique_id=1931265401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D282" type="MeshInstance3D" parent="Floor" unique_id=1014065133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D283" type="MeshInstance3D" parent="Floor" unique_id=1216322684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D284" type="MeshInstance3D" parent="Floor" unique_id=2125171373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D285" type="MeshInstance3D" parent="Floor" unique_id=908067920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D286" type="MeshInstance3D" parent="Floor" unique_id=245383852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D287" type="MeshInstance3D" parent="Floor" unique_id=1952987591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D288" type="MeshInstance3D" parent="Floor" unique_id=437476158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D289" type="MeshInstance3D" parent="Floor" unique_id=430120758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D290" type="MeshInstance3D" parent="Floor" unique_id=1736779981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D291" type="MeshInstance3D" parent="Floor" unique_id=110938492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D292" type="MeshInstance3D" parent="Floor" unique_id=1274423284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D293" type="MeshInstance3D" parent="Floor" unique_id=2070472474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D294" type="MeshInstance3D" parent="Floor" unique_id=39231459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 2)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D295" type="MeshInstance3D" parent="Floor" unique_id=2060802934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D296" type="MeshInstance3D" parent="Floor" unique_id=1567557589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D297" type="MeshInstance3D" parent="Floor" unique_id=1735060583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D298" type="MeshInstance3D" parent="Floor" unique_id=789917761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D299" type="MeshInstance3D" parent="Floor" unique_id=1894922291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D300" type="MeshInstance3D" parent="Floor" unique_id=362854598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D301" type="MeshInstance3D" parent="Floor" unique_id=1299467984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 4)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D302" type="MeshInstance3D" parent="Floor" unique_id=227546800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D303" type="MeshInstance3D" parent="Floor" unique_id=789199636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D304" type="MeshInstance3D" parent="Floor" unique_id=541769760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D305" type="MeshInstance3D" parent="Floor" unique_id=1732949362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D306" type="MeshInstance3D" parent="Floor" unique_id=1384059675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D307" type="MeshInstance3D" parent="Floor" unique_id=429585879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D308" type="MeshInstance3D" parent="Floor" unique_id=491966742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 6)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D309" type="MeshInstance3D" parent="Floor" unique_id=482644823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D310" type="MeshInstance3D" parent="Floor" unique_id=2131913158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D311" type="MeshInstance3D" parent="Floor" unique_id=580693831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D312" type="MeshInstance3D" parent="Floor" unique_id=1853236190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D313" type="MeshInstance3D" parent="Floor" unique_id=50650082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D314" type="MeshInstance3D" parent="Floor" unique_id=383403960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D315" type="MeshInstance3D" parent="Floor" unique_id=1591589835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 8)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D316" type="MeshInstance3D" parent="Floor" unique_id=215353164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D317" type="MeshInstance3D" parent="Floor" unique_id=1889072855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D318" type="MeshInstance3D" parent="Floor" unique_id=1155071012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D319" type="MeshInstance3D" parent="Floor" unique_id=165908527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D320" type="MeshInstance3D" parent="Floor" unique_id=436926989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D321" type="MeshInstance3D" parent="Floor" unique_id=2112304015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D322" type="MeshInstance3D" parent="Floor" unique_id=1609306697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 10)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D323" type="MeshInstance3D" parent="Floor" unique_id=1733191481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D324" type="MeshInstance3D" parent="Floor" unique_id=343916413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D325" type="MeshInstance3D" parent="Floor" unique_id=1911934266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D326" type="MeshInstance3D" parent="Floor" unique_id=1331864630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D327" type="MeshInstance3D" parent="Floor" unique_id=199476514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D328" type="MeshInstance3D" parent="Floor" unique_id=835428738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D329" type="MeshInstance3D" parent="Floor" unique_id=1842270934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 12)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D330" type="MeshInstance3D" parent="Floor" unique_id=276187108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D331" type="MeshInstance3D" parent="Floor" unique_id=823765729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D332" type="MeshInstance3D" parent="Floor" unique_id=2129949736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D333" type="MeshInstance3D" parent="Floor" unique_id=837164215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D334" type="MeshInstance3D" parent="Floor" unique_id=1093085256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D335" type="MeshInstance3D" parent="Floor" unique_id=1787613784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D336" type="MeshInstance3D" parent="Floor" unique_id=1522949429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 14)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D337" type="MeshInstance3D" parent="Floor" unique_id=1637497463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D338" type="MeshInstance3D" parent="Floor" unique_id=753621665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D339" type="MeshInstance3D" parent="Floor" unique_id=712937355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D340" type="MeshInstance3D" parent="Floor" unique_id=1514539108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D341" type="MeshInstance3D" parent="Floor" unique_id=612566898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D342" type="MeshInstance3D" parent="Floor" unique_id=87317508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D343" type="MeshInstance3D" parent="Floor" unique_id=1624201681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D344" type="MeshInstance3D" parent="Floor" unique_id=388896860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D345" type="MeshInstance3D" parent="Floor" unique_id=20893855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D346" type="MeshInstance3D" parent="Floor" unique_id=1648872864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D347" type="MeshInstance3D" parent="Floor" unique_id=2119116873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D348" type="MeshInstance3D" parent="Floor" unique_id=874437396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D349" type="MeshInstance3D" parent="Floor" unique_id=312182097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D350" type="MeshInstance3D" parent="Floor" unique_id=895608278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D351" type="MeshInstance3D" parent="Floor" unique_id=130779216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D352" type="MeshInstance3D" parent="Floor" unique_id=1943021404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D353" type="MeshInstance3D" parent="Floor" unique_id=189983108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D354" type="MeshInstance3D" parent="Floor" unique_id=652129880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D355" type="MeshInstance3D" parent="Floor" unique_id=1735543635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D356" type="MeshInstance3D" parent="Floor" unique_id=380294683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D357" type="MeshInstance3D" parent="Floor" unique_id=538089594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D358" type="MeshInstance3D" parent="Floor" unique_id=1107691238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D359" type="MeshInstance3D" parent="Floor" unique_id=598361446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D360" type="MeshInstance3D" parent="Floor" unique_id=1110367268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D361" type="MeshInstance3D" parent="Floor" unique_id=1414382896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D362" type="MeshInstance3D" parent="Floor" unique_id=1432084319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D363" type="MeshInstance3D" parent="Floor" unique_id=167062230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D364" type="MeshInstance3D" parent="Floor" unique_id=1872273338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D365" type="MeshInstance3D" parent="Floor" unique_id=1484929605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D366" type="MeshInstance3D" parent="Floor" unique_id=640094123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D367" type="MeshInstance3D" parent="Floor" unique_id=1211017818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D368" type="MeshInstance3D" parent="Floor" unique_id=737791174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D369" type="MeshInstance3D" parent="Floor" unique_id=896009105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D370" type="MeshInstance3D" parent="Floor" unique_id=1707232298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D371" type="MeshInstance3D" parent="Floor" unique_id=1457537036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D372" type="MeshInstance3D" parent="Floor" unique_id=652753682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D373" type="MeshInstance3D" parent="Floor" unique_id=1651999676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D374" type="MeshInstance3D" parent="Floor" unique_id=1023749431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D375" type="MeshInstance3D" parent="Floor" unique_id=995043668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D376" type="MeshInstance3D" parent="Floor" unique_id=1388400962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D377" type="MeshInstance3D" parent="Floor" unique_id=1623074982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D378" type="MeshInstance3D" parent="Floor" unique_id=2060573684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D379" type="MeshInstance3D" parent="Floor" unique_id=986988901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D380" type="MeshInstance3D" parent="Floor" unique_id=550685535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D381" type="MeshInstance3D" parent="Floor" unique_id=655888860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D382" type="MeshInstance3D" parent="Floor" unique_id=143778733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D383" type="MeshInstance3D" parent="Floor" unique_id=784821557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D384" type="MeshInstance3D" parent="Floor" unique_id=1679508025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D385" type="MeshInstance3D" parent="Floor" unique_id=1780239879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D386" type="MeshInstance3D" parent="Floor" unique_id=2077724532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D387" type="MeshInstance3D" parent="Floor" unique_id=111541368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D388" type="MeshInstance3D" parent="Floor" unique_id=80126260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D389" type="MeshInstance3D" parent="Floor" unique_id=738484044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D390" type="MeshInstance3D" parent="Floor" unique_id=425750501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D391" type="MeshInstance3D" parent="Floor" unique_id=1450690763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D392" type="MeshInstance3D" parent="Floor" unique_id=1267561659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D393" type="MeshInstance3D" parent="Floor" unique_id=1240654179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D394" type="MeshInstance3D" parent="Floor" unique_id=781526180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D395" type="MeshInstance3D" parent="Floor" unique_id=238121241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D396" type="MeshInstance3D" parent="Floor" unique_id=1727478147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D397" type="MeshInstance3D" parent="Floor" unique_id=984562468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D398" type="MeshInstance3D" parent="Floor" unique_id=771110095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D399" type="MeshInstance3D" parent="Floor" unique_id=559577710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 16)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D400" type="MeshInstance3D" parent="Floor" unique_id=1300260954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D401" type="MeshInstance3D" parent="Floor" unique_id=910826239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D402" type="MeshInstance3D" parent="Floor" unique_id=1110882689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D403" type="MeshInstance3D" parent="Floor" unique_id=1408711231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D404" type="MeshInstance3D" parent="Floor" unique_id=177177789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D405" type="MeshInstance3D" parent="Floor" unique_id=366227366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D406" type="MeshInstance3D" parent="Floor" unique_id=1823325638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 18)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D407" type="MeshInstance3D" parent="Floor" unique_id=472597858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D408" type="MeshInstance3D" parent="Floor" unique_id=13350904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D409" type="MeshInstance3D" parent="Floor" unique_id=1921674371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D410" type="MeshInstance3D" parent="Floor" unique_id=690018705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D411" type="MeshInstance3D" parent="Floor" unique_id=1955525294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D412" type="MeshInstance3D" parent="Floor" unique_id=388224309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D413" type="MeshInstance3D" parent="Floor" unique_id=1455049593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 20)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D414" type="MeshInstance3D" parent="Floor" unique_id=264208738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D415" type="MeshInstance3D" parent="Floor" unique_id=1316435879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D416" type="MeshInstance3D" parent="Floor" unique_id=923749119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D417" type="MeshInstance3D" parent="Floor" unique_id=1269241359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D418" type="MeshInstance3D" parent="Floor" unique_id=621682309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D419" type="MeshInstance3D" parent="Floor" unique_id=44177115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D420" type="MeshInstance3D" parent="Floor" unique_id=819105371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 22)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D421" type="MeshInstance3D" parent="Floor" unique_id=1353964127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D422" type="MeshInstance3D" parent="Floor" unique_id=1874697436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D423" type="MeshInstance3D" parent="Floor" unique_id=1056263769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D424" type="MeshInstance3D" parent="Floor" unique_id=956661305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D425" type="MeshInstance3D" parent="Floor" unique_id=1942768538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D426" type="MeshInstance3D" parent="Floor" unique_id=746748146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D427" type="MeshInstance3D" parent="Floor" unique_id=238423525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 24)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D428" type="MeshInstance3D" parent="Floor" unique_id=303205889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D429" type="MeshInstance3D" parent="Floor" unique_id=1407146389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D430" type="MeshInstance3D" parent="Floor" unique_id=403829450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D431" type="MeshInstance3D" parent="Floor" unique_id=1427559877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D432" type="MeshInstance3D" parent="Floor" unique_id=1151860236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D433" type="MeshInstance3D" parent="Floor" unique_id=2029256656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D434" type="MeshInstance3D" parent="Floor" unique_id=741958948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 26)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D435" type="MeshInstance3D" parent="Floor" unique_id=58008153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D436" type="MeshInstance3D" parent="Floor" unique_id=1423106134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D437" type="MeshInstance3D" parent="Floor" unique_id=668210633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D438" type="MeshInstance3D" parent="Floor" unique_id=1428591789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D439" type="MeshInstance3D" parent="Floor" unique_id=164231200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D440" type="MeshInstance3D" parent="Floor" unique_id=1436995273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D441" type="MeshInstance3D" parent="Floor" unique_id=1566238712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 28)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D442" type="MeshInstance3D" parent="Floor" unique_id=2144279304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D443" type="MeshInstance3D" parent="Floor" unique_id=290935754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D444" type="MeshInstance3D" parent="Floor" unique_id=781084276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D445" type="MeshInstance3D" parent="Floor" unique_id=2025918656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D446" type="MeshInstance3D" parent="Floor" unique_id=793384940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D447" type="MeshInstance3D" parent="Floor" unique_id=1583377483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D448" type="MeshInstance3D" parent="Floor" unique_id=494271920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 30)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D449" type="MeshInstance3D" parent="Floor" unique_id=1802314753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D450" type="MeshInstance3D" parent="Floor" unique_id=2080132791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D451" type="MeshInstance3D" parent="Floor" unique_id=308634844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D452" type="MeshInstance3D" parent="Floor" unique_id=2099742195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D453" type="MeshInstance3D" parent="Floor" unique_id=1682356014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D454" type="MeshInstance3D" parent="Floor" unique_id=354269127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D455" type="MeshInstance3D" parent="Floor" unique_id=1212382101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D456" type="MeshInstance3D" parent="Floor" unique_id=883049451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D457" type="MeshInstance3D" parent="Floor" unique_id=285530699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D458" type="MeshInstance3D" parent="Floor" unique_id=1698965784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D459" type="MeshInstance3D" parent="Floor" unique_id=1298548084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D460" type="MeshInstance3D" parent="Floor" unique_id=1076835199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D461" type="MeshInstance3D" parent="Floor" unique_id=986337054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D462" type="MeshInstance3D" parent="Floor" unique_id=2020828860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D463" type="MeshInstance3D" parent="Floor" unique_id=1578890391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D464" type="MeshInstance3D" parent="Floor" unique_id=1874914340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D465" type="MeshInstance3D" parent="Floor" unique_id=1325458317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D466" type="MeshInstance3D" parent="Floor" unique_id=948639450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D467" type="MeshInstance3D" parent="Floor" unique_id=1918639753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D468" type="MeshInstance3D" parent="Floor" unique_id=2002705911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D469" type="MeshInstance3D" parent="Floor" unique_id=918047947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D470" type="MeshInstance3D" parent="Floor" unique_id=1448147748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D471" type="MeshInstance3D" parent="Floor" unique_id=1532169999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D472" type="MeshInstance3D" parent="Floor" unique_id=757196626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D473" type="MeshInstance3D" parent="Floor" unique_id=1215724308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D474" type="MeshInstance3D" parent="Floor" unique_id=1154331767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D475" type="MeshInstance3D" parent="Floor" unique_id=1522915601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D476" type="MeshInstance3D" parent="Floor" unique_id=426897511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D477" type="MeshInstance3D" parent="Floor" unique_id=1485296306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D478" type="MeshInstance3D" parent="Floor" unique_id=1316766612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D479" type="MeshInstance3D" parent="Floor" unique_id=1067971154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D480" type="MeshInstance3D" parent="Floor" unique_id=1762737579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D481" type="MeshInstance3D" parent="Floor" unique_id=1262783756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D482" type="MeshInstance3D" parent="Floor" unique_id=1844090022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D483" type="MeshInstance3D" parent="Floor" unique_id=1141245762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D484" type="MeshInstance3D" parent="Floor" unique_id=639278738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D485" type="MeshInstance3D" parent="Floor" unique_id=1046091508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D486" type="MeshInstance3D" parent="Floor" unique_id=1713860052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D487" type="MeshInstance3D" parent="Floor" unique_id=1099479189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D488" type="MeshInstance3D" parent="Floor" unique_id=1532937396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D489" type="MeshInstance3D" parent="Floor" unique_id=1424057265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D490" type="MeshInstance3D" parent="Floor" unique_id=207463752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D491" type="MeshInstance3D" parent="Floor" unique_id=42450412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D492" type="MeshInstance3D" parent="Floor" unique_id=22103246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D493" type="MeshInstance3D" parent="Floor" unique_id=1320946904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D494" type="MeshInstance3D" parent="Floor" unique_id=2012110067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D495" type="MeshInstance3D" parent="Floor" unique_id=725245221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D496" type="MeshInstance3D" parent="Floor" unique_id=426223025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D497" type="MeshInstance3D" parent="Floor" unique_id=203784827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D498" type="MeshInstance3D" parent="Floor" unique_id=581726207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D499" type="MeshInstance3D" parent="Floor" unique_id=1011269560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D500" type="MeshInstance3D" parent="Floor" unique_id=815510562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D501" type="MeshInstance3D" parent="Floor" unique_id=953865299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D502" type="MeshInstance3D" parent="Floor" unique_id=514523503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D503" type="MeshInstance3D" parent="Floor" unique_id=318604494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D504" type="MeshInstance3D" parent="Floor" unique_id=941611583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D505" type="MeshInstance3D" parent="Floor" unique_id=477442994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D506" type="MeshInstance3D" parent="Floor" unique_id=802810335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D507" type="MeshInstance3D" parent="Floor" unique_id=2074941902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D508" type="MeshInstance3D" parent="Floor" unique_id=1904966817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D509" type="MeshInstance3D" parent="Floor" unique_id=157593238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D510" type="MeshInstance3D" parent="Floor" unique_id=716924242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D511" type="MeshInstance3D" parent="Floor" unique_id=2104678399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D512" type="MeshInstance3D" parent="Floor" unique_id=1354925095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D513" type="MeshInstance3D" parent="Floor" unique_id=1065281010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D514" type="MeshInstance3D" parent="Floor" unique_id=8857990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D515" type="MeshInstance3D" parent="Floor" unique_id=1996684678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D516" type="MeshInstance3D" parent="Floor" unique_id=1327008453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D517" type="MeshInstance3D" parent="Floor" unique_id=1045263553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D518" type="MeshInstance3D" parent="Floor" unique_id=1781544087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D519" type="MeshInstance3D" parent="Floor" unique_id=627048715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D520" type="MeshInstance3D" parent="Floor" unique_id=2085205247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D521" type="MeshInstance3D" parent="Floor" unique_id=1295561160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D522" type="MeshInstance3D" parent="Floor" unique_id=819279237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D523" type="MeshInstance3D" parent="Floor" unique_id=1752988400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D524" type="MeshInstance3D" parent="Floor" unique_id=1437176579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D525" type="MeshInstance3D" parent="Floor" unique_id=725840549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D526" type="MeshInstance3D" parent="Floor" unique_id=2078114274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D527" type="MeshInstance3D" parent="Floor" unique_id=408819883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D528" type="MeshInstance3D" parent="Floor" unique_id=529805948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D529" type="MeshInstance3D" parent="Floor" unique_id=1615577949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D530" type="MeshInstance3D" parent="Floor" unique_id=611348706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D531" type="MeshInstance3D" parent="Floor" unique_id=2002075489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D532" type="MeshInstance3D" parent="Floor" unique_id=2097872695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D533" type="MeshInstance3D" parent="Floor" unique_id=2064916768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D534" type="MeshInstance3D" parent="Floor" unique_id=474773188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D535" type="MeshInstance3D" parent="Floor" unique_id=104898179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D536" type="MeshInstance3D" parent="Floor" unique_id=262059607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D537" type="MeshInstance3D" parent="Floor" unique_id=368926858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D538" type="MeshInstance3D" parent="Floor" unique_id=415854456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D539" type="MeshInstance3D" parent="Floor" unique_id=990218332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D540" type="MeshInstance3D" parent="Floor" unique_id=1372494233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D541" type="MeshInstance3D" parent="Floor" unique_id=1928220348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D542" type="MeshInstance3D" parent="Floor" unique_id=1048432233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D543" type="MeshInstance3D" parent="Floor" unique_id=1272782909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D544" type="MeshInstance3D" parent="Floor" unique_id=1478049320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D545" type="MeshInstance3D" parent="Floor" unique_id=571716264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D546" type="MeshInstance3D" parent="Floor" unique_id=217228083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D547" type="MeshInstance3D" parent="Floor" unique_id=1404103185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D548" type="MeshInstance3D" parent="Floor" unique_id=829750567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D549" type="MeshInstance3D" parent="Floor" unique_id=213432610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D550" type="MeshInstance3D" parent="Floor" unique_id=349600220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D551" type="MeshInstance3D" parent="Floor" unique_id=185464820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D552" type="MeshInstance3D" parent="Floor" unique_id=1621851162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D553" type="MeshInstance3D" parent="Floor" unique_id=770384982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D554" type="MeshInstance3D" parent="Floor" unique_id=1310007644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D555" type="MeshInstance3D" parent="Floor" unique_id=158006474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D556" type="MeshInstance3D" parent="Floor" unique_id=1559838071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D557" type="MeshInstance3D" parent="Floor" unique_id=871048464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D558" type="MeshInstance3D" parent="Floor" unique_id=127192814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D559" type="MeshInstance3D" parent="Floor" unique_id=1760657605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D560" type="MeshInstance3D" parent="Floor" unique_id=470091393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D561" type="MeshInstance3D" parent="Floor" unique_id=1783117269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D562" type="MeshInstance3D" parent="Floor" unique_id=1402049928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D563" type="MeshInstance3D" parent="Floor" unique_id=1982962195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D564" type="MeshInstance3D" parent="Floor" unique_id=1139061816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D565" type="MeshInstance3D" parent="Floor" unique_id=1175041032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D566" type="MeshInstance3D" parent="Floor" unique_id=712656942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D567" type="MeshInstance3D" parent="Floor" unique_id=232442355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D568" type="MeshInstance3D" parent="Floor" unique_id=1500146571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D569" type="MeshInstance3D" parent="Floor" unique_id=1091868267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D570" type="MeshInstance3D" parent="Floor" unique_id=415950378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D571" type="MeshInstance3D" parent="Floor" unique_id=2061131066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D572" type="MeshInstance3D" parent="Floor" unique_id=388740470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D573" type="MeshInstance3D" parent="Floor" unique_id=1518114630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D574" type="MeshInstance3D" parent="Floor" unique_id=196123117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D575" type="MeshInstance3D" parent="Floor" unique_id=1043912229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D576" type="MeshInstance3D" parent="Floor" unique_id=66641068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D577" type="MeshInstance3D" parent="Floor" unique_id=294002402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D578" type="MeshInstance3D" parent="Floor" unique_id=1174571075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D579" type="MeshInstance3D" parent="Floor" unique_id=1154634592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D580" type="MeshInstance3D" parent="Floor" unique_id=523256698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D581" type="MeshInstance3D" parent="Floor" unique_id=852319539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D582" type="MeshInstance3D" parent="Floor" unique_id=424343393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D583" type="MeshInstance3D" parent="Floor" unique_id=2032339041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D584" type="MeshInstance3D" parent="Floor" unique_id=1616048077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D585" type="MeshInstance3D" parent="Floor" unique_id=1009705000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D586" type="MeshInstance3D" parent="Floor" unique_id=1085011136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D587" type="MeshInstance3D" parent="Floor" unique_id=92279396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D588" type="MeshInstance3D" parent="Floor" unique_id=1345998045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D589" type="MeshInstance3D" parent="Floor" unique_id=2107345253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D590" type="MeshInstance3D" parent="Floor" unique_id=1767269506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D591" type="MeshInstance3D" parent="Floor" unique_id=805356564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D592" type="MeshInstance3D" parent="Floor" unique_id=206554273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D593" type="MeshInstance3D" parent="Floor" unique_id=291634324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D594" type="MeshInstance3D" parent="Floor" unique_id=1228255158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D595" type="MeshInstance3D" parent="Floor" unique_id=861012404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D596" type="MeshInstance3D" parent="Floor" unique_id=380469358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D597" type="MeshInstance3D" parent="Floor" unique_id=824739004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D598" type="MeshInstance3D" parent="Floor" unique_id=253438983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D599" type="MeshInstance3D" parent="Floor" unique_id=620606112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D600" type="MeshInstance3D" parent="Floor" unique_id=120280558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D601" type="MeshInstance3D" parent="Floor" unique_id=1494700196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D602" type="MeshInstance3D" parent="Floor" unique_id=981594602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D603" type="MeshInstance3D" parent="Floor" unique_id=1455671804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D604" type="MeshInstance3D" parent="Floor" unique_id=1811293233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D605" type="MeshInstance3D" parent="Floor" unique_id=1606015882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D606" type="MeshInstance3D" parent="Floor" unique_id=1186224459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D607" type="MeshInstance3D" parent="Floor" unique_id=1167178763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D608" type="MeshInstance3D" parent="Floor" unique_id=290657041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D609" type="MeshInstance3D" parent="Floor" unique_id=1704732174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D610" type="MeshInstance3D" parent="Floor" unique_id=1321667072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D611" type="MeshInstance3D" parent="Floor" unique_id=67288357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D612" type="MeshInstance3D" parent="Floor" unique_id=1682733631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D613" type="MeshInstance3D" parent="Floor" unique_id=1203302163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D614" type="MeshInstance3D" parent="Floor" unique_id=2111507353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D615" type="MeshInstance3D" parent="Floor" unique_id=1709189954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D616" type="MeshInstance3D" parent="Floor" unique_id=2048293786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D617" type="MeshInstance3D" parent="Floor" unique_id=1995475818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D618" type="MeshInstance3D" parent="Floor" unique_id=474146031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D619" type="MeshInstance3D" parent="Floor" unique_id=1952173770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D620" type="MeshInstance3D" parent="Floor" unique_id=1466769145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D621" type="MeshInstance3D" parent="Floor" unique_id=2029009605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D622" type="MeshInstance3D" parent="Floor" unique_id=208597718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D623" type="MeshInstance3D" parent="Floor" unique_id=2124778573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D624" type="MeshInstance3D" parent="Floor" unique_id=8779634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D625" type="MeshInstance3D" parent="Floor" unique_id=2082243070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D626" type="MeshInstance3D" parent="Floor" unique_id=1741996406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D627" type="MeshInstance3D" parent="Floor" unique_id=1848123768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D628" type="MeshInstance3D" parent="Floor" unique_id=1672933970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D629" type="MeshInstance3D" parent="Floor" unique_id=472911164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D630" type="MeshInstance3D" parent="Floor" unique_id=505117735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D631" type="MeshInstance3D" parent="Floor" unique_id=1125728660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D632" type="MeshInstance3D" parent="Floor" unique_id=608532526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D633" type="MeshInstance3D" parent="Floor" unique_id=832819774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D634" type="MeshInstance3D" parent="Floor" unique_id=422063707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D635" type="MeshInstance3D" parent="Floor" unique_id=1204599266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D636" type="MeshInstance3D" parent="Floor" unique_id=342944066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D637" type="MeshInstance3D" parent="Floor" unique_id=1683945911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D638" type="MeshInstance3D" parent="Floor" unique_id=1278435067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D639" type="MeshInstance3D" parent="Floor" unique_id=200740579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D640" type="MeshInstance3D" parent="Floor" unique_id=768462701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D641" type="MeshInstance3D" parent="Floor" unique_id=1874575375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D642" type="MeshInstance3D" parent="Floor" unique_id=13529382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D643" type="MeshInstance3D" parent="Floor" unique_id=1312202874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D644" type="MeshInstance3D" parent="Floor" unique_id=1734947570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D645" type="MeshInstance3D" parent="Floor" unique_id=824786096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D646" type="MeshInstance3D" parent="Floor" unique_id=1392364062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D647" type="MeshInstance3D" parent="Floor" unique_id=1370298358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D648" type="MeshInstance3D" parent="Floor" unique_id=1454108110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D649" type="MeshInstance3D" parent="Floor" unique_id=988613118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D650" type="MeshInstance3D" parent="Floor" unique_id=1532065044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D651" type="MeshInstance3D" parent="Floor" unique_id=1558248562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D652" type="MeshInstance3D" parent="Floor" unique_id=1921823010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D653" type="MeshInstance3D" parent="Floor" unique_id=2124290395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D654" type="MeshInstance3D" parent="Floor" unique_id=852232175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D655" type="MeshInstance3D" parent="Floor" unique_id=1136814756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D656" type="MeshInstance3D" parent="Floor" unique_id=718207500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D657" type="MeshInstance3D" parent="Floor" unique_id=2129174619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D658" type="MeshInstance3D" parent="Floor" unique_id=563876838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D659" type="MeshInstance3D" parent="Floor" unique_id=1322410828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D660" type="MeshInstance3D" parent="Floor" unique_id=1670965180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D661" type="MeshInstance3D" parent="Floor" unique_id=1978735188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D662" type="MeshInstance3D" parent="Floor" unique_id=1988846058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D663" type="MeshInstance3D" parent="Floor" unique_id=1214262456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D664" type="MeshInstance3D" parent="Floor" unique_id=979237388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D665" type="MeshInstance3D" parent="Floor" unique_id=2018883641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D666" type="MeshInstance3D" parent="Floor" unique_id=1234011722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D667" type="MeshInstance3D" parent="Floor" unique_id=1791654417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D668" type="MeshInstance3D" parent="Floor" unique_id=1225737754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D669" type="MeshInstance3D" parent="Floor" unique_id=1244012097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D670" type="MeshInstance3D" parent="Floor" unique_id=2030600541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D671" type="MeshInstance3D" parent="Floor" unique_id=860149373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D672" type="MeshInstance3D" parent="Floor" unique_id=264622111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D673" type="MeshInstance3D" parent="Floor" unique_id=1067205028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D674" type="MeshInstance3D" parent="Floor" unique_id=1717571873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D675" type="MeshInstance3D" parent="Floor" unique_id=1121850692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D676" type="MeshInstance3D" parent="Floor" unique_id=1955097216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D677" type="MeshInstance3D" parent="Floor" unique_id=379709500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D678" type="MeshInstance3D" parent="Floor" unique_id=978021385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D679" type="MeshInstance3D" parent="Floor" unique_id=187239707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D680" type="MeshInstance3D" parent="Floor" unique_id=849668720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D681" type="MeshInstance3D" parent="Floor" unique_id=398512106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D682" type="MeshInstance3D" parent="Floor" unique_id=218838131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D683" type="MeshInstance3D" parent="Floor" unique_id=2015790333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D684" type="MeshInstance3D" parent="Floor" unique_id=726556508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D685" type="MeshInstance3D" parent="Floor" unique_id=670593031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D686" type="MeshInstance3D" parent="Floor" unique_id=1528411628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D687" type="MeshInstance3D" parent="Floor" unique_id=1463077593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D688" type="MeshInstance3D" parent="Floor" unique_id=646518651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D689" type="MeshInstance3D" parent="Floor" unique_id=748292011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D690" type="MeshInstance3D" parent="Floor" unique_id=594970701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D691" type="MeshInstance3D" parent="Floor" unique_id=493985678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D692" type="MeshInstance3D" parent="Floor" unique_id=216624391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D693" type="MeshInstance3D" parent="Floor" unique_id=49177448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D694" type="MeshInstance3D" parent="Floor" unique_id=2092741113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D695" type="MeshInstance3D" parent="Floor" unique_id=36211724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D696" type="MeshInstance3D" parent="Floor" unique_id=175612779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D697" type="MeshInstance3D" parent="Floor" unique_id=144284179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D698" type="MeshInstance3D" parent="Floor" unique_id=1592041891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D699" type="MeshInstance3D" parent="Floor" unique_id=1447780583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D700" type="MeshInstance3D" parent="Floor" unique_id=2071727606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D701" type="MeshInstance3D" parent="Floor" unique_id=1642950329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D702" type="MeshInstance3D" parent="Floor" unique_id=883837718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D703" type="MeshInstance3D" parent="Floor" unique_id=732175803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D704" type="MeshInstance3D" parent="Floor" unique_id=806686674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D705" type="MeshInstance3D" parent="Floor" unique_id=691458904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D706" type="MeshInstance3D" parent="Floor" unique_id=1065381024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D707" type="MeshInstance3D" parent="Floor" unique_id=1043061543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D708" type="MeshInstance3D" parent="Floor" unique_id=245628289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D709" type="MeshInstance3D" parent="Floor" unique_id=590518232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D710" type="MeshInstance3D" parent="Floor" unique_id=609552788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D711" type="MeshInstance3D" parent="Floor" unique_id=1071535936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D712" type="MeshInstance3D" parent="Floor" unique_id=1873070966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D713" type="MeshInstance3D" parent="Floor" unique_id=1298014623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D714" type="MeshInstance3D" parent="Floor" unique_id=931641104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D715" type="MeshInstance3D" parent="Floor" unique_id=840626720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D716" type="MeshInstance3D" parent="Floor" unique_id=725865062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D717" type="MeshInstance3D" parent="Floor" unique_id=1337992348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D718" type="MeshInstance3D" parent="Floor" unique_id=211026888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D719" type="MeshInstance3D" parent="Floor" unique_id=523109129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D720" type="MeshInstance3D" parent="Floor" unique_id=556806273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D721" type="MeshInstance3D" parent="Floor" unique_id=1740945314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D722" type="MeshInstance3D" parent="Floor" unique_id=258921668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D723" type="MeshInstance3D" parent="Floor" unique_id=1199571829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D724" type="MeshInstance3D" parent="Floor" unique_id=2062998993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D725" type="MeshInstance3D" parent="Floor" unique_id=1628608881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D726" type="MeshInstance3D" parent="Floor" unique_id=1198897679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D727" type="MeshInstance3D" parent="Floor" unique_id=1691583176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D728" type="MeshInstance3D" parent="Floor" unique_id=636088891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D729" type="MeshInstance3D" parent="Floor" unique_id=1693696721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D730" type="MeshInstance3D" parent="Floor" unique_id=1122908436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D731" type="MeshInstance3D" parent="Floor" unique_id=1381284797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D732" type="MeshInstance3D" parent="Floor" unique_id=960444532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D733" type="MeshInstance3D" parent="Floor" unique_id=396826871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D734" type="MeshInstance3D" parent="Floor" unique_id=665095164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D735" type="MeshInstance3D" parent="Floor" unique_id=781676284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 32)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D736" type="MeshInstance3D" parent="Floor" unique_id=605172140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D737" type="MeshInstance3D" parent="Floor" unique_id=1050719688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D738" type="MeshInstance3D" parent="Floor" unique_id=1236327757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D739" type="MeshInstance3D" parent="Floor" unique_id=973106589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D740" type="MeshInstance3D" parent="Floor" unique_id=1939050512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D741" type="MeshInstance3D" parent="Floor" unique_id=1295403673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D742" type="MeshInstance3D" parent="Floor" unique_id=1411807694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 34)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D743" type="MeshInstance3D" parent="Floor" unique_id=1504065155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D744" type="MeshInstance3D" parent="Floor" unique_id=1811561066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D745" type="MeshInstance3D" parent="Floor" unique_id=1199865600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D746" type="MeshInstance3D" parent="Floor" unique_id=871681918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D747" type="MeshInstance3D" parent="Floor" unique_id=552284354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D748" type="MeshInstance3D" parent="Floor" unique_id=952318144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D749" type="MeshInstance3D" parent="Floor" unique_id=1805710540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 36)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D750" type="MeshInstance3D" parent="Floor" unique_id=1079989670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D751" type="MeshInstance3D" parent="Floor" unique_id=997346537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D752" type="MeshInstance3D" parent="Floor" unique_id=1025845589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D753" type="MeshInstance3D" parent="Floor" unique_id=900067562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D754" type="MeshInstance3D" parent="Floor" unique_id=834887175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D755" type="MeshInstance3D" parent="Floor" unique_id=678930667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D756" type="MeshInstance3D" parent="Floor" unique_id=2025117190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 38)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D757" type="MeshInstance3D" parent="Floor" unique_id=1571322608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D758" type="MeshInstance3D" parent="Floor" unique_id=2060573489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D759" type="MeshInstance3D" parent="Floor" unique_id=1825346832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D760" type="MeshInstance3D" parent="Floor" unique_id=2099084654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D761" type="MeshInstance3D" parent="Floor" unique_id=2078483442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D762" type="MeshInstance3D" parent="Floor" unique_id=1419268848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D763" type="MeshInstance3D" parent="Floor" unique_id=384473864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 40)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D764" type="MeshInstance3D" parent="Floor" unique_id=862631521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D765" type="MeshInstance3D" parent="Floor" unique_id=1921752738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D766" type="MeshInstance3D" parent="Floor" unique_id=629149138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D767" type="MeshInstance3D" parent="Floor" unique_id=1263780653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D768" type="MeshInstance3D" parent="Floor" unique_id=798602026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D769" type="MeshInstance3D" parent="Floor" unique_id=1420143257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D770" type="MeshInstance3D" parent="Floor" unique_id=1148688881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 42)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D771" type="MeshInstance3D" parent="Floor" unique_id=1216526412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D772" type="MeshInstance3D" parent="Floor" unique_id=2070852619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D773" type="MeshInstance3D" parent="Floor" unique_id=448181830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D774" type="MeshInstance3D" parent="Floor" unique_id=2048160125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D775" type="MeshInstance3D" parent="Floor" unique_id=370657167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D776" type="MeshInstance3D" parent="Floor" unique_id=1456735851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D5")
+
+[node name="MeshInstance3D777" type="MeshInstance3D" parent="Floor" unique_id=1364644294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 44)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D6")
+
+[node name="MeshInstance3D778" type="MeshInstance3D" parent="Floor" unique_id=408903650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D7")
+
+[node name="MeshInstance3D779" type="MeshInstance3D" parent="Floor" unique_id=60856182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D780" type="MeshInstance3D" parent="Floor" unique_id=410248331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D781" type="MeshInstance3D" parent="Floor" unique_id=538798463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D782" type="MeshInstance3D" parent="Floor" unique_id=2142611771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D783" type="MeshInstance3D" parent="Floor" unique_id=1488063328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D784" type="MeshInstance3D" parent="Floor" unique_id=1717665312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 46)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D785" type="MeshInstance3D" parent="Floor" unique_id=1078738047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D786" type="MeshInstance3D" parent="Floor" unique_id=1189041471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D787" type="MeshInstance3D" parent="Floor" unique_id=289449315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D788" type="MeshInstance3D" parent="Floor" unique_id=219997424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D789" type="MeshInstance3D" parent="Floor" unique_id=996352089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D790" type="MeshInstance3D" parent="Floor" unique_id=277924703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D791" type="MeshInstance3D" parent="Floor" unique_id=931423549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D792" type="MeshInstance3D" parent="Floor" unique_id=1752679903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D793" type="MeshInstance3D" parent="Floor" unique_id=731758172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D794" type="MeshInstance3D" parent="Floor" unique_id=1533641268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D795" type="MeshInstance3D" parent="Floor" unique_id=554909519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D796" type="MeshInstance3D" parent="Floor" unique_id=1314955148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D797" type="MeshInstance3D" parent="Floor" unique_id=1879404082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D798" type="MeshInstance3D" parent="Floor" unique_id=51369261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D799" type="MeshInstance3D" parent="Floor" unique_id=1670822791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D800" type="MeshInstance3D" parent="Floor" unique_id=1136319900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D801" type="MeshInstance3D" parent="Floor" unique_id=1191253125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D802" type="MeshInstance3D" parent="Floor" unique_id=321878699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D803" type="MeshInstance3D" parent="Floor" unique_id=1408085060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D804" type="MeshInstance3D" parent="Floor" unique_id=1730401417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D805" type="MeshInstance3D" parent="Floor" unique_id=130084898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D806" type="MeshInstance3D" parent="Floor" unique_id=1236020909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D807" type="MeshInstance3D" parent="Floor" unique_id=1221704592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D808" type="MeshInstance3D" parent="Floor" unique_id=434507598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D809" type="MeshInstance3D" parent="Floor" unique_id=865534182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D810" type="MeshInstance3D" parent="Floor" unique_id=1397781225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D811" type="MeshInstance3D" parent="Floor" unique_id=1006571547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D812" type="MeshInstance3D" parent="Floor" unique_id=1942800828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D813" type="MeshInstance3D" parent="Floor" unique_id=793369519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D814" type="MeshInstance3D" parent="Floor" unique_id=576858048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D815" type="MeshInstance3D" parent="Floor" unique_id=1240223253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D816" type="MeshInstance3D" parent="Floor" unique_id=41035413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D817" type="MeshInstance3D" parent="Floor" unique_id=657180565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D818" type="MeshInstance3D" parent="Floor" unique_id=30136639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D819" type="MeshInstance3D" parent="Floor" unique_id=1869880463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D820" type="MeshInstance3D" parent="Floor" unique_id=1669525101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D821" type="MeshInstance3D" parent="Floor" unique_id=612174938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D822" type="MeshInstance3D" parent="Floor" unique_id=640312993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D823" type="MeshInstance3D" parent="Floor" unique_id=1331428404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D824" type="MeshInstance3D" parent="Floor" unique_id=247004207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D825" type="MeshInstance3D" parent="Floor" unique_id=1380633809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D826" type="MeshInstance3D" parent="Floor" unique_id=1187087605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D827" type="MeshInstance3D" parent="Floor" unique_id=1267539550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D828" type="MeshInstance3D" parent="Floor" unique_id=1164686596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D829" type="MeshInstance3D" parent="Floor" unique_id=1628328475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D830" type="MeshInstance3D" parent="Floor" unique_id=1444141054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D831" type="MeshInstance3D" parent="Floor" unique_id=36084068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D832" type="MeshInstance3D" parent="Floor" unique_id=967652429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D833" type="MeshInstance3D" parent="Floor" unique_id=1708938138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D834" type="MeshInstance3D" parent="Floor" unique_id=418939717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D835" type="MeshInstance3D" parent="Floor" unique_id=959982806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D836" type="MeshInstance3D" parent="Floor" unique_id=1498358134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D837" type="MeshInstance3D" parent="Floor" unique_id=1962325927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D838" type="MeshInstance3D" parent="Floor" unique_id=307291287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D839" type="MeshInstance3D" parent="Floor" unique_id=1217440187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D840" type="MeshInstance3D" parent="Floor" unique_id=1298357333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D841" type="MeshInstance3D" parent="Floor" unique_id=438527809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D842" type="MeshInstance3D" parent="Floor" unique_id=131187479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D843" type="MeshInstance3D" parent="Floor" unique_id=441691966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D844" type="MeshInstance3D" parent="Floor" unique_id=1023632083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D845" type="MeshInstance3D" parent="Floor" unique_id=1920199419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D846" type="MeshInstance3D" parent="Floor" unique_id=1300809692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D847" type="MeshInstance3D" parent="Floor" unique_id=2033472475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 48)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D848" type="MeshInstance3D" parent="Floor" unique_id=1835519526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D849" type="MeshInstance3D" parent="Floor" unique_id=2111644139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D850" type="MeshInstance3D" parent="Floor" unique_id=822504915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D851" type="MeshInstance3D" parent="Floor" unique_id=776677256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D852" type="MeshInstance3D" parent="Floor" unique_id=522719252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D853" type="MeshInstance3D" parent="Floor" unique_id=431008663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D854" type="MeshInstance3D" parent="Floor" unique_id=1735915016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 50)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D855" type="MeshInstance3D" parent="Floor" unique_id=901404027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D856" type="MeshInstance3D" parent="Floor" unique_id=213751415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D857" type="MeshInstance3D" parent="Floor" unique_id=2047222377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D858" type="MeshInstance3D" parent="Floor" unique_id=937953419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D859" type="MeshInstance3D" parent="Floor" unique_id=532158990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D860" type="MeshInstance3D" parent="Floor" unique_id=1238799898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D861" type="MeshInstance3D" parent="Floor" unique_id=2015850343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 52)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D862" type="MeshInstance3D" parent="Floor" unique_id=1067280146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D863" type="MeshInstance3D" parent="Floor" unique_id=1423020595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D864" type="MeshInstance3D" parent="Floor" unique_id=1714141213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D865" type="MeshInstance3D" parent="Floor" unique_id=705157368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D866" type="MeshInstance3D" parent="Floor" unique_id=1993184962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D867" type="MeshInstance3D" parent="Floor" unique_id=1721942193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D868" type="MeshInstance3D" parent="Floor" unique_id=1984565085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 54)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D869" type="MeshInstance3D" parent="Floor" unique_id=883312532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D870" type="MeshInstance3D" parent="Floor" unique_id=1016429058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D871" type="MeshInstance3D" parent="Floor" unique_id=653375286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D872" type="MeshInstance3D" parent="Floor" unique_id=353708430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D873" type="MeshInstance3D" parent="Floor" unique_id=1274206722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D874" type="MeshInstance3D" parent="Floor" unique_id=115589462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D875" type="MeshInstance3D" parent="Floor" unique_id=1935441274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 56)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D876" type="MeshInstance3D" parent="Floor" unique_id=1648762532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D877" type="MeshInstance3D" parent="Floor" unique_id=479625274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D878" type="MeshInstance3D" parent="Floor" unique_id=1048775067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D879" type="MeshInstance3D" parent="Floor" unique_id=1533415264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D880" type="MeshInstance3D" parent="Floor" unique_id=1651719038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D881" type="MeshInstance3D" parent="Floor" unique_id=1304544434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D882" type="MeshInstance3D" parent="Floor" unique_id=196183915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 58)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D883" type="MeshInstance3D" parent="Floor" unique_id=1223098061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath("../MeshInstance3D10")
+
+[node name="MeshInstance3D884" type="MeshInstance3D" parent="Floor" unique_id=1380097186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D885" type="MeshInstance3D" parent="Floor" unique_id=1034740824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D886" type="MeshInstance3D" parent="Floor" unique_id=928268259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D887" type="MeshInstance3D" parent="Floor" unique_id=1524762563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D888" type="MeshInstance3D" parent="Floor" unique_id=1748959294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D889" type="MeshInstance3D" parent="Floor" unique_id=250241026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 60)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D890" type="MeshInstance3D" parent="Floor" unique_id=860644893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D891" type="MeshInstance3D" parent="Floor" unique_id=1028039285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D892" type="MeshInstance3D" parent="Floor" unique_id=491747612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D893" type="MeshInstance3D" parent="Floor" unique_id=738797572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D894" type="MeshInstance3D" parent="Floor" unique_id=1310741989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D895" type="MeshInstance3D" parent="Floor" unique_id=2099764693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D896" type="MeshInstance3D" parent="Floor" unique_id=592225806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 62)
+mesh = ExtResource("1_3kon2")
+skeleton = NodePath(".")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1563444929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.902527, 0, 10.429058)
+mesh = ExtResource("2_yoqy0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1903799941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.805054, 0, 20.858116)
+mesh = ExtResource("2_yoqy0")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=510802706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.70758, 0, 31.287174)
+mesh = ExtResource("2_yoqy0")
+skeleton = NodePath("../MeshInstance3D2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1807251719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.610107, 0, 41.716232)
+mesh = ExtResource("2_yoqy0")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="Door" parent="." unique_id=10556630 instance=ExtResource("3_yoqy0")]

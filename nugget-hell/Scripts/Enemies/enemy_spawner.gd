@@ -91,12 +91,10 @@ func _try_spawn_enemy() -> void:
 		return
 
 	# 3) Spawn siempre dentro de la sala: usar una posición de suelo válida del Room3D
-	# enemy_spawner.gd (dentro de _try_spawn_enemy o similar)
-	var room3d := get_tree().get_root().find_child("Room3d", true, false)
-	if room3d and room3d.has_method("get_random_floor_position"):
-		var spawn_position: Vector3 = room3d.get_random_floor_position()
-	else:
-		var spawn_position: Vector3 = Vector3.ZERO   # fallback
+	var room3d := get_tree().get_root().find_child("Room3D", true, false)
+	if room3d == null:
+		# Compatibilidad con el nombre antiguo
+		room3d = get_tree().get_root().find_child("Room3d", true, false)
 
 	var spawn_position: Vector3
 	if room3d and room3d.has_method("get_random_floor_position"):
