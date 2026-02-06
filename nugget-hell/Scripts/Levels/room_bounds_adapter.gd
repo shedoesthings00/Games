@@ -11,6 +11,7 @@ extends Node3D
 @export var padding: float = 1.0
 @export var wall_height: float = 1.5
 @export var floor_y: float = 0.0
+@export var generate_collisions: bool = true
 
 var bounds_min: Vector3 = Vector3.ZERO
 var bounds_max: Vector3 = Vector3.ZERO
@@ -18,6 +19,8 @@ var _has_bounds: bool = false
 
 
 func setup_from_room(room: Node) -> void:
+	if generate_collisions:
+		_ensure_room_collisions(room)
 	_has_bounds = _compute_bounds_from_meshes(room)
 	if not _has_bounds:
 		# Fallback razonable si no hay meshes: caja 20x20 centrada en el root.
@@ -129,4 +132,76 @@ func _compute_bounds_from_meshes(room: Node) -> bool:
 	bounds_min = min_v
 	bounds_max = max_v
 	return true
+
+
+func _ensure_room_collisions(room: Node) -> void:
+	if room == null:
+		return
+
+	# Colisiones para paredes y objetos (y también suelo si existe).
+	var walls := room.get_node_or_null("Walls")
+	if walls != null:
+		_add_collisions_in_subtree(walls)
+
+	var objects := room.get_node_or_null("Objects")
+	if objects != null:
+		# En Objects solo colisiona lo marcado como collidable (la deco no bloquea).
+		_add_collisions_in_subtree(objects, true)
+
+	var floor := room.get_node_or_null("Floor")
+	if floor is MeshInstance3D:
+		_ensure_collision_for_mesh(floor as MeshInstance3D)
+
+
+func _is_mesh_collidable(mi: MeshInstance3D) -> bool:
+	if mi == null:
+		return false
+	# Metadata generada por tools/generate_layout_rooms.py
+	if mi.has_meta("collidable"):
+		return bool(mi.get_meta("collidable"))
+	# Backwards-compatible: si no hay metadata, asumir que colisiona (comportamiento antiguo).
+	return true
+
+
+func _add_collisions_in_subtree(root: Node, require_collidable_meta: bool = false) -> void:
+	if root == null:
+		return
+	for n in root.find_children("*", "MeshInstance3D", true, false):
+		var mi := n as MeshInstance3D
+		if mi == null:
+			continue
+		if require_collidable_meta and not _is_mesh_collidable(mi):
+			continue
+		_ensure_collision_for_mesh(mi)
+
+
+func _ensure_collision_for_mesh(mi: MeshInstance3D) -> void:
+	if mi == null:
+		return
+
+	# Evitar duplicados si ya hay un body.
+	if mi.get_node_or_null("CollisionBody") != null:
+		return
+
+	var aabb := mi.get_aabb()
+	if aabb.size == Vector3.ZERO:
+		return
+
+	var body := StaticBody3D.new()
+	body.name = "CollisionBody"
+	# Defaults explícitos (por si el player usa layer 1).
+	body.collision_layer = 1
+	body.collision_mask = 1
+	mi.add_child(body)
+
+	var cs := CollisionShape3D.new()
+	cs.name = "CollisionShape3D"
+	body.add_child(cs)
+
+	var shape := BoxShape3D.new()
+	shape.size = aabb.size
+	cs.shape = shape
+
+	# Centrar la caja según el AABB local del mesh (por si no está centrado en 0,0,0).
+	cs.position = aabb.position + (aabb.size * 0.5)
 

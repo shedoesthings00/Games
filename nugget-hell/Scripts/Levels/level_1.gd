@@ -97,10 +97,17 @@ func _start_room() -> void:
 	if room_helper.has_method("setup_from_room"):
 		room_helper.setup_from_room(current_room_instance)
 
-	# recolocar al player al centro de la sala
+	# recolocar al player (si existe SpawnPoint, usarlo; si no, centro)
 	var player := get_tree().get_root().find_child("Player", true, false)
 	if player:
-		if room_helper.has_method("get_center_position"):
+		var spawn := current_room_instance.get_node_or_null("SpawnPoint") as Node3D
+		if spawn:
+			player.global_transform.origin = Vector3(
+				spawn.global_transform.origin.x,
+				player.global_transform.origin.y,
+				spawn.global_transform.origin.z
+			)
+		elif room_helper.has_method("get_center_position"):
 			var c: Vector3 = room_helper.get_center_position()
 			player.global_transform.origin = Vector3(c.x, player.global_transform.origin.y, c.z)
 		else:

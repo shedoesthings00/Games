@@ -7,8 +7,8 @@ const SFX_TAKE_DAMAGE := preload("res://Audio/take_damage.wav")
 @export var bullet_scene: PackedScene
 
 # SFX configurables desde el inspector (AudioStream/WAV).
-@export var sfx_shooting: AudioStream
-@export var sfx_reloading: AudioStream
+@export var sfx_shooting: AudioStream = preload("res://Audio/shooting.wav")
+@export var sfx_reloading: AudioStream = preload("res://Audio/reloading.wav")
 
 @export var dash_speed: float = 18.0
 @export var dash_duration: float = 0.2

@@ -13,13 +13,18 @@ const DEATH_SCREEN_PATH := "res://Escenas/Menus/DeathScreen.tscn"
 # --- HABITACIONES HECHAS A MANO ---
 
 var room_scenes: Array[String] = [
-	"res://Escenas/Levels/Level1/Room1.tscn",
-	"res://Escenas/Levels/Level1/Room2.tscn",
-	"res://Escenas/Levels/Level1/Room3.tscn",
-	"res://Escenas/Levels/Level1/Room4.tscn",
-	"res://Escenas/Levels/Level1/Room5.tscn",
-	"res://Escenas/Levels/Level1/Room6.tscn",
-	"res://Escenas/Levels/Level1/Room7.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room1.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room2.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room3.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room4.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room5.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room6.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room7.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room8.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room9.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room10.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room11.tscn",
+	"res://Escenas/Levels/Level1/LayoutRooms/Room12.tscn",
 ]
 
 var available_rooms: Array[String] = []
