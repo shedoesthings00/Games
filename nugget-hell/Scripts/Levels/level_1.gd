@@ -30,13 +30,15 @@ var _room_changed_during_transition: bool = false
 
 @onready var hud: CanvasLayer = $HUD
 
-
 func _ready() -> void:
 	print("LEVEL_1 _ready")
-	randomize()
-
-	total_rooms = randi_range(rooms_per_level_min, rooms_per_level_max)
-	current_room_index = 0
+	
+	var player := get_tree().get_root().find_child("Player", true, false)
+	if player:
+		print("LEVEL_1: player encontrado, moviendo al centro")
+		player.global_transform.origin = Vector3(0.0, 0.0, 0.0)
+	else:
+		print("LEVEL_1: player NO encontrado")
 
 	if hud and hud.has_method("hide_boss_health"):
 		hud.hide_boss_health()
@@ -45,6 +47,7 @@ func _ready() -> void:
 		LevelTransition.transition_finished.connect(_on_transition_finished)
 	else:
 		_start_room()
+
 
 
 func _on_transition_finished() -> void:

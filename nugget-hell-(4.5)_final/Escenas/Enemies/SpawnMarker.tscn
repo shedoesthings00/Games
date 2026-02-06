@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cql6r56wgnmmr"]
+
+[ext_resource type="Script" uid="uid://br0hgr2e5jff1" path="res://Scripts/Enemies/spawn_marker.gd" id="1_ohr4h"]
+[ext_resource type="Texture2D" uid="uid://cqnc5mh8618oq" path="res://icon.svg" id="2_ow3v6"]
+
+[node name="SpawnMarker" type="Node3D"]
+script = ExtResource("1_ohr4h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.3327374, 0, 0, 0, -1.01967196e-07, 2.3327374, 0, -2.3327374, -1.01967196e-07, 0, 0, 0)
+texture = ExtResource("2_ow3v6")

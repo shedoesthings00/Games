@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cljnltn6uksp3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bsy51x6f4qrm2" path="res://Modelo/Box1.obj" id="1_6yj5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mbkq"]
+
+[node name="Obj1" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6yj5w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_0mbkq")

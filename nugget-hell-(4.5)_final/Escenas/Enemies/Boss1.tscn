@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4pfxu0rnd1c2"]
+
+[ext_resource type="Script" uid="uid://2tpf8w1dqbea" path="res://Scripts/Enemies/boss.gd" id="1_0kd8n"]
+[ext_resource type="PackedScene" uid="uid://l2hrq0tyksp7" path="res://Escenas/Enemies/EnemyHealthBar.tscn" id="2_fc1m8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lbyu5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0kd8n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_12w20"]
+viewport_path = NodePath("HealthViewport")
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5106733, 0)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_0kd8n")
+max_health = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.8087906, 0, 0, 0, 1.8087906, 0, 0, 0, 1.8087906, 0, 1.403867, 0)
+mesh = SubResource("CapsuleMesh_lbyu5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.892587, 0, 0, 0, 2.1226795, 0, 0, 0, 1.8090415, 0, 1.3683114, 0)
+shape = SubResource("CapsuleShape3D_0kd8n")
+
+[node name="HealthViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(217, 42)
+
+[node name="EnemyHealthBar" parent="HealthViewport" instance=ExtResource("2_fc1m8")]
+visible = false
+
+[node name="HealthBarSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0032337, 0)
+visible = false
+texture = SubResource("ViewportTexture_12w20")

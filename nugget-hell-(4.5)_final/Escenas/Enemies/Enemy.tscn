@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dof52upl1ycwh"]
+
+[ext_resource type="Script" uid="uid://5y4h0hb31m6i" path="res://Scripts/Enemies/enemy.gd" id="1_y3j3y"]
+[ext_resource type="PackedScene" uid="uid://dwo3ilt5413dn" path="res://Modelo/player.glb" id="2_pe06u"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pe06u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cxmtl"]
+
+[node name="Enemy" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_y3j3y")
+model_scene = ExtResource("2_pe06u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_pe06u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cxmtl")

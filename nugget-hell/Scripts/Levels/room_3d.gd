@@ -24,11 +24,8 @@ var blocked: Array = []      # para reglas de verdes
 
 func _ready() -> void:
 	randomize()
-	# No generar aquí: la sala se crea una sola vez cuando Level_1 llama regenerate_room()
-	# tras la transición (inicio o cambio de habitación).
+	# NO generes nada aquí
 
-
-# --------- API PÚBLICA PARA EL NIVEL ---------
 
 func regenerate_room() -> void:
 	# Borra todo el contenido anterior
@@ -112,10 +109,11 @@ func _generate_single_complex_room() -> void:
 	var max_room_h := 20
 
 	# Rectángulo base centrado, limitado por max_room_*
-	var base_w = min(max_room_w, grid_size.x)
-	var base_h = min(max_room_h, grid_size.y)
+	var base_w = int(grid_size.x * 0.7)
+	var base_h = int(grid_size.y * 0.7)
 	var x0 = (grid_size.x - base_w) / 2
 	var y0 = (grid_size.y - base_h) / 2
+	_fill_rect_floor(x0, y0, base_w, base_h)
 
 	print("Habitación base en (", x0, ",", y0, ") tamaño (", base_w, "x", base_h, ")")
 	_fill_rect_floor(x0, y0, base_w, base_h)
@@ -342,9 +340,17 @@ func _spawn_color_objects() -> void:
 				continue
 
 			var inst: Node3D = scene.instantiate()
-			var px = offset_x + float(x) * cell_size
-			var pz = offset_z + float(y) * cell_size
-			inst.position = Vector3(px, 0.5, pz)
+
+			# centro de la celda
+			var base_x = offset_x + float(x) * cell_size
+			var base_z = offset_z + float(y) * cell_size
+
+			# offset aleatorio dentro de la celda (divide en 4x4 “subceldas”)
+			var max_offset := cell_size * 0.4  # < 0.5 para no salir de la celda
+			var ox = randf_range(-max_offset, max_offset)
+			var oz = randf_range(-max_offset, max_offset)
+
+			inst.position = Vector3(base_x + ox, 0.0, base_z + oz)
 			room_root_3d.add_child(inst)
 
 

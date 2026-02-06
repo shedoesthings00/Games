@@ -1,7 +1,7 @@
 # Blender 4.5.1 LTS
 # www.blender.org
 mtllib Floor1.mtl
-o Cube
+o Floor1
 v -0.900000 0.177831 0.900000
 v -0.900000 0.127427 1.000000
 v -1.000000 0.127427 0.900000

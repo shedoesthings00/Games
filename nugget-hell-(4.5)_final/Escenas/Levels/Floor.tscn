@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4e21t7pjuouc"]
+
+[ext_resource type="ArrayMesh" uid="uid://sittidk8i4vb" path="res://Modelo/Floor1.obj" id="1_vcu7f"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_vcu7f")
