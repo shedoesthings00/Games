@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Detective"
+config/name="El Despacho"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+run/main_scene="res://scenes/main_desk.tscn"
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
 
 [physics]
 

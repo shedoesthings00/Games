@@ -1,0 +1,86 @@
+[
+  {
+    "phase": "initial",
+    "day_start": 1,
+    "day_end": 3,
+    "rule_type": "accept",
+    "field": "ciudad",
+    "operator": "in",
+    "value": "Madrid|Alcalá de Henares|Getafe",
+    "label": "Zona de trabajo",
+    "player_visible": true,
+    "notes": "Regla base del despacho"
+  },
+  {
+    "phase": "initial",
+    "day_start": 1,
+    "day_end": 3,
+    "rule_type": "accept",
+    "field": "presupuesto",
+    "operator": ">=",
+    "value": "500",
+    "label": "Presupuesto mínimo",
+    "player_visible": true,
+    "notes": "Puede subir en fases posteriores"
+  },
+  {
+    "phase": "initial",
+    "day_start": 1,
+    "day_end": 3,
+    "rule_type": "accept",
+    "field": "tipo_caso",
+    "operator": "in",
+    "value": "Desaparición|Amenazas|Corporativo",
+    "label": "Tipos aceptados",
+    "player_visible": true,
+    "notes": "Infidelidad y otros fuera"
+  },
+  {
+    "phase": "intermediate",
+    "day_start": 4,
+    "day_end": 7,
+    "rule_type": "require",
+    "field": "telefono",
+    "operator": "not_empty",
+    "value": "TRUE",
+    "label": "Teléfono obligatorio",
+    "player_visible": true,
+    "notes": "Nueva regla fase intermedia"
+  },
+  {
+    "phase": "intermediate",
+    "day_start": 4,
+    "day_end": 7,
+    "rule_type": "require",
+    "field": "email",
+    "operator": "not_empty",
+    "value": "TRUE",
+    "label": "Email obligatorio",
+    "player_visible": true,
+    "notes": "Nueva regla fase intermedia"
+  },
+  {
+    "phase": "intermediate",
+    "day_start": 4,
+    "day_end": 7,
+    "rule_type": "priority",
+    "field": "historial_cliente",
+    "operator": "prefer_repeat",
+    "value": "TRUE",
+    "label": "Clientes repetidos primero",
+    "player_visible": false,
+    "notes": "Afecta orden o prioridad"
+  },
+  {
+    "phase": "advanced",
+    "day_start": 8,
+    "day_end": 99,
+    "rule_type": "check",
+    "field": "prefijo_telefono",
+    "operator": "matches_city",
+    "value": "TRUE",
+    "label": "Prefijo coherente con ciudad",
+    "player_visible": false,
+    "notes": "Herramienta avanzada"
+  }
+]

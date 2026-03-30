@@ -1,0 +1,93 @@
+[
+  {
+    "day_id": "DAY-01",
+    "day_number": 1,
+    "phase": "initial",
+    "detective_policy": "Ciudad + presupuesto + tipo",
+    "story_focus": "Aprender el loop básico",
+    "guaranteed_metacase_clue": "Primer símbolo + frase \"nos veremos en la curva\"",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 1,
+    "fixed_appointments_count": 1,
+    "notes": "Introducción"
+  },
+  {
+    "day_id": "DAY-02",
+    "day_number": 2,
+    "phase": "initial",
+    "detective_policy": "Mismas reglas",
+    "story_focus": "Repetición de lugar",
+    "guaranteed_metacase_clue": "M-23 / Bar La Curva",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 1,
+    "fixed_appointments_count": 1,
+    "notes": "Refuerza patrón geográfico"
+  },
+  {
+    "day_id": "DAY-03",
+    "day_number": 3,
+    "phase": "initial",
+    "detective_policy": "Mismas reglas",
+    "story_focus": "Conectar nombre/lugar",
+    "guaranteed_metacase_clue": "Ricardo Muñoz y Bar La Curva",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 1,
+    "fixed_appointments_count": 1,
+    "notes": "Primer nombre recurrente"
+  },
+  {
+    "day_id": "DAY-04",
+    "day_number": 4,
+    "phase": "intermediate",
+    "detective_policy": "Añade datos de contacto",
+    "story_focus": "Historial y repetición de víctima",
+    "guaranteed_metacase_clue": "Caso conectado con hermano desaparecido",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 1,
+    "fixed_appointments_count": 2,
+    "notes": "Sube complejidad"
+  },
+  {
+    "day_id": "DAY-05",
+    "day_number": 5,
+    "phase": "intermediate",
+    "detective_policy": "Mismas reglas intermedias",
+    "story_focus": "Amenaza directa al jugador",
+    "guaranteed_metacase_clue": "Correo personal anónimo",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 2,
+    "fixed_appointments_count": 2,
+    "notes": "Escala tensión"
+  },
+  {
+    "day_id": "DAY-06",
+    "day_number": 6,
+    "phase": "intermediate",
+    "detective_policy": "Prioridad clientes repetidos",
+    "story_focus": "Cruce de coartadas",
+    "guaranteed_metacase_clue": "Coartada dudosa del sospechoso",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 2,
+    "fixed_appointments_count": 2,
+    "notes": "Preparación del clímax"
+  },
+  {
+    "day_id": "DAY-07",
+    "day_number": 7,
+    "phase": "intermediate",
+    "detective_policy": "Mismas reglas",
+    "story_focus": "Preclímax y preparación de acusación",
+    "guaranteed_metacase_clue": "Patrón de víctimas completo",
+    "fixed_cases_count": 3,
+    "fixed_emails_count": 4,
+    "fixed_calls_count": 2,
+    "fixed_appointments_count": 2,
+    "notes": "Cierre del primer arco"
+  }
+]
