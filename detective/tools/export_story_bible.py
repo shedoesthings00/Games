@@ -240,11 +240,76 @@ def _postprocess_emails(records: list[dict]) -> list[dict]:
     return records
 
 
+# Transcripción jugable por call_id (si falta en Excel, se inyecta aquí).
+CALL_TRANSCRIPT_BY_ID: dict[str, str] = {
+    "CALL-0001": (
+        "[DESPACHO] Digame.\n"
+        "[LAURA] Buenos días, soy Laura Gómez. ¿Pueden confirmarme si hay hueco esta tarde?\n"
+        "[DESPACHO] Un momento… sí, podemos verle a las 17:30.\n"
+        "[LAURA] Perfecto, envío la documentación por correo.\n"
+        "[DESPACHO] Quedamos así. Hasta luego."
+    ),
+    "CALL-0002": (
+        "[ANDRÉS] …sí, escucho mal, hay un camión pasando.\n"
+        "[DESPACHO] Dígame su franja habitual para devolverle la llamada.\n"
+        "[ANDRÉS] Suelen llamarme entre 14:00 y 15:00, desde un fijo que no reconozco.\n"
+        "[DESPACHO] Lo anoto en el expediente. Gracias."
+    ),
+    "CALL-0003": (
+        "[RICARDO] Necesito adelantar la visita. El bar está peor de lo que pensaba.\n"
+        "[DESPACHO] Le propongo mañana 11:00, ¿le vale?\n"
+        "[RICARDO] Vale. Y traiga alguien que sepa leer grafos… hay marcas nuevas.\n"
+        "[DESPACHO] Entendido. Mañana entonces."
+    ),
+    "CALL-0004": (
+        "[LAURA] Ortega, la situación con el socio se ha acelerado. Necesito prioridad absoluta.\n"
+        "[DESPACHO] Registramos su petición; respuesta formal por escrito.\n"
+        "[LAURA] No me falles. Mañana paso a dejar más papeles.\n"
+        "[DESPACHO] …De acuerdo. Hasta mañana."
+    ),
+    "CALL-0005": (
+        "…\n"
+        "(siseo — ruido de neumáticos)\n"
+        "…Voz indistinguible, posible altavoz de coche.\n"
+        "La línea se corta."
+    ),
+    "CALL-0006": (
+        "[TOMÁS] ¿Despacho Ortega? Soy Tomás Egea, debemos mover la cita.\n"
+        "[DESPACHO] Indíqueme nueva hora.\n"
+        "[TOMÁS] El viernes a la misma hora no puedo; ¿el lunes 10:00?\n"
+        "[DESPACHO] Confirmado. Le envío SMS de verificación.\n"
+        "[TOMÁS] Gracias."
+    ),
+    "CALL-0007": (
+        "[DESPACHO] Testigo Sonía Herranz, ¿me confirma la franja?\n"
+        "[SONIA] Estaba en clase hasta las 14:15; después no vi al hombre del abrigo gris.\n"
+        "[DESPACHO] ¿Puede repetir la matrícula que mencionó?\n"
+        "[SONIA] Parcial: terminaba en 41… debía ser 41, no estoy segura.\n"
+        "[DESPACHO] Recibido. Gracias por su colaboración."
+    ),
+    "CALL-0008": (
+        "[BELMONTE] Autorizo el envío cifrado del paquete A-17.\n"
+        "[DESPACHO] Necesito código verbal de dos palabras.\n"
+        "[BELMONTE] Curva — archivo.\n"
+        "[DESPACHO] Correcto. Procedemos hoy antes de las 18:00.\n"
+        "[BELMONTE] Bien."
+    ),
+    "CALL-0009": (
+        "(voz filtrada)\n"
+        "La curva no cierra. La espiral sigue abierta.\n"
+        "(silencio — tono de colgar)"
+    ),
+}
+
+
 def _postprocess_calls(records: list[dict]) -> list[dict]:
     for row in records:
         for k in ("must_happen", "answer_required", "is_metacase"):
             if k in row and row[k] is not None:
                 row[k] = _boolish(row[k])
+        cid = row.get("call_id")
+        if cid and str(cid) in CALL_TRANSCRIPT_BY_ID and not row.get("transcript"):
+            row["transcript"] = CALL_TRANSCRIPT_BY_ID[str(cid)]
     return records
 
 

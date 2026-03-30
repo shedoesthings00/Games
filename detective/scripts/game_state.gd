@@ -189,6 +189,23 @@ func cases_for_today() -> Array:
 	return out
 
 
+## Casos del día ya decididos (historial de la jornada en curso).
+func cases_decided_today() -> Array:
+	var did: String = current_day_id()
+	var out: Array = []
+	for cid in case_states.keys():
+		var st: Dictionary = case_states[cid] as Dictionary
+		if str(st.get("day_id", "")) != did:
+			continue
+		if str(st.get("status", "pending")) == "pending":
+			continue
+		out.append(st)
+	out.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
+		return int(a.get("slot_order", 0)) < int(b.get("slot_order", 0))
+	)
+	return out
+
+
 func emails_for_today() -> Array:
 	var did: String = current_day_id()
 	var out: Array = []

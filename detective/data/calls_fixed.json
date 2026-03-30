@@ -13,7 +13,8 @@
     "answer_required": true,
     "outcome_if_missed": "La cita pasa al día siguiente",
     "is_metacase": false,
-    "notes": "Tutorial llamada"
+    "notes": "Tutorial llamada",
+    "transcript": "[DESPACHO] Digame.\n[LAURA] Buenos días, soy Laura Gómez. ¿Pueden confirmarme si hay hueco esta tarde?\n[DESPACHO] Un momento… sí, podemos verle a las 17:30.\n[LAURA] Perfecto, envío la documentación por correo.\n[DESPACHO] Quedamos así. Hasta luego."
   },
   {
     "call_id": "CALL-0002",
@@ -29,7 +30,8 @@
     "answer_required": false,
     "outcome_if_missed": "Se añade nota incompleta al caso",
     "is_metacase": false,
-    "notes": null
+    "notes": null,
+    "transcript": "[ANDRÉS] …sí, escucho mal, hay un camión pasando.\n[DESPACHO] Dígame su franja habitual para devolverle la llamada.\n[ANDRÉS] Suelen llamarme entre 14:00 y 15:00, desde un fijo que no reconozco.\n[DESPACHO] Lo anoto en el expediente. Gracias."
   },
   {
     "call_id": "CALL-0003",
@@ -45,7 +47,8 @@
     "answer_required": true,
     "outcome_if_missed": "Baja satisfacción cliente",
     "is_metacase": true,
-    "notes": null
+    "notes": null,
+    "transcript": "[RICARDO] Necesito adelantar la visita. El bar está peor de lo que pensaba.\n[DESPACHO] Le propongo mañana 11:00, ¿le vale?\n[RICARDO] Vale. Y traiga alguien que sepa leer grafos… hay marcas nuevas.\n[DESPACHO] Entendido. Mañana entonces."
   },
   {
     "call_id": "CALL-0004",
@@ -61,7 +64,8 @@
     "answer_required": true,
     "outcome_if_missed": "Pierde prioridad en agenda",
     "is_metacase": false,
-    "notes": null
+    "notes": null,
+    "transcript": "[LAURA] Ortega, la situación con el socio se ha acelerado. Necesito prioridad absoluta.\n[DESPACHO] Registramos su petición; respuesta formal por escrito.\n[LAURA] No me falles. Mañana paso a dejar más papeles.\n[DESPACHO] …De acuerdo. Hasta mañana."
   },
   {
     "call_id": "CALL-0005",
@@ -77,7 +81,8 @@
     "answer_required": false,
     "outcome_if_missed": "Solo queda registrado como perdida",
     "is_metacase": true,
-    "notes": "Primera llamada personal extraña"
+    "notes": "Primera llamada personal extraña",
+    "transcript": "…\n(siseo — ruido de neumáticos)\n…Voz indistinguible, posible altavoz de coche.\nLa línea se corta."
   },
   {
     "call_id": "CALL-0006",
@@ -93,7 +98,8 @@
     "answer_required": true,
     "outcome_if_missed": "La cita se cancela",
     "is_metacase": false,
-    "notes": null
+    "notes": null,
+    "transcript": "[TOMÁS] ¿Despacho Ortega? Soy Tomás Egea, debemos mover la cita.\n[DESPACHO] Indíqueme nueva hora.\n[TOMÁS] El viernes a la misma hora no puedo; ¿el lunes 10:00?\n[DESPACHO] Confirmado. Le envío SMS de verificación.\n[TOMÁS] Gracias."
   },
   {
     "call_id": "CALL-0007",
@@ -109,7 +115,8 @@
     "answer_required": false,
     "outcome_if_missed": "Pierdes pista opcional",
     "is_metacase": true,
-    "notes": "Solo si jugador investiga"
+    "notes": "Solo si jugador investiga",
+    "transcript": "[DESPACHO] Testigo Sonía Herranz, ¿me confirma la franja?\n[SONIA] Estaba en clase hasta las 14:15; después no vi al hombre del abrigo gris.\n[DESPACHO] ¿Puede repetir la matrícula que mencionó?\n[SONIA] Parcial: terminaba en 41… debía ser 41, no estoy segura.\n[DESPACHO] Recibido. Gracias por su colaboración."
   },
   {
     "call_id": "CALL-0008",
@@ -125,7 +132,8 @@
     "answer_required": true,
     "outcome_if_missed": "Retrasa caso 1 día",
     "is_metacase": false,
-    "notes": null
+    "notes": null,
+    "transcript": "[BELMONTE] Autorizo el envío cifrado del paquete A-17.\n[DESPACHO] Necesito código verbal de dos palabras.\n[BELMONTE] Curva — archivo.\n[DESPACHO] Correcto. Procedemos hoy antes de las 18:00.\n[BELMONTE] Bien."
   },
   {
     "call_id": "CALL-0009",
@@ -141,6 +149,7 @@
     "answer_required": false,
     "outcome_if_missed": "Se guarda buzón incompleto",
     "is_metacase": true,
-    "notes": "Preclímax"
+    "notes": "Preclímax",
+    "transcript": "(voz filtrada)\nLa curva no cierra. La espiral sigue abierta.\n(silencio — tono de colgar)"
   }
 ]
