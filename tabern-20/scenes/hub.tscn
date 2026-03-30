@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://hub0001"]
+
+[ext_resource type="Script" path="res://scripts/hub.gd" id="1_hub"]
+
+[node name="Hub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hub")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+text = "Fin de la noche"
+
+[node name="OroLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+text = "Oro disponible: 0"
+
+[node name="TrabajadoresTitulo" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+text = "Trabajadores y mejoras"
+
+[node name="TrabajadoresVBox" type="VBoxContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FeedbackLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+autowrap_mode = 2
+
+[node name="NuevaNocheButton" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+text = "Empezar nueva noche"
+
+[connection signal="pressed" from="MarginContainer/VBox/NuevaNocheButton" to="." method="_on_NuevaNocheButton_pressed"]
+

@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/shelf_panel.gd" id="1"]
+
+[node name="ShelfPanel" type="PanelContainer"]
+visible = false
+anchors_preset = 13
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -320.0
+offset_right = 220.0
+offset_bottom = -120.0
+script = ExtResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBox"]
+unique_name_in_owner = true
+text = "Estantería"
+
+[node name="HintLabel" type="Label" parent="MarginContainer/VBox"]
+unique_name_in_owner = true
+text = "Elige un producto"
+
+[node name="ProductsList" type="ItemList" parent="MarginContainer/VBox"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 140)
+fixed_column_width = 280
+same_column_width = true
+
+[node name="PickupProgress" type="ProgressBar" parent="MarginContainer/VBox"]
+unique_name_in_owner = true
+min_size = Vector2(0, 16)
+value = 0.0
+visible = false
+
+[node name="PickupButton" type="Button" parent="MarginContainer/VBox"]
+unique_name_in_owner = true
+text = "Recoger"

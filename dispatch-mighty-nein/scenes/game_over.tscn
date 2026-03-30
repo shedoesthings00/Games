@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://game_over"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_script"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.1, 0.1, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Derrota"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reason" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "Demasiados fallos."
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Center/VBox/Buttons"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="MenuButton" type="Button" parent="Center/VBox/Buttons"]
+layout_mode = 2
+text = "Menú principal"

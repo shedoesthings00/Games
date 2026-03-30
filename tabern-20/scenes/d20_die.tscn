@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bko1fxykqgmdf"]
+
+[ext_resource type="Script" uid="uid://c1wwnmjatc7so" path="res://scripts/d20_die_3d.gd" id="1_d20"]
+[ext_resource type="PackedScene" uid="uid://d3guusdo7un71" path="res://scenes/d20_dice_w20_wurfel_3d_model_free.glb" id="2_cdbft"]
+
+[node name="D20Die" type="Node3D" unique_id=741358584]
+
+[node name="D20Mesh" type="MeshInstance3D" parent="." unique_id=1748867629]
+script = ExtResource("1_d20")
+
+[node name="Sketchfab_Scene" parent="." unique_id=467353839 instance=ExtResource("2_cdbft")]
+transform = Transform3D(0.053595103, 0, 0, 0, 0.053595103, 0, 0, 0, 0.053595103, -0.04229939, 0, -0.18636608)
+visible = false

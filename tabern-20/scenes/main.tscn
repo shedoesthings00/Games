@@ -1,0 +1,351 @@
+[gd_scene format=3 uid="uid://c0main001"]
+
+[ext_resource type="Script" uid="uid://c0erpdafcu5u3" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bn8ad2yb1ht4v" path="res://scripts/mission_ring.gd" id="2_ring"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_floor"]
+size = Vector2(16, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.35, 0.28, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall"]
+size = Vector3(16, 3, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_color = Color(0.45, 0.38, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_table"]
+size = Vector3(2.2, 0.25, 1.4)
+
+[node name="Main" type="Node3D" unique_id=1214144691]
+script = ExtResource("1_main")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=630218796]
+transform = Transform3D(1, 0, 0, 0, 0.32215005, 0.9466886, 0, -0.9466886, 0.32215005, 0, 10, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2007462415]
+transform = Transform3D(1, 0, 0, 0, 0.021361308, 0.99977183, 0, -0.99977183, 0.021361308, 0, 18, 0)
+current = true
+fov = 50.0
+
+[node name="Tavern" type="Node3D" parent="." unique_id=1582394433]
+
+[node name="Floor" type="MeshInstance3D" parent="Tavern" unique_id=1218535110]
+mesh = SubResource("PlaneMesh_floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_floor")
+
+[node name="WallBack" type="MeshInstance3D" parent="Tavern" unique_id=1236498754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="WallFront" type="MeshInstance3D" parent="Tavern" unique_id=711155989]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 6)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="WallLeft" type="MeshInstance3D" parent="Tavern" unique_id=458270646]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8, 0, 0)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="WallRight" type="MeshInstance3D" parent="Tavern" unique_id=2141203971]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8, 0, 0)
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Tables" type="Node3D" parent="Tavern" unique_id=1112744341]
+
+[node name="Table1" type="Node3D" parent="Tavern/Tables" unique_id=744427514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Tavern/Tables/Table1" unique_id=1597854675]
+mesh = SubResource("BoxMesh_table")
+
+[node name="Table2" type="Node3D" parent="Tavern/Tables" unique_id=1892777825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Tavern/Tables/Table2" unique_id=1250809501]
+mesh = SubResource("BoxMesh_table")
+
+[node name="Table3" type="Node3D" parent="Tavern/Tables" unique_id=2007302769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Tavern/Tables/Table3" unique_id=604849279]
+mesh = SubResource("BoxMesh_table")
+
+[node name="Table4" type="Node3D" parent="Tavern/Tables" unique_id=1291084839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Tavern/Tables/Table4" unique_id=253584724]
+mesh = SubResource("BoxMesh_table")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1408531778]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1575556506]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="UI/MarginContainer" unique_id=46058024]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Barras" type="HBoxContainer" parent="UI/MarginContainer/VBox" unique_id=84770803]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ReputacionBox" type="VBoxContainer" parent="UI/MarginContainer/VBox/Barras" unique_id=1748927851]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="LabelRep" type="Label" parent="UI/MarginContainer/VBox/Barras/ReputacionBox" unique_id=1004986910]
+layout_mode = 2
+text = "Reputación"
+
+[node name="ReputacionBar" type="ProgressBar" parent="UI/MarginContainer/VBox/Barras/ReputacionBox" unique_id=394909]
+custom_minimum_size = Vector2(200, 22)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="CaosBox" type="VBoxContainer" parent="UI/MarginContainer/VBox/Barras" unique_id=771670657]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="LabelCaos" type="Label" parent="UI/MarginContainer/VBox/Barras/CaosBox" unique_id=430119979]
+layout_mode = 2
+text = "Caos"
+
+[node name="CaosBar" type="ProgressBar" parent="UI/MarginContainer/VBox/Barras/CaosBox" unique_id=1018828287]
+custom_minimum_size = Vector2(200, 22)
+layout_mode = 2
+show_percentage = false
+
+[node name="Spacer" type="Control" parent="UI/MarginContainer/VBox" unique_id=93901120]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Feedback" type="RichTextLabel" parent="UI/MarginContainer/VBox" unique_id=1147744272]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Pulsa el punto en una mesa para ver la petición y asigna un trabajador."
+fit_content = true
+
+[node name="OroLabel" type="Label" parent="UI/MarginContainer/VBox" unique_id=2000000000]
+layout_mode = 2
+text = "Oro: 0"
+
+[node name="Trabajadores" type="HBoxContainer" parent="UI/MarginContainer/VBox" unique_id=379353639]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Worker1" type="PanelContainer" parent="UI/MarginContainer/VBox/Trabajadores" unique_id=744163214]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="Btn" type="Button" parent="UI/MarginContainer/VBox/Trabajadores/Worker1" unique_id=1385294732]
+layout_mode = 2
+text = "Marina"
+flat = true
+
+[node name="Worker2" type="PanelContainer" parent="UI/MarginContainer/VBox/Trabajadores" unique_id=2086006844]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="Btn" type="Button" parent="UI/MarginContainer/VBox/Trabajadores/Worker2" unique_id=1788831654]
+layout_mode = 2
+text = "Bruno"
+flat = true
+
+[node name="Worker3" type="PanelContainer" parent="UI/MarginContainer/VBox/Trabajadores" unique_id=619160194]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="Btn" type="Button" parent="UI/MarginContainer/VBox/Trabajadores/Worker3" unique_id=215235360]
+layout_mode = 2
+text = "Luna"
+flat = true
+
+[node name="Reintentar" type="Button" parent="UI/MarginContainer/VBox" unique_id=1541358549]
+visible = false
+layout_mode = 2
+text = "Reintentar"
+
+[node name="PopupLayer" type="CanvasLayer" parent="." unique_id=1351724456]
+
+[node name="MissionPointContainer" type="Control" parent="PopupLayer" unique_id=448226486]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 220.0
+
+[node name="MissionRing" type="Control" parent="PopupLayer/MissionPointContainer" unique_id=1522226167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_ring")
+
+[node name="MissionPoint" type="Button" parent="PopupLayer/MissionPointContainer" unique_id=680074759]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "•"
+flat = true
+
+[node name="TablePopup" type="PanelContainer" parent="PopupLayer" unique_id=2066540740]
+visible = false
+custom_minimum_size = Vector2(320, 160)
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 420.0
+offset_bottom = 260.0
+
+[node name="VBox" type="VBoxContainer" parent="PopupLayer/TablePopup" unique_id=1576439426]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MesaLabel" type="Label" parent="PopupLayer/TablePopup/VBox" unique_id=1886783084]
+layout_mode = 2
+text = "Mesa 1"
+
+[node name="EventText" type="Label" parent="PopupLayer/TablePopup/VBox" unique_id=21337427]
+layout_mode = 2
+text = "Una mesa pide servicio."
+autowrap_mode = 2
+
+[node name="SlotRow" type="HBoxContainer" parent="PopupLayer/TablePopup/VBox" unique_id=1101733159]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MissionSlot" type="PanelContainer" parent="PopupLayer/TablePopup/VBox/SlotRow" unique_id=535397619]
+custom_minimum_size = Vector2(100, 56)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PopupLayer/TablePopup/VBox/SlotRow/MissionSlot" unique_id=1502947490]
+layout_mode = 2
+text = "Nadie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="PopupLayer/TablePopup/VBox" unique_id=1718687807]
+layout_mode = 2
+text = "Pulsa un personaje abajo para asignar"
+
+[node name="BotonesPopup" type="HBoxContainer" parent="PopupLayer/TablePopup/VBox" unique_id=377385725]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AceptarMision" type="Button" parent="PopupLayer/TablePopup/VBox/BotonesPopup" unique_id=729572558]
+layout_mode = 2
+disabled = true
+text = "Aceptar"
+
+[node name="CerrarMision" type="Button" parent="PopupLayer/TablePopup/VBox/BotonesPopup" unique_id=144139015]
+layout_mode = 2
+text = "Cerrar"
+
+[node name="CharacterStatsPopup" type="PanelContainer" parent="PopupLayer" unique_id=952001950]
+visible = false
+custom_minimum_size = Vector2(180, 130)
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 380.0
+offset_bottom = 280.0
+
+[node name="VBox" type="VBoxContainer" parent="PopupLayer/CharacterStatsPopup" unique_id=1146333464]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatsNombre" type="Label" parent="PopupLayer/CharacterStatsPopup/VBox" unique_id=680461028]
+layout_mode = 2
+text = "Marina"
+
+[node name="StatsText" type="Label" parent="PopupLayer/CharacterStatsPopup/VBox" unique_id=819702518]
+layout_mode = 2
+text = "Carisma 5 | Cocina 1 | Limpieza 1"
+autowrap_mode = 2
+
+[node name="CerrarStats" type="Button" parent="PopupLayer/CharacterStatsPopup/VBox" unique_id=178654755]
+layout_mode = 2
+text = "Cerrar"
+
+[node name="D20RollOverlay" type="Control" parent="PopupLayer" unique_id=1582752906]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PopupLayer/D20RollOverlay" unique_id=1025114242]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="NumbersPanel" type="CenterContainer" parent="PopupLayer/D20RollOverlay" unique_id=665594471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="PopupLayer/D20RollOverlay/NumbersPanel" unique_id=251552125]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelD20" type="Label" parent="PopupLayer/D20RollOverlay/NumbersPanel/VBox" unique_id=1153869024]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 48
+text = "?"
+horizontal_alignment = 1
+
+[node name="LabelPlusStat" type="Label" parent="PopupLayer/D20RollOverlay/NumbersPanel/VBox" unique_id=1858727633]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="LabelTotal" type="Label" parent="PopupLayer/D20RollOverlay/NumbersPanel/VBox" unique_id=180763243]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1

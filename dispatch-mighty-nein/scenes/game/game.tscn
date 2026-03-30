@@ -1,0 +1,176 @@
+[gd_scene load_steps=3 format=3 uid="uid://game_main"]
+
+[ext_resource type="Script" path="res://scripts/game/game.gd" id="1_game"]
+[ext_resource type="Script" path="res://scripts/ui/mission_drop_zone.gd" id="2_drop"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.17, 0.22, 1)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="MapArea" type="PanelContainer" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="UILayer/MapArea"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="MissionCard" type="VBoxContainer" parent="UILayer/MapArea/Margin"]
+layout_mode = 2
+
+[node name="MissionTitle" type="Label" parent="UILayer/MapArea/Margin/MissionCard"]
+layout_mode = 2
+text = "Misión 1 — (pulsa para ver requisitos)"
+
+[node name="MissionBriefing" type="Label" parent="UILayer/MapArea/Margin/MissionCard"]
+layout_mode = 2
+text = "Briefing..."
+add_theme_font_size_override("font_size", 12)
+
+[node name="MissionPanel" type="PanelContainer" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -420.0
+offset_right = -20.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="UILayer/MissionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/MissionPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ReqLabel" type="Label" parent="UILayer/MissionPanel/Margin/VBox"]
+layout_mode = 2
+text = "Qué se necesita: —"
+autowrap_mode = 2
+
+[node name="DropZone" type="Control" parent="UILayer/MissionPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+script = ExtResource("2_drop")
+
+[node name="AssignedSlots" type="HBoxContainer" parent="UILayer/MissionPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TeamTotalLabel" type="Label" parent="UILayer/MissionPanel/Margin/VBox"]
+layout_mode = 2
+text = "Arrastra héroes aquí. Total: —"
+
+[node name="SendButton" type="Button" parent="UILayer/MissionPanel/Margin/VBox"]
+layout_mode = 2
+text = "Enviar a la misión"
+
+[node name="HeroList" type="ScrollContainer" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HeroListInner" type="HBoxContainer" parent="UILayer/HeroList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="BottomBar" type="PanelContainer" parent="UILayer"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="UILayer/BottomBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="FailuresLabel" type="Label" parent="UILayer/BottomBar/Margin"]
+layout_mode = 2
+text = "Fallos: 0 / 3"
+
+[node name="ResultPanel" type="PanelContainer" parent="UILayer"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -120.0
+offset_right = 260.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="UILayer/ResultPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/ResultPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ResultTitle" type="Label" parent="UILayer/ResultPanel/Margin/VBox"]
+layout_mode = 2
+text = "¡Éxito!"
+horizontal_alignment = 1
+
+[node name="ResultDetail" type="Label" parent="UILayer/ResultPanel/Margin/VBox"]
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+
+[node name="ResultQuote" type="Label" parent="UILayer/ResultPanel/Margin/VBox"]
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="UILayer/ResultPanel/Margin/VBox"]
+layout_mode = 2
+text = "Continuar"

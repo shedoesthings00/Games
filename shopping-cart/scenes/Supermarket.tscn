@@ -1,0 +1,445 @@
+[gd_scene load_steps=38 format=3]
+
+[ext_resource type="Script" path="res://scripts/player_topdown.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/virtual_joystick.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/world/shelf.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/data/product_catalog.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/game/order_manager.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/game/inventory.gd" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ShelfPanel.tscn" id="5"]
+[ext_resource type="Script" path="res://scripts/ui/pickup_popup.gd" id="8"]
+[ext_resource type="Script" path="res://scripts/feedback/pickup_feedback.gd" id="9"]
+[ext_resource type="Script" path="res://scripts/ui/order_popup.gd" id="10"]
+[ext_resource type="Script" path="res://scripts/game/money_manager.gd" id="11"]
+[ext_resource type="Script" path="res://scripts/ui/money_ui.gd" id="12"]
+[ext_resource type="Script" path="res://scripts/world/checkout.gd" id="13"]
+[ext_resource type="Script" path="res://scripts/game/missions_manager.gd" id="14"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pickup"]
+emission_shape = 1
+emission_sphere_radius = 0.35
+gravity = Vector3(0, -2.0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.5
+scale_min = 0.6
+scale_max = 1.1
+color = Color(0.2, 1, 0.35, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.18, 0.18, 0.2, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_color = Color(0.85, 0.85, 0.9, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shelf"]
+albedo_color = Color(0.25, 0.25, 0.28, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_player"]
+albedo_color = Color(0.15, 0.75, 0.25, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(28, 0.1, 28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(28, 0.2, 28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_long"]
+size = Vector3(28, 2.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_long"]
+size = Vector3(28, 2.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_short"]
+size = Vector3(0.5, 2.5, 28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_short"]
+size = Vector3(0.5, 2.5, 28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shelf"]
+size = Vector3(1.4, 1.6, 6.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shelf"]
+size = Vector3(1.4, 1.6, 6.0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_player"]
+top_radius = 0.55
+bottom_radius = 0.55
+height = 0.25
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shelf_trigger"]
+size = Vector3(2.6, 2.0, 7.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_checkout"]
+size = Vector3(2.8, 1.0, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_checkout"]
+size = Vector3(3.4, 2.0, 2.2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joy_base"]
+bg_color = Color(0, 0, 0, 0.22)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_left = 999
+corner_radius_bottom_right = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joy_knob"]
+bg_color = Color(1, 1, 1, 0.28)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_left = 999
+corner_radius_bottom_right = 999
+
+[node name="Supermarket" type="Node3D"]
+
+[node name="ProductCatalog" type="Node" parent="."]
+script = ExtResource("4")
+
+[node name="OrderManager" type="Node" parent="."]
+script = ExtResource("6")
+
+[node name="MissionsManager" type="Node" parent="."]
+script = ExtResource("14")
+
+[node name="MoneyManager" type="Node" parent="."]
+script = ExtResource("11")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-60, 0, 0)
+position = Vector3(0, 8, 0)
+light_energy = 2.2
+shadow_enabled = true
+
+[node name="Checkout" type="Area3D" parent="."]
+script = ExtResource("13")
+position = Vector3(10.5, 0.5, 11.5)
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+catalog_path = NodePath("../ProductCatalog")
+missions_manager_path = NodePath("../MissionsManager")
+money_manager_path = NodePath("../MoneyManager")
+feedback_path = NodePath("../UI/HUD/PickupFeedback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkout"]
+shape = SubResource("BoxShape3D_checkout")
+
+[node name="Visual" type="MeshInstance3D" parent="Checkout"]
+mesh = SubResource("BoxMesh_checkout")
+position = Vector3(0, -0.5, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="FloorMesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_floor")
+surface_material_override/0 = SubResource("StandardMaterial3D_floor")
+
+[node name="FloorCollision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_floor")
+position = Vector3(0, -0.05, 0)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="WallNorth" type="StaticBody3D" parent="Walls"]
+position = Vector3(0, 1.25, -14.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallNorth"]
+mesh = SubResource("BoxMesh_wall_long")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallNorth"]
+shape = SubResource("BoxShape3D_wall_long")
+
+[node name="WallSouth" type="StaticBody3D" parent="Walls"]
+position = Vector3(0, 1.25, 14.0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallSouth"]
+mesh = SubResource("BoxMesh_wall_long")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallSouth"]
+shape = SubResource("BoxShape3D_wall_long")
+
+[node name="WallWest" type="StaticBody3D" parent="Walls"]
+position = Vector3(-14.0, 1.25, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallWest"]
+mesh = SubResource("BoxMesh_wall_short")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallWest"]
+shape = SubResource("BoxShape3D_wall_short")
+
+[node name="WallEast" type="StaticBody3D" parent="Walls"]
+position = Vector3(14.0, 1.25, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallEast"]
+mesh = SubResource("BoxMesh_wall_short")
+surface_material_override/0 = SubResource("StandardMaterial3D_wall")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallEast"]
+shape = SubResource("BoxShape3D_wall_short")
+
+[node name="Shelves" type="Node3D" parent="."]
+
+[node name="ShelfRow1_A" type="StaticBody3D" parent="Shelves"]
+script = ExtResource("3")
+position = Vector3(-6.0, 0.8, -7.0)
+product_ids = PackedStringArray("milk", "bread")
+
+[node name="Mesh" type="MeshInstance3D" parent="Shelves/ShelfRow1_A"]
+mesh = SubResource("BoxMesh_shelf")
+surface_material_override/0 = SubResource("StandardMaterial3D_shelf")
+
+[node name="Collision" type="CollisionShape3D" parent="Shelves/ShelfRow1_A"]
+shape = SubResource("BoxShape3D_shelf")
+
+[node name="Trigger" type="Area3D" parent="Shelves/ShelfRow1_A"]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelves/ShelfRow1_A/Trigger"]
+shape = SubResource("BoxShape3D_shelf_trigger")
+position = Vector3(0, 0.6, 0)
+
+[node name="ShelfRow1_B" type="StaticBody3D" parent="Shelves"]
+script = ExtResource("3")
+position = Vector3(-2.0, 0.8, -7.0)
+product_ids = PackedStringArray("apple")
+
+[node name="Mesh" type="MeshInstance3D" parent="Shelves/ShelfRow1_B"]
+mesh = SubResource("BoxMesh_shelf")
+surface_material_override/0 = SubResource("StandardMaterial3D_shelf")
+
+[node name="Collision" type="CollisionShape3D" parent="Shelves/ShelfRow1_B"]
+shape = SubResource("BoxShape3D_shelf")
+
+[node name="Trigger" type="Area3D" parent="Shelves/ShelfRow1_B"]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelves/ShelfRow1_B/Trigger"]
+shape = SubResource("BoxShape3D_shelf_trigger")
+position = Vector3(0, 0.6, 0)
+
+[node name="ShelfRow2_A" type="StaticBody3D" parent="Shelves"]
+script = ExtResource("3")
+position = Vector3(2.0, 0.8, 1.0)
+product_ids = PackedStringArray("milk", "apple")
+
+[node name="Mesh" type="MeshInstance3D" parent="Shelves/ShelfRow2_A"]
+mesh = SubResource("BoxMesh_shelf")
+surface_material_override/0 = SubResource("StandardMaterial3D_shelf")
+
+[node name="Collision" type="CollisionShape3D" parent="Shelves/ShelfRow2_A"]
+shape = SubResource("BoxShape3D_shelf")
+
+[node name="Trigger" type="Area3D" parent="Shelves/ShelfRow2_A"]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelves/ShelfRow2_A/Trigger"]
+shape = SubResource("BoxShape3D_shelf_trigger")
+position = Vector3(0, 0.6, 0)
+
+[node name="ShelfRow2_B" type="StaticBody3D" parent="Shelves"]
+script = ExtResource("3")
+position = Vector3(6.0, 0.8, 1.0)
+product_ids = PackedStringArray("bread")
+
+[node name="Mesh" type="MeshInstance3D" parent="Shelves/ShelfRow2_B"]
+mesh = SubResource("BoxMesh_shelf")
+surface_material_override/0 = SubResource("StandardMaterial3D_shelf")
+
+[node name="Collision" type="CollisionShape3D" parent="Shelves/ShelfRow2_B"]
+shape = SubResource("BoxShape3D_shelf")
+
+[node name="Trigger" type="Area3D" parent="Shelves/ShelfRow2_B"]
+collision_layer = 0
+collision_mask = 1
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelves/ShelfRow2_B/Trigger"]
+shape = SubResource("BoxShape3D_shelf_trigger")
+position = Vector3(0, 0.6, 0)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1")
+position = Vector3(-10.0, 0.5, 10.0)
+groups = ["player"]
+
+[node name="PickupParticles" type="GPUParticles3D" parent="Player"]
+one_shot = true
+emitting = false
+amount = 24
+lifetime = 0.35
+process_material = SubResource("ParticleProcessMaterial_pickup")
+visibility_aabb = AABB(-2, -2, -2, 4, 4, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="Visual" type="Node3D" parent="Player"]
+
+[node name="CartMesh" type="MeshInstance3D" parent="Player/Visual"]
+mesh = SubResource("CylinderMesh_player")
+surface_material_override/0 = SubResource("StandardMaterial3D_player")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+current = true
+position = Vector3(0, 12.0, 10.0)
+rotation_degrees = Vector3(-60.0, 0, 0)
+fov = 55.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 1
+
+[node name="HUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="OrderPopup" type="PanelContainer" parent="UI/HUD"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 620.0
+offset_bottom = 168.0
+script = ExtResource("10")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/OrderPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/HUD/OrderPopup/MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="OrderTitle" type="Label" parent="UI/HUD/OrderPopup/MarginContainer/VBox"]
+unique_name_in_owner = true
+text = "Comanda"
+
+[node name="MissionsScroll" type="ScrollContainer" parent="UI/HUD/OrderPopup/MarginContainer/VBox"]
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="MissionsHBox" type="HBoxContainer" parent="UI/HUD/OrderPopup/MarginContainer/VBox/MissionsScroll"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MoneyUI" type="PanelContainer" parent="UI/HUD"]
+anchors_preset = 2
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -180.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
+script = ExtResource("12")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/MoneyUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="MoneyLabel" type="Label" parent="UI/HUD/MoneyUI/MarginContainer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 2
+vertical_alignment = 1
+text = "€ 0.00"
+
+[node name="PickupSfx" type="AudioStreamPlayer" parent="UI/HUD"]
+volume_db = -8.0
+
+[node name="PickupPopup" type="Control" parent="UI/HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -220.0
+offset_top = 18.0
+offset_right = 220.0
+offset_bottom = 70.0
+script = ExtResource("8")
+visible = false
+
+[node name="Label" type="Label" parent="UI/HUD/PickupPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "+1"
+
+[node name="PickupFeedback" type="Node" parent="UI/HUD"]
+script = ExtResource("9")
+popup_path = NodePath("../PickupPopup")
+particles_path = NodePath("../../Player/PickupParticles")
+audio_path = NodePath("../PickupSfx")
+
+[node name="ShelfPanel" parent="UI/HUD" instance=ExtResource("5")]
+
+[node name="VirtualJoystick" type="Control" parent="UI/HUD"]
+script = ExtResource("2")
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -280.0
+offset_right = 280.0
+offset_bottom = -80.0
+
+[node name="Base" type="Panel" parent="UI/HUD/VirtualJoystick"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_joy_base")
+mouse_filter = 0
+
+[node name="Knob" type="Panel" parent="UI/HUD/VirtualJoystick"]
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_joy_knob")
+mouse_filter = 0
+
